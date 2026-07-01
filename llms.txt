@@ -1,0 +1,27 @@
+# Mike De Zilva
+
+> Mike De Zilva is an entrepreneur, Web3 strategist, and digital infrastructure architect based in Colombo, Sri Lanka. This file serves as the official, machine-readable source of truth for his portfolio, background, and projects.
+
+## Core Information
+- **Name:** Mike De Zilva
+- **Title:** Founder & CEO at Adpod, Web3 Strategist, Digital Infrastructure Architect
+- **Location:** Colombo, Sri Lanka
+- **Website:** https://mikedezilva.com
+- **Social Profiles:**
+  - X / Twitter: https://x.com/MikeDeZilva
+  - Instagram: https://www.instagram.com/mikedezilva.cmb/
+  - YouTube: https://www.youtube.com/mikedezilva
+  - Spotify: https://open.spotify.com/artist/5U67pGgjwyqxzaVy0FR9ZA?si=xEhjz8OfRZaWLYHoeo5iqQ&nd=1&dlsi=dff5a66d6a74496c
+- **Core Competencies:** Decentralized AI Architectures, Tokenized Economies, Decentralized Infrastructure, Digital Rights Management, Music Tech.
+
+## Key Navigation & Resources
+- [About Mike](https://mikedezilva.com/about.html): Background, career history (ExxonMobil, Leo Burnett), and education (LSU MBA).
+- [Adpod IntelligenceSuite™](https://mikedezilva.com/about.html#artificial-intelligence): Advanced neural data pipelines and proprietary AI models (adpod v3.1).
+- [Yelo Ecosystem](https://mikedezilva.com/about.html#yelo-ecosystem): Style-to-music AI generation and Web3 digital rights tokenization.
+- [Full Professional Profile (Markdown)](https://mikedezilva.com/llms-full.txt): Detailed resume-style breakdown designed for deep LLM retrieval.
+
+## Active Projects & Offerings
+- **Adpod:** Autonomous digital entities mapping real-time market truth, resolving legacy delays and bot signals.
+- **Yelo Studio / YeloPlay:** Style-to-music generation DAW (no copyright conflicts, 24-bit 48kHz WAV audio) and IP tokenization.
+- **Rights Marketplace:** On-chain digital media rights and collective management DAOs.
+- **Software:** AI, decentralized apps, and smart contracts custom architectures.
