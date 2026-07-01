@@ -134,7 +134,41 @@
                 <div class="detail-price">$35.00</div>
                 <p class="body-text">Premium heavyweight cotton t-shirt featuring the intricate Demon of Mandala design. High-quality print that maintains its stark contrast and atmospheric aesthetic wash after wash.</p>
                 <p class="body-text" style="margin-bottom: 3rem;">Available in all standard sizes. Secure your piece of exclusive merchandise today.</p>
-                <button class="btn btn-primary" style="width: fit-content; border: 1px solid var(--text-primary);">ADD TO CART</button>
+                <button id="payButton" class="btn btn-primary" style="width: fit-content; border: 1px solid var(--text-primary);">Pay with Card</button>
+                <div id="payError" class="tech-text" style="color: red; margin-top: 1rem; display: none;"></div>
+                <script>
+                    document.getElementById('payButton').addEventListener('click', async () => {
+                        const btn = document.getElementById('payButton');
+                        const errorDiv = document.getElementById('payError');
+                        btn.innerText = 'Processing...';
+                        btn.disabled = true;
+                        errorDiv.style.display = 'none';
+
+                        try {
+                            const response = await fetch('http://localhost:3000/api/checkout', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ amount: 35 }) // 35 USD or equivalent
+                            });
+                            
+                            const data = await response.json();
+                            
+                            if (response.ok && data.checkoutUrl) {
+                                window.location.href = data.checkoutUrl;
+                            } else {
+                                errorDiv.innerText = data.error || 'Failed to initiate payment';
+                                errorDiv.style.display = 'block';
+                                btn.innerText = 'Pay with Card';
+                                btn.disabled = false;
+                            }
+                        } catch (err) {
+                            errorDiv.innerText = 'Please ensure the Next.js API server is running on port 3000.';
+                            errorDiv.style.display = 'block';
+                            btn.innerText = 'Pay with Card';
+                            btn.disabled = false;
+                        }
+                    });
+                </script>
             </div>
         </div>
     </section>
