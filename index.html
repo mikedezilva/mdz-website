@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike De Zilva — Entrepreneur, Web3 Strategist, Digital Infrastructure Architect</title>
+    <meta name="description" content="Official website of Mike De Zilva. Entrepreneur, Web3 strategist, and digital infrastructure architect based in Colombo, Sri Lanka.">
+    
+    <!-- SEO / GEO Metadata -->
+    <link rel="canonical" href="https://mikedezilva.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mikedezilva.com/">
+    <meta property="og:title" content="Mike De Zilva — Entrepreneur, Web3 Strategist, Digital Infrastructure Architect">
+    <meta property="og:description" content="Official website of Mike De Zilva. Entrepreneur, Web3 strategist, and digital infrastructure architect based in Colombo, Sri Lanka.">
+    <meta property="og:image" content="https://mikedezilva.com/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@MikeDeZilva">
+    <meta name="twitter:creator" content="@MikeDeZilva">
+    <meta name="twitter:title" content="Mike De Zilva — Entrepreneur, Web3 Strategist, Digital Infrastructure Architect">
+    <meta name="twitter:description" content="Official website of Mike De Zilva. Entrepreneur, Web3 strategist, and digital infrastructure architect based in Colombo, Sri Lanka.">
+    <meta name="twitter:image" content="https://mikedezilva.com/logo.png">
+
+    <!-- JSON-LD Structured Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mike De Zilva",
+      "url": "https://mikedezilva.com",
+      "image": "https://mikedezilva.com/logo.png",
+      "jobTitle": "Entrepreneur, Web3 Strategist, Digital Infrastructure Architect",
+      "description": "Mike De Zilva is an entrepreneur, Web3 strategist, and digital infrastructure architect based in Colombo, Sri Lanka. Founder & CEO of Adpod and creator of the Yelo Ecosystem.",
+      "sameAs": [
+        "https://mikedezilva.com/about.html",
+        "https://x.com/MikeDeZilva",
+        "https://www.instagram.com/mikedezilva.cmb/",
+        "https://www.youtube.com/mikedezilva",
+        "https://open.spotify.com/artist/5U67pGgjwyqxzaVy0FR9ZA?si=xEhjz8OfRZaWLYHoeo5iqQ&nd=1&dlsi=dff5a66d6a74496c"
+      ],
+      "knowsAbout": [
+        "Web3 Strategy",
+        "Digital Infrastructure",
+        "Artificial Intelligence",
+        "Tokenomics",
+        "Decentralized Systems",
+        "Music Technology"
+      ],
+      "founder": [
+        {
+          "@type": "Organization",
+          "name": "Adpod"
+        },
+        {
+          "@type": "Organization",
+          "name": "Yelo Ecosystem"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon and App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+</head>
+<body>
+    <!-- Slide-out Menu Overlay -->
+    <div id="menu-overlay" class="menu-overlay" data-lenis-prevent>
+        <div class="menu-content">
+            <button id="close-menu" class="close-menu-btn">&times;</button>
+            <nav class="main-nav">
+                <a href="#news">News</a>
+                <a href="about.html">About</a>
+                <a href="productions.html">Productions</a>
+                <a href="#videos">Videos</a>
+                <a href="#store">Store</a>
+                <a href="#software">Software</a>
+                <a href="licensing.html">Music Licensing</a>
+                <a href="#rights">Rights Marketplace</a>
+            </nav>
+            <div class="menu-footer">
+                <div class="menu-socials">
+                    <a href="https://www.instagram.com/mikedezilva.cmb/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/MikeDeZilva" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.youtube.com/mikedezilva" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://open.spotify.com/artist/5U67pGgjwyqxzaVy0FR9ZA?si=xEhjz8OfRZaWLYHoeo5iqQ&amp;nd=1&amp;dlsi=dff5a66d6a74496c" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-left">
+            <button id="open-menu" class="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <span class="menu-label">MENU</span>
+        </div>
+        <div class="header-center">
+            <img src="logo.png" alt="Mike De Zilva Logo" class="logo">
+        </div>
+        <div class="header-right social-icons">
+            <a href="https://www.instagram.com/mikedezilva.cmb/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/MikeDeZilva" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/mikedezilva" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://open.spotify.com/artist/5U67pGgjwyqxzaVy0FR9ZA?si=xEhjz8OfRZaWLYHoeo5iqQ&amp;nd=1&amp;dlsi=dff5a66d6a74496c" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="video-background">
+            <div class="hero-bg-slider" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+                <img src="Images/hero-banner-slides/Banner-slide-1.png" alt="Hero Slide 1" class="hero-slide" style="min-width: 100%; min-height: 100%; width: auto; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover; opacity: 1; transition: opacity 1.5s ease; filter: contrast(1.1) brightness(0.45);">
+                <img src="Images/hero-banner-slides/Banner-slide-2.png" alt="Hero Slide 2" class="hero-slide" style="min-width: 100%; min-height: 100%; width: auto; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover; opacity: 0; transition: opacity 1.5s ease; filter: contrast(1.1) brightness(0.45);">
+                <img src="Images/hero-banner-slides/Banner-slide-3.png" alt="Hero Slide 3" class="hero-slide" style="min-width: 100%; min-height: 100%; width: auto; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover; opacity: 0; transition: opacity 1.5s ease; filter: contrast(1.1) brightness(0.45);">
+                <img src="Images/hero-banner-slides/Banner-slide-4.png" alt="Hero Slide 4" class="hero-slide" style="min-width: 100%; min-height: 100%; width: auto; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover; opacity: 0; transition: opacity 1.5s ease; filter: contrast(1.1) brightness(0.45);">
+                <img src="Images/hero-banner-slides/Banner-slide-5.png" alt="Hero Slide 5" class="hero-slide" style="min-width: 100%; min-height: 100%; width: auto; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover; opacity: 0; transition: opacity 1.5s ease; filter: contrast(1.1) brightness(0.45);">
+                <img src="Images/hero-banner-slides/Banner-slide-6.png" alt="Hero Slide 6" class="hero-slide" style="min-width: 100%; min-height: 100%; width: auto; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover; opacity: 0; transition: opacity 1.5s ease; filter: contrast(1.1) brightness(0.45);">
+            </div>
+            <div class="video-overlay"></div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const heroSlides = document.querySelectorAll('.hero-slide');
+                let currentHeroSlide = 0;
+                if(heroSlides.length > 0) {
+                    setInterval(() => {
+                        heroSlides[currentHeroSlide].style.opacity = '0';
+                        currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+                        heroSlides[currentHeroSlide].style.opacity = '1';
+                    }, 4000);
+                }
+            });
+        </script>
+        <div class="hero-content fade-in">
+            <span class="feature-tag" style="margin-bottom: 0.5rem; display: inline-block;">UPCOMING RELEASE</span>
+            <h1 class="display-title">TAPROBANE TRANCE</h1>
+            <p class="body-text" style="margin-bottom: 3rem;">Ancient percussion and perahera rhythms collide with heavy guitars, analogue noise, and cinematic distortion—reimagining Sri Lanka as a parallel sonic mythology.</p>
+            <a href="#videos" class="btn btn-primary">Explore Album</a>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span class="tech-text">EXPLORE SITE &darr;</span>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section" id="news">
+        <div class="news-grid">
+            <!-- News Item 1 -->
+            <a href="https://www.globenewswire.com/news-release/2024/09/20/2949707/0/en/elastos-creates-world-s-first-live-music-inscription-on-bitcoin-at-token-2049.html" target="_blank" class="news-item fade-in-scroll delay-1">
+                <div class="news-img-wrapper">
+                    <img src="Images/news-1-img.png" alt="Elastos × Mike De Zilva">
+                </div>
+                <div class="news-overlay-gradient"></div>
+                <div class="news-content">
+                    <span class="news-date">Elastos × Mike De Zilva</span>
+                    <h2>First live music performance inscribed to Bitcoin</h2>
+                </div>
+            </a>
+            <!-- News Item 2 -->
+            <a href="https://news.bitcoin.com/forbes-web3-celebrates-innovation-legacy-pass-members-showcased-in-the-forbes-magazine/" target="_blank" class="news-item fade-in-scroll delay-2">
+                <div class="news-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Forbes Web3 Recognition">
+                </div>
+                <div class="news-overlay-gradient"></div>
+                <div class="news-content">
+                    <span class="news-date">Forbes Web3 Recognition</span>
+                    <h2>Featured among Web3 Legacy founders and innovators</h2>
+                </div>
+            </a>
+            <!-- News Item 3 -->
+            <a href="https://blog.elastos.net/news/yelo-to-release-music-catalogue-via-elastos-escription/" target="_blank" class="news-item fade-in-scroll delay-3">
+                <div class="news-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Elastos × YeloPlay">
+                </div>
+                <div class="news-overlay-gradient"></div>
+                <div class="news-content">
+                    <span class="news-date">Elastos × YeloPlay</span>
+                    <h2>Music catalogue released via Bitcoin eScription technology</h2>
+                </div>
+            </a>
+        </div>
+    </section>
+
+
+
+    <!-- Video Release Section -->
+    <section class="video-release" id="videos" style="position: relative; padding: 15rem 2rem; text-align: center; overflow: hidden; border: none; min-height: 80vh; display: flex; align-items: center; justify-content: center; background-color: #000;">
+        
+        <!-- Background Slider -->
+        <div class="video-bg-slider" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+            <img src="Images/video-slide-1.png" alt="Slide 1" class="bg-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; transition: opacity 1.5s ease; filter: grayscale(10%) brightness(0.75);">
+            <img src="Images/video-slide-2.png" alt="Slide 2" class="bg-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s ease; filter: grayscale(10%) brightness(0.75);">
+            <img src="Images/video-slide-3.png" alt="Slide 3" class="bg-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s ease; filter: grayscale(10%) brightness(0.75);">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(5,5,5,0.1) 0%, rgba(5,5,5,0.7) 100%);"></div>
+        </div>
+
+        <div class="video-content fade-in-scroll" style="position: relative; z-index: 1;">
+            <span class="tech-text" style="margin-bottom: 1.5rem; display: inline-block;">New Release</span>
+            <h2 class="display-title" style="margin-bottom: 1.5rem;">BIJJA (SEED)</h2>
+            <p class="tech-text" style="margin-bottom: 4rem;">THE OFFICIAL FILM VIDEO NOW ONLINE</p>
+            <a href="https://www.youtube.com/watch?v=c95_UjAtFo8" class="btn btn-outline" target="_blank" rel="noopener noreferrer">WATCH VIDEO</a>
+        </div>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const slides = document.querySelectorAll('.bg-slide');
+                let currentSlide = 0;
+                if(slides.length > 0) {
+                    setInterval(() => {
+                        slides[currentSlide].style.opacity = '0';
+                        currentSlide = (currentSlide + 1) % slides.length;
+                        slides[currentSlide].style.opacity = '1';
+                    }, 4000);
+                }
+            });
+        </script>
+    </section>
+
+    <!-- Gig Dates Section (Hidden) -->
+    <!--
+    <section class="gig-dates-section" id="gig-dates">
+        <div class="gig-dates-container">
+            <div class="gig-dates-header fade-in-scroll">
+                <span class="tech-text">Live</span>
+                <h2 class="display-title">Upcoming Dates</h2>
+            </div>
+            <div class="gig-dates-list">
+                <a href="#" class="gig-date-item fade-in-scroll delay-1">
+                    <span class="gig-date">28 Jun 2026</span>
+                    <span class="gig-venue">The Roundhouse</span>
+                    <span class="gig-city">London, UK</span>
+                    <span class="btn btn-outline btn-gig">TICKETS</span>
+                </a>
+                <a href="#" class="gig-date-item fade-in-scroll delay-2">
+                    <span class="gig-date">15 Jul 2026</span>
+                    <span class="gig-venue">Paradiso</span>
+                    <span class="gig-city">Amsterdam, NL</span>
+                    <span class="btn btn-outline btn-gig">TICKETS</span>
+                </a>
+                <a href="#" class="gig-date-item fade-in-scroll delay-3">
+                    <span class="gig-date">02 Aug 2026</span>
+                    <span class="gig-venue">Nelum Pokuna Theatre</span>
+                    <span class="gig-city">Colombo, LK</span>
+                    <span class="btn btn-outline btn-gig">TICKETS</span>
+                </a>
+                <a href="#" class="gig-date-item fade-in-scroll delay-4">
+                    <span class="gig-date">19 Sep 2026</span>
+                    <span class="gig-venue">Sydney Opera House</span>
+                    <span class="gig-city">Sydney, AU</span>
+                    <span class="btn btn-outline btn-gig">TICKETS</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- Store Section -->
+    <section class="store-section" id="store">
+        <div class="store-header fade-in-scroll">
+            <span class="tech-text">Merch</span>
+            <h2 class="display-title">Store</h2>
+        </div>
+        <div class="store-grid">
+            <!-- Item 1 -->
+            <div class="store-item fade-in-scroll delay-1">
+                <a href="detail.html" class="store-img-link">
+                    <img src="Images/Merch-item-1.jpeg" alt="Demon of Mandala — T-Shirt">
+                </a>
+                <h3 class="tech-text">DEMON OF MANDALA — T-SHIRT</h3>
+                <a href="detail.html" class="btn btn-store">PRE-ORDER</a>
+            </div>
+            <!-- Item 2 -->
+            <div class="store-item fade-in-scroll delay-2" style="display: none;">
+                <a href="detail.html" class="store-img-link">
+                    <img src="Images/Merch-item-2.jpeg" alt="Demon of Mandala — Playing Card 1/1">
+                </a>
+                <h3 class="tech-text">DEMON OF MANDALA — PLAYING CARD 1/1</h3>
+                <a href="detail.html" class="btn btn-store">JOIN WAITLIST</a>
+            </div>
+            <!-- Item 3 -->
+            <div class="store-item fade-in-scroll delay-3">
+                <a href="detail.html" class="store-img-link">
+                    <img src="Images/Merch-item-3.jpeg" alt="Taprobane Trance — Limited Edition Vinyl">
+                </a>
+                <h3 class="tech-text">TAPROBANE TRANCE — LIMITED EDITION VINYL (50 UNITS)</h3>
+                <a href="detail.html" class="btn btn-store">PRE-ORDER</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Section -->
+    <section class="software-section" id="software" style="position: relative; padding: 10rem 2rem; text-align: center; overflow: hidden; border: none; min-height: 85vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #000; margin-bottom: 0;">
+        <div class="video-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+            <img src="Images/gen-music-img.jpeg" alt="Software Coming Soon" style="min-width: 100%; min-height: 100%; width: auto; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover; filter: contrast(1.1) brightness(0.65);">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(5,5,5,0.05) 0%, rgba(5,5,5,0.7) 100%);"></div>
+        </div>
+        
+        <div class="software-container fade-in-scroll" style="position: relative; z-index: 1; width: 100%; max-width: 760px; margin: 0 auto; padding: 0 1rem;">
+            <span class="tech-text" style="margin-bottom: 1.5rem; display: inline-block; color: var(--yelo-primary);">Generative music engine</span>
+            <h2 class="display-title" style="margin-bottom: 3rem; font-size: 3.5rem;">SOFTWARE</h2>
+            
+            <!-- Interactive Glassmorphic Generator Card -->
+            <div class="generator-card">
+                <div class="generator-prompt-box">
+                    <textarea class="generator-textarea" placeholder="Describe the mood, instruments, and style..."></textarea>
+                    <div class="generator-inner-actions">
+                        <button class="inner-action-btn"><i class="fa-solid fa-bars"></i> ADD CUSTOM LYRICS</button>
+                        <button class="inner-action-btn"><i class="fa-regular fa-pen-to-square"></i> ADD INSPIRATION IMAGE</button>
+                    </div>
+                </div>
+                
+                <div class="generator-controls-row">
+                    <div class="controls-left">
+                        <div class="toggle-control">
+                            <label class="switch">
+                                <input type="checkbox" id="direct-to-engine">
+                                <span class="slider round"></span>
+                            </label>
+                            <span class="control-label">DIRECT TO ENGINE</span>
+                        </div>
+                        
+                        <div class="duration-selector">
+                            <span class="control-label">DURATION:</span>
+                            <div class="duration-pills">
+                                <button class="duration-pill active" data-duration="30s">30 Sec</button>
+                                <button class="duration-pill" data-duration="3m">3 Min</button>
+                                <button class="duration-pill" data-duration="5m">5 Min</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="controls-right">
+                        <button class="btn-generate" disabled style="cursor: not-allowed; opacity: 0.8;">Coming soon</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy Music Rights Section -->
+    <section class="rights-section" id="rights" style="padding: 10rem 4rem; background-color: var(--surface-color);">
+        <div class="store-header fade-in-scroll">
+            <span class="tech-text" style="color: var(--yelo-primary);">Rights Marketplace</span>
+            <h2 class="display-title">Buy Music Rights</h2>
+            <p class="body-text" style="max-width: 600px; margin: 2rem auto 0 auto;">A direct music rights marketplace allowing fans, collectors, and investors to acquire ownership or licensing rights to selected tracks.</p>
+        </div>
+        <!-- Rights Marketplace Console -->
+        <div class="player-console fade-in-scroll delay-1" id="rights-player-console">
+            <div class="player-header">
+                <span class="playlist-title">Rights Marketplace</span>
+                <div class="track-title" id="rights-track-title">Loading track...</div>
+                <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:0.3rem;" id="rights-track-badge">FULL OWNERSHIP</div>
+            </div>
+
+            <div class="player-controls">
+                <button class="console-btn" id="rights-prev-btn" aria-label="Previous Track"><i class="fa-solid fa-backward"></i></button>
+                <button class="console-btn play-pause-btn" id="rights-play-btn" aria-label="Play/Pause"><i class="fa-solid fa-play"></i></button>
+                <button class="console-btn" id="rights-next-btn" aria-label="Next Track"><i class="fa-solid fa-forward"></i></button>
+            </div>
+
+            <div class="player-progress-container">
+                <span class="progress-time" id="rights-time-current">0:00</span>
+                <div class="progress-slider-wrapper" id="rights-progress-wrapper">
+                    <div class="progress-slider-fill" id="rights-progress-fill"></div>
+                </div>
+                <span class="progress-time" id="rights-time-duration">0:00</span>
+            </div>
+
+            <div class="player-footer">
+                <div class="player-track-counter" id="rights-track-counter">Track 0 of 0</div>
+                <button class="btn btn-primary player-action-btn open-deal-btn" id="rights-action-btn">BUY RIGHTS</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deal Terms Drawer -->
+    <div id="deal-drawer" class="deal-drawer">
+        <div class="drawer-content" data-lenis-prevent>
+            <button id="close-drawer" class="close-drawer-btn">&times;</button>
+            
+            <!-- View 1: Deal Terms Summary -->
+            <div id="drawer-view-terms" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+                <div>
+                    <div class="drawer-header">
+                        <span class="tech-text" style="color: var(--yelo-primary); font-size: 0.75rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Deal Specification</span>
+                        <h2 class="display-title" id="drawer-track-title" style="font-size: 2.2rem; margin-bottom: 0.8rem; font-weight: 400;">RITUAL MEMORY</h2>
+                        <span class="badge-rights" id="drawer-track-badge">PUBLISHING RIGHTS</span>
+                    </div>
+                    
+                    <div class="drawer-body">
+                        <div class="deal-metric-grid">
+                            <div class="deal-metric-card">
+                                <span class="metric-label">OFFER PRICE</span>
+                                <span class="metric-value" id="drawer-track-price">$2,500</span>
+                            </div>
+                            <div class="deal-metric-card">
+                                <span class="metric-label">SHARE OFFER</span>
+                                <span class="metric-value" id="drawer-track-share">25%</span>
+                            </div>
+                        </div>
+
+                        <div class="deal-terms-section">
+                            <h4 class="tech-text" style="font-size: 0.8rem; margin-bottom: 0.8rem;">TERMS SUMMARY</h4>
+                            <p class="body-text" id="drawer-track-desc" style="font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;"></p>
+                            
+                            <ul class="terms-bullets">
+                                <li><i class="fa-solid fa-check"></i> Standard publisher/writer agreement alignment</li>
+                                <li><i class="fa-solid fa-check"></i> Administered through global performance rights organizations</li>
+                                <li><i class="fa-solid fa-check"></i> Transparent semi-annual royalty statement distribution</li>
+                                <li><i class="fa-solid fa-check"></i> Creative synchronization decision approvals retained</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="deal-buy-section">
+                    <button class="btn btn-primary buy-now-btn" id="btn-secure-acquisition" style="width: 100%; border-radius: 100px; padding: 1.1rem; font-weight: 600; margin-bottom: 0.8rem;">SECURE ACQUISITION</button>
+                    <button class="btn btn-outline make-offer-btn" id="btn-make-offer" style="width: 100%; border-radius: 100px; padding: 1.1rem; font-weight: 600;">MAKE AN OFFER</button>
+                    <p class="tech-text" style="font-size: 0.65rem; text-align: center; margin-top: 1rem; color: rgba(255,255,255,0.4);">Direct blockchain invoice generated on authorization.</p>
+                </div>
+            </div>
+
+            <!-- View 2: Make an Offer Form -->
+            <div id="drawer-view-offer" style="display: none; flex-direction: column; justify-content: space-between; height: 100%;">
+                <div>
+                    <button id="btn-back-to-terms" style="background: none; border: none; color: var(--yelo-primary); font-family: var(--font-body); font-size: 0.85rem; letter-spacing: 0.05em; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem; padding: 0;"><i class="fa-solid fa-arrow-left"></i> BACK TO TERMS</button>
+                    
+                    <div class="drawer-header">
+                        <span class="tech-text" style="color: var(--yelo-primary); font-size: 0.75rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Negotiate Acquisition</span>
+                        <h2 class="display-title" id="offer-track-title" style="font-size: 2.2rem; margin-bottom: 0.8rem; font-weight: 400;">RITUAL MEMORY</h2>
+                        <span class="badge-rights" id="offer-track-badge">PUBLISHING RIGHTS</span>
+                    </div>
+
+                    <form id="make-offer-form" style="display: flex; flex-direction: column; gap: 1.2rem; margin-top: 1rem;">
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label class="metric-label" for="offer-amount">YOUR OFFER (USD)</label>
+                            <input type="text" id="offer-amount" required placeholder="$2,000" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 12px; color: var(--text-primary); font-family: var(--font-display); font-size: 1.5rem; outline: none; width: 100%; transition: border-color 0.3s ease;">
+                        </div>
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label class="metric-label" for="offer-email">EMAIL ADDRESS</label>
+                            <input type="email" id="offer-email" required placeholder="name@domain.com" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 12px; color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; transition: border-color 0.3s ease;">
+                        </div>
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label class="metric-label" for="offer-notes">PROPOSAL / NOTES (OPTIONAL)</label>
+                            <textarea id="offer-notes" placeholder="Enter any specific terms or notes..." rows="3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 12px; color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; resize: none; transition: border-color 0.3s ease;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 100px; padding: 1.1rem; font-weight: 600; margin-top: 1rem;">SUBMIT OFFER</button>
+                    </form>
+                </div>
+                <p class="tech-text" style="font-size: 0.65rem; text-align: center; margin-top: 1.5rem; color: rgba(255,255,255,0.4);">Offers are subject to response within 48 hours.</p>
+            </div>
+
+            <!-- View 3: Success Confirmation -->
+            <div id="drawer-view-success" style="display: none; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100%; padding: 2rem 0;">
+                <div style="font-size: 4rem; color: var(--yelo-primary); margin-bottom: 2rem;"><i class="fa-regular fa-circle-check"></i></div>
+                <h3 class="display-title" id="success-title" style="font-size: 1.8rem; margin-bottom: 1rem; font-weight: 400;">OFFER LOGGED</h3>
+                <p class="body-text" id="success-message" style="font-size: 0.95rem; margin-bottom: 2.5rem; line-height: 1.6; color: var(--text-secondary);">Your offer has been submitted for review. We will reach out to the provided email within 48 hours.</p>
+                <button id="success-close-btn" class="btn btn-outline" style="width: 100%; border-radius: 100px; padding: 1.1rem; font-weight: 600;">CLOSE DRAWER</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mailing List Section -->
+    <section class="mailing-list-section">
+        <div class="mailing-list-container fade-in-scroll">
+            <h2 class="display-title">Stay Connected</h2>
+            <p class="body-text">Sign up to receive updates on new releases, tour dates, and exclusive content.</p>
+            <form class="mailing-list-form">
+                <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS" required>
+                <button type="submit">SUBSCRIBE &rarr;</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <img src="logo.png" alt="Mike De Zilva Logo" class="footer-logo">
+                <p class="body-text footer-tagline">Music · Marketing · Future Tech</p>
+            </div>
+            <div class="footer-col">
+                <h4 class="tech-text">Navigate</h4>
+                <nav class="footer-nav">
+                    <a href="#home">Home</a>
+                    <a href="#news">News</a>
+                    <a href="about.html">About</a>
+                    <a href="#videos">Videos</a>
+                    <!-- <a href="#gig-dates">Gig Dates</a> -->
+                    <a href="#store">Store</a>
+                    <a href="#software">Software</a>
+                </nav>
+            </div>
+            <div class="footer-col">
+                <h4 class="tech-text">Connect</h4>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/mikedezilva.cmb/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://x.com/MikeDeZilva" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter"></i> X / Twitter</a>
+                    <a href="https://www.youtube.com/mikedezilva" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i> YouTube</a>
+                    <a href="https://open.spotify.com/artist/5U67pGgjwyqxzaVy0FR9ZA?si=xEhjz8OfRZaWLYHoeo5iqQ&amp;nd=1&amp;dlsi=dff5a66d6a74496c" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><i class="fab fa-spotify"></i> Spotify</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="tech-text">Contact</h4>
+                <div class="footer-contact">
+                    <p class="body-text">Management & Booking</p>
+                    <a href="mailto:mgt@yelostudio.xyz" class="footer-email">mgt@yelostudio.xyz</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mike De Zilva. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="catalogue_data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
