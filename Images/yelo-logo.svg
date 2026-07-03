@@ -1,0 +1,15 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .yelo-text { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 24px; }
+    .studio-text { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 24px; fill: #F0F0F5; }
+  </style>
+  
+  <!-- "Yelo" Block with Skew -->
+  <g transform="translate(10, 10)">
+    <path d="M4 0H96C98.2091 0 100 1.79086 100 4V36C100 38.2091 98.2091 40 96 40H4C1.79086 40 0 38.2091 0 36V4C0 1.79086 1.79086 0 4 0Z" fill="#D9FF00" transform="skewX(-5)" />
+    <text x="50" y="28" fill="#000000" text-anchor="middle" class="yelo-text" transform="skewX(-5)">Yelo</text>
+  </g>
+  
+  <!-- "Studio" Text (Unskewed) -->
+  <text x="115" y="38" class="studio-text">Studio</text>
+</svg>

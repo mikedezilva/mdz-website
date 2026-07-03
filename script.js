@@ -459,3 +459,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+/* Yelo Studio Popup Logic */
+document.addEventListener('DOMContentLoaded', () => {
+    const popupModal = document.getElementById('yelo-popup-modal');
+    const minimizedBtn = document.getElementById('yelo-minimized-btn');
+    const closeBtn = document.getElementById('yelo-close-btn');
+    const laterBtn = document.getElementById('yelo-later-btn');
+    const applyBtn = document.getElementById('yelo-apply-btn');
+
+    if (!popupModal || !minimizedBtn) return;
+
+    const popupState = sessionStorage.getItem('yeloPopupState');
+
+    function minimizePopup() {
+        popupModal.classList.remove('show');
+        setTimeout(() => {
+            minimizedBtn.classList.remove('hidden');
+        }, 300);
+        sessionStorage.setItem('yeloPopupState', 'minimized');
+    }
+
+    function maximizePopup() {
+        minimizedBtn.classList.add('hidden');
+        setTimeout(() => {
+            popupModal.classList.add('show');
+        }, 100);
+    }
+
+    if (popupState === 'minimized') {
+        minimizedBtn.classList.remove('hidden');
+    } else {
+        popupModal.classList.add('show');
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', minimizePopup);
+    if (laterBtn) laterBtn.addEventListener('click', minimizePopup);
+    if (applyBtn) applyBtn.addEventListener('click', minimizePopup);
+    if (minimizedBtn) minimizedBtn.addEventListener('click', maximizePopup);
+});
+

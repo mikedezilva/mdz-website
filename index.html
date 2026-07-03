@@ -92,6 +92,7 @@
                 <a href="#music">Music</a>
                 <a href="#store">Store</a>
                 <a href="#software">Software</a>
+                <a href="http://localhost:3000/yelo-studio" style="padding: 15px 20px;"><img src="Images/yelo-logo.svg" alt="Yelo Studio" style="height: 48px;"></a>
                 <a href="licensing.html">Music Licensing <span class="badge-soon">Coming Soon</span></a>
                 <a href="#rights">Rights Marketplace <span class="badge-soon">Coming Soon</span></a>
             </nav>
@@ -561,6 +562,7 @@
                     <!-- <a href="#gig-dates">Gig Dates</a> -->
                     <a href="#store">Store</a>
                     <a href="#software">Software</a>
+                    <a href="http://localhost:3000/yelo-studio" style="padding-top: 5px;"><img src="Images/yelo-logo.svg" alt="Yelo Studio" style="height: 16px;"></a>
                 </nav>
             </div>
             <div class="footer-col">
@@ -584,6 +586,34 @@
             <p>&copy; 2026 Mike De Zilva. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Yelo Studio Popup -->
+    <div id="yelo-minimized-btn" class="yelo-minimized hidden">
+        <div class="yelo-pulse"></div>
+        <img src="Images/yelo-favicon.svg" alt="Yelo" class="yelo-min-icon">
+        <span class="yelo-tooltip">Creator Partner Program</span>
+    </div>
+
+    <div id="yelo-popup-modal" class="yelo-modal">
+        <div class="yelo-modal-content">
+            <div class="yelo-decor-top"></div>
+            <div class="yelo-decor-blob"></div>
+            <button id="yelo-close-btn" class="yelo-close-btn">&times;</button>
+            <div class="yelo-logo-wrapper">
+                <img src="Images/yelo-logo.svg" alt="Yelo Studio" class="yelo-main-logo">
+            </div>
+            <div class="yelo-text-content">
+                <span class="yelo-badge">Coming Soon</span>
+                <h2>Creator Partner Program</h2>
+                <p>Join our exclusive generative music engine. Create content using Yelo, tag us on your socials, and earn <strong style="color: #facc15;">free credits</strong> to keep creating.</p>
+                <p class="yelo-small-text">* Spaces are strictly limited.</p>
+            </div>
+            <div class="yelo-actions">
+                <button id="yelo-later-btn" class="yelo-later-btn">Maybe later</button>
+                <a href="https://forms.google.com" target="_blank" id="yelo-apply-btn" class="yelo-apply-btn">Apply Now &rarr;</a>
+            </div>
+        </div>
+    </div>
 
     <script src="catalogue_data.js"></script>
     <script src="script.js"></script>

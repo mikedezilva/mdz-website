@@ -1503,6 +1503,9 @@ input:checked + .slider:before {
     .site-header .header-left {
         z-index: 2;
     }
+    .menu-label {
+        display: none;
+    }
     .site-header .header-center {
         position: absolute;
         left: 50%;
@@ -1512,7 +1515,9 @@ input:checked + .slider:before {
         align-items: center;
     }
     .site-header .logo {
-        height: 30px;
+        height: 24px;
+        max-width: 60vw;
+        object-fit: contain;
     }
     .site-header .header-right.social-icons {
         display: none;
@@ -2089,4 +2094,418 @@ input:checked + .slider:before {
     align-items: center;
     justify-content: center;
     border-radius: inherit;
+}
+
+/* Yelo Studio Popup Styles */
+.yelo-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.yelo-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.yelo-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 450px;
+    background: #0a0a0a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    transform: translateY(20px) scale(0.95);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+.yelo-modal.show .yelo-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.yelo-decor-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(180deg, rgba(250, 204, 21, 0.15) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.yelo-decor-blob {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 250px;
+    height: 250px;
+    background: rgba(250, 204, 21, 0.1);
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.yelo-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: #9ca3af;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.yelo-close-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.yelo-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.yelo-main-logo {
+    height: 40px;
+    filter: drop-shadow(0 0 15px rgba(250, 204, 21, 0.2));
+}
+
+.yelo-text-content {
+    text-align: center;
+}
+
+.yelo-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(250, 204, 21, 0.1);
+    border: 1px solid rgba(250, 204, 21, 0.2);
+    color: #facc15;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
+
+.yelo-text-content h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.yelo-text-content p {
+    color: #d4d4d8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.yelo-small-text {
+    font-size: 0.75rem !important;
+    color: #71717a !important;
+    font-style: italic;
+}
+
+.yelo-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 480px) {
+    .yelo-actions {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.yelo-later-btn {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.yelo-later-btn:hover {
+    color: #fff;
+}
+
+.yelo-apply-btn {
+    background: linear-gradient(90deg, #facc15, #eab308);
+    color: #000;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.3);
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.yelo-apply-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.5);
+}
+
+/* Minimized State */
+.yelo-minimized {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9998;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #facc15, #ca8a04);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.yelo-minimized.hidden {
+    transform: translateY(100px) scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.yelo-minimized:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.6);
+}
+
+.yelo-pulse {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    animation: yelo-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.yelo-min-icon {
+    width: 28px;
+    height: 28px;
+    z-index: 2;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.yelo-tooltip {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: #18181b;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.yelo-minimized:hover .yelo-tooltip {
+    opacity: 1;
+}
+
+@keyframes yelo-ping {
+    75%, 100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Dual Popup Styling Updates */
+.dual-modal-content {
+    max-width: 650px !important;
+    padding: 2.5rem 2rem !important;
+}
+
+.dual-modal-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.dual-modal-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.03em;
+}
+
+.dual-modal-header p {
+    color: #d4d4d8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.2rem;
+}
+
+.dual-modal-split {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (min-width: 600px) {
+    .dual-modal-split {
+        flex-direction: row;
+    }
+}
+
+.dual-card {
+    flex: 1;
+    position: relative;
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.6) 0%, rgba(10, 10, 10, 0.9) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 220px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.dual-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dual-card-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.yelo-card .dual-card-decor {
+    background: radial-gradient(circle at 50% -20%, rgba(250, 204, 21, 0.25) 0%, transparent 65%);
+}
+
+.adpod-card .dual-card-decor {
+    background: radial-gradient(circle at 50% -20%, rgba(167, 139, 250, 0.25) 0%, transparent 65%);
+}
+
+.dual-card-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.dual-card-content p {
+    color: #a1a1aa;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.adpod-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(167, 139, 250, 0.1);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    color: #a78bfa;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+}
+
+.adpod-main-logo {
+    height: 40px !important;
+    filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.3)) !important;
+    margin-top: 5px;
+}
+
+.dual-apply-btn {
+    margin-top: auto;
+    width: 100%;
+    font-size: 0.85rem !important;
+    padding: 0.75rem 1.2rem !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: all 0.3s ease !important;
+    display: inline-block;
+}
+
+.yelo-apply-btn {
+    background: rgba(250, 204, 21, 0.1) !important;
+    color: #facc15 !important;
+    border: 1px solid rgba(250, 204, 21, 0.3) !important;
+    box-shadow: none !important;
+}
+
+.yelo-apply-btn:hover {
+    background: rgba(250, 204, 21, 0.15) !important;
+    border-color: rgba(250, 204, 21, 0.5) !important;
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.15) !important;
+    transform: none !important;
+}
+
+.adpod-apply-btn {
+    background: rgba(167, 139, 250, 0.1) !important;
+    color: #a78bfa !important;
+    border: 1px solid rgba(167, 139, 250, 0.3) !important;
+    box-shadow: none !important;
+}
+
+.adpod-apply-btn:hover {
+    background: rgba(167, 139, 250, 0.15) !important;
+    border-color: rgba(167, 139, 250, 0.5) !important;
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.15) !important;
+    transform: none !important;
 }
