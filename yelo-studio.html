@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yelo Studio | Integrated Creative Productions</title>
+    <meta name="description" content="A Home For The Messengers. Integrated creative productions.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #020202;
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        ::selection {
+            background-color: #D9FF00;
+            color: black;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D9FF00;
+        }
+    </style>
+</head>
+<body class="selection:bg-[#D9FF00] selection:text-black overflow-x-hidden">
+
+    <!-- BOOT SCREEN -->
+    <div id="boot-screen" class="min-h-screen bg-black flex flex-col items-center justify-center font-mono text-[#D9FF00] p-6 absolute inset-0 z-[100]">
+        <div class="max-w-2xl w-full">
+            <pre class="whitespace-pre-wrap text-xs md:text-sm leading-relaxed"><span id="boot-text"></span><span class="animate-pulse">_</span></pre>
+        </div>
+    </div>
+
+    <!-- MAIN APP -->
+    <div id="main-app" class="min-h-screen relative hidden font-mono">
+        <!-- Grid Background -->
+        <div class="fixed inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0"></div>
+        <div class="fixed inset-0 bg-black/80 pointer-events-none z-0"></div>
+        
+        <!-- Top Nav (Console Header) -->
+        <nav class="relative z-50 flex flex-col md:flex-row items-center justify-between p-6 border-b border-[#D9FF00]/20 bg-black/50 backdrop-blur-md">
+            <div class="flex items-center gap-4 mb-4 md:mb-0">
+                <img src="Images/yelo-logo.svg" alt="Yelo Studio" class="h-9 drop-shadow-[0_0_10px_rgba(217,255,0,0.5)]">
+                <div class="h-6 w-px bg-[#D9FF00]/30 hidden md:block"></div>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-[#D9FF00] animate-pulse hidden md:block">System: Online</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-500 hover:text-[#D9FF00] transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-terminal text-sm"></i> Root System (MDZ)
+                </a>
+            </div>
+        </nav>
+
+        <main class="relative z-10 max-w-7xl mx-auto p-6 md:p-12">
+            <!-- SECTOR 1: The Sanctuary -->
+            <section class="mb-32 relative">
+                <div class="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-[#D9FF00] opacity-50"></div>
+                <div class="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-[#D9FF00] opacity-50"></div>
+                
+                <div class="py-24 px-8 text-center relative z-10">
+                    <div class="inline-block mb-6 px-4 py-1 border border-[#D9FF00] bg-[#D9FF00]/10 text-[#D9FF00] text-[10px] uppercase tracking-widest">
+                        Sector 01 // The Sanctuary
+                    </div>
+                    <h1 class="text-5xl md:text-8xl font-black mb-8 tracking-tighter uppercase leading-none">
+                        A Home For <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D9FF00] to-white drop-shadow-[0_0_20px_rgba(217,255,0,0.3)]">The Messengers.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-sans font-light mb-8">
+                        We are a label and sanctuary for <strong class="text-white font-normal">alternative, message-driven artists</strong> with integrated creative productions. We do not manufacture pop songs. We engineer sonic revolutions.
+                    </p>
+                    
+                    <div class="mt-16 flex justify-center">
+                        <a href="#pipeline" class="group flex items-center gap-4 px-10 py-5 border border-[#D9FF00]/30 hover:border-[#D9FF00] bg-black hover:bg-[#D9FF00]/10 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(217,255,0,0.1)] hover:shadow-[0_0_30px_rgba(217,255,0,0.3)]">
+                            <span class="text-xs font-black uppercase tracking-[0.2em] text-[#D9FF00]">View The Process</span>
+                            <i class="fa-solid fa-arrow-right text-[#D9FF00] transform group-hover:translate-y-1 transition-transform rotate-90"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTOR 2: The Signal Chain (The Pipeline) -->
+            <section id="pipeline" class="mb-32 scroll-mt-24">
+                <div class="flex items-center gap-4 mb-16">
+                    <div class="h-px bg-[#D9FF00]/30 flex-1"></div>
+                    <span class="text-[10px] uppercase tracking-[0.3em] text-[#D9FF00]">Sector 02 // The Signal Chain</span>
+                    <div class="h-px bg-[#D9FF00]/30 flex-1"></div>
+                </div>
+                
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-black uppercase text-white mb-6">The End-to-End Offering</h2>
+                    <p class="font-sans text-gray-400 max-w-2xl mx-auto">
+                        We handle the entire lifecycle of your art. From pristine audio generation to global data-driven distribution, we bring your music to your audience faster and with absolute ease.
+                    </p>
+                </div>
+
+                <div class="relative">
+                    <!-- Connection Line -->
+                    <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#D9FF00]/10 via-[#D9FF00]/50 to-[#D9FF00]/10 hidden md:block"></div>
+
+                    <div class="space-y-6 md:space-y-12">
+                        
+                        <!-- STEP 1 -->
+                        <div class="flex flex-col md:flex-row items-center gap-8 group">
+                            <div class="md:w-1/2 text-left md:text-right p-6 bg-[#0a0a0a] border border-white/10 hover:border-[#D9FF00]/50 transition-colors w-full rounded-lg relative overflow-hidden">
+                                <div class="absolute top-0 right-0 p-4 opacity-10"><i class="fa-solid fa-chart-line text-[4rem] text-[#D9FF00]"></i></div>
+                                <span class="text-[10px] text-[#D9FF00] uppercase tracking-widest mb-2 block">Phase 01</span>
+                                <h3 class="text-xl font-bold uppercase text-white mb-2">Produce The Song</h3>
+                                <p class="font-sans text-sm text-gray-400 leading-relaxed">
+                                Using our next-gen 24-bit 48k AI Audio Engine (DAW + Custom Prompt Designer). No metallic artifacts. Just pristine, high-fidelity sound tailored to alternative genres.
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-black border-2 border-[#D9FF00] flex items-center justify-center z-10 shadow-[0_0_15px_rgba(217,255,0,0.3)] group-hover:scale-110 transition-transform hidden md:flex">
+                                <span class="text-[#D9FF00] font-black">01</span>
+                            </div>
+                            <div class="md:w-1/2 hidden md:block opacity-0"></div>
+                        </div>
+
+                        <!-- STEP 2 -->
+                        <div class="flex flex-col md:flex-row items-center gap-8 group">
+                            <div class="md:w-1/2 hidden md:block opacity-0"></div>
+                            <div class="w-12 h-12 rounded-full bg-black border-2 border-[#D9FF00] flex items-center justify-center z-10 shadow-[0_0_15px_rgba(217,255,0,0.3)] group-hover:scale-110 transition-transform hidden md:flex">
+                                <span class="text-[#D9FF00] font-black">02</span>
+                            </div>
+                            <div class="md:w-1/2 text-left p-6 bg-[#0a0a0a] border border-white/10 hover:border-[#D9FF00]/50 transition-colors w-full rounded-lg relative overflow-hidden">
+                                <div class="absolute top-0 right-0 p-4 opacity-10"><i class="fa-solid fa-pen-nib text-[4rem] text-[#D9FF00]"></i></div>
+                                <span class="text-[10px] text-[#D9FF00] uppercase tracking-widest mb-2 block">Phase 02</span>
+                                <h3 class="text-xl font-bold uppercase text-white mb-2">Visuals & Design</h3>
+                                <p class="font-sans text-sm text-gray-400 leading-relaxed">
+                                We craft the music video and design the complete aesthetic package. A unified visual identity that amplifies your message.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- STEP 3 -->
+                        <div class="flex flex-col md:flex-row items-center gap-8 group">
+                            <div class="md:w-1/2 text-left md:text-right p-6 bg-[#0a0a0a] border border-white/10 hover:border-[#D9FF00]/50 transition-colors w-full rounded-lg relative overflow-hidden">
+                                <div class="absolute top-0 right-0 p-4 opacity-10"><i class="fa-solid fa-copyright text-[4rem] text-[#D9FF00]"></i></div>
+                                <span class="text-[10px] text-[#D9FF00] uppercase tracking-widest mb-2 block">Phase 03</span>
+                                <h3 class="text-xl font-bold uppercase text-white mb-2">Copyright Transfer</h3>
+                                <p class="font-sans text-sm text-gray-400 leading-relaxed">
+                                We operate fairly. Once the creative production is locked, we transfer the copyrights directly to you. Your art remains yours.
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-black border-2 border-[#D9FF00] flex items-center justify-center z-10 shadow-[0_0_15px_rgba(217,255,0,0.3)] group-hover:scale-110 transition-transform hidden md:flex">
+                                <span class="text-[#D9FF00] font-black">03</span>
+                            </div>
+                            <div class="md:w-1/2 hidden md:block opacity-0"></div>
+                        </div>
+
+                        <!-- STEP 4 -->
+                        <div class="flex flex-col md:flex-row items-center gap-8 group">
+                            <div class="md:w-1/2 hidden md:block opacity-0"></div>
+                            <div class="w-12 h-12 rounded-full bg-black border-2 border-[#D9FF00] flex items-center justify-center z-10 shadow-[0_0_15px_rgba(217,255,0,0.3)] group-hover:scale-110 transition-transform hidden md:flex">
+                                <span class="text-[#D9FF00] font-black">04</span>
+                            </div>
+                            <div class="md:w-1/2 text-left p-6 bg-[#0a0a0a] border border-white/10 hover:border-[#D9FF00]/50 transition-colors w-full rounded-lg relative overflow-hidden">
+                                <div class="absolute top-0 right-0 p-4 opacity-10"><i class="fa-solid fa-shield-halved text-[4rem] text-[#D9FF00]"></i></div>
+                                <span class="text-[10px] text-[#D9FF00] uppercase tracking-widest mb-2 block">Phase 04</span>
+                                <h3 class="text-xl font-bold uppercase text-white mb-2">Global Rights Registration</h3>
+                                <p class="font-sans text-sm text-gray-400 leading-relaxed">
+                                There are multiple types of royalties (mechanical, performance, etc.) generated when music is played. We register your music with over <strong class="text-white">150+ PROs (Performing Rights Organizations)</strong> worldwide so you get paid every single cent you are owed.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- STEP 5 -->
+                        <div class="flex flex-col md:flex-row items-center gap-8 group">
+                            <div class="md:w-1/2 text-left md:text-right p-6 bg-[#0a0a0a] border border-white/10 hover:border-[#D9FF00]/50 transition-colors w-full rounded-lg relative overflow-hidden">
+                                <div class="absolute top-0 right-0 p-4 opacity-10"><i class="fa-solid fa-tower-broadcast text-[4rem] text-[#D9FF00]"></i></div>
+                                <span class="text-[10px] text-[#D9FF00] uppercase tracking-widest mb-2 block">Phase 05</span>
+                                <h3 class="text-xl font-bold uppercase text-white mb-2">Web2 + Web3 Distribution</h3>
+                                <p class="font-sans text-sm text-gray-400 leading-relaxed">
+                                We push your release to Spotify, Apple Music, and YouTube. Simultaneously, <strong class="text-white">YeloPlay</strong> distributes your music on-chain via Elastos, unlocking decentralized economics and BTC-backed security.
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-black border-2 border-[#D9FF00] flex items-center justify-center z-10 shadow-[0_0_15px_rgba(217,255,0,0.3)] group-hover:scale-110 transition-transform hidden md:flex">
+                                <span class="text-[#D9FF00] font-black">05</span>
+                            </div>
+                            <div class="md:w-1/2 hidden md:block opacity-0"></div>
+                        </div>
+
+                        <!-- STEP 6 -->
+                        <div class="flex flex-col md:flex-row items-center gap-8 group">
+                            <div class="md:w-1/2 hidden md:block opacity-0"></div>
+                            <div class="w-12 h-12 rounded-full bg-black border-2 border-[#D9FF00] flex items-center justify-center z-10 shadow-[0_0_15px_rgba(217,255,0,0.3)] group-hover:scale-110 transition-transform hidden md:flex">
+                                <span class="text-[#D9FF00] font-black">06</span>
+                            </div>
+                            <div class="md:w-1/2 text-left p-6 border border-[#D9FF00] bg-black hover:bg-[#D9FF00]/5 transition-colors w-full rounded-lg relative overflow-hidden">
+                                <!-- Scanline effect over this specific box -->
+                                <div class="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px] pointer-events-none z-0"></div>
+                                
+                                <div class="relative z-10">
+                                    <div class="absolute top-0 right-0 p-4 opacity-10"><i class="fa-solid fa-crosshairs text-[4rem] text-[#D9FF00]"></i></div>
+                                    <span class="text-[10px] text-[#D9FF00] uppercase tracking-widest mb-2 block">Phase 06 // The Edge</span>
+                                    <h3 class="text-xl font-bold uppercase text-white mb-2">AdPod Intelligence</h3>
+                                    <p class="font-sans text-sm text-gray-400 leading-relaxed">
+                                    Our proprietary tech uses real-time data and predictive modeling to know exactly where the internet algorithms will place your music. We ensure the creative product reaches the absolute audience.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+        <!-- Footer / Status Bar -->
+        <footer class="border-t border-white/10 bg-black p-4 flex flex-col md:flex-row items-center justify-between text-[10px] uppercase tracking-widest text-gray-600 font-mono relative z-10">
+            <div>Yelo Studio // 2026 // Integrated Creative Productions</div>
+            <div class="flex gap-4 mt-4 md:mt-0">
+                <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#D9FF00] animate-pulse"></span> Server Online</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script for Boot Sequence -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bootTextElement = document.getElementById('boot-text');
+            const bootScreen = document.getElementById('boot-screen');
+            const mainApp = document.getElementById('main-app');
+            
+            const text = "> INITIALIZING YELO STUDIO CORE...\n> LOADING INTEGRATED CREATIVE PRODUCTIONS...\n> BYPASSING POP ALGORITHMS...\n> ESTABLISHING ALTERNATIVE FREQUENCIES...\n> SYSTEM READY.";
+            let i = 0;
+            
+            const interval = setInterval(() => {
+                bootTextElement.textContent = text.substring(0, i);
+                i++;
+                if (i > text.length) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        bootScreen.style.opacity = '0';
+                        bootScreen.style.transition = 'opacity 0.5s ease-out';
+                        setTimeout(() => {
+                            bootScreen.style.display = 'none';
+                            mainApp.classList.remove('hidden');
+                        }, 500);
+                    }, 800);
+                }
+            }, 20);
+        });
+    </script>
+</body>
+</html>
