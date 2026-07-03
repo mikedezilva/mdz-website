@@ -1503,7 +1503,7 @@ input:checked + .slider:before {
     .site-header .header-left {
         z-index: 2;
     }
-    .menu-label {
+    .menu-label, .back-text {
         display: none;
     }
     .site-header .header-center {

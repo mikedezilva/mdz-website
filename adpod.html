@@ -412,6 +412,9 @@
             .evo-grid { grid-template-columns: 1fr; }
             .cta-group { flex-direction: column; }
             .integrations-diagram { flex-direction: column; }
+            .site-header { padding: 1rem 1.5rem !important; }
+            .adpod-logo-center { position: absolute; left: 50%; transform: translateX(-50%); }
+            .back-text { display: none; }
         }
     </style>
 </head>
@@ -419,13 +422,13 @@
 
     <!-- Header -->
     <header class="site-header">
-        <a href="index.html" class="header-link">
-            <i class="fa-solid fa-arrow-left"></i> BACK
+        <a href="index.html" class="header-link" style="z-index: 2;">
+            <i class="fa-solid fa-arrow-left"></i> <span class="back-text">BACK</span>
         </a>
-        <div style="display:flex; align-items:center; gap: 10px; opacity: 0.8;">
+        <div class="adpod-logo-center" style="display:flex; align-items:center; gap: 10px; opacity: 0.8; z-index: 1;">
             <img src="Images/adpod-logo.svg" alt="Adpod Logo" style="height: 20px;">
         </div>
-        <a href="#deploy" class="btn-outline" style="padding: 8px 20px; font-size: 0.7rem;">GET STARTED</a>
+        <a href="#deploy" class="btn-outline" style="padding: 8px 16px; font-size: 0.7rem; z-index: 2;">GET STARTED</a>
     </header>
 
     <main>
