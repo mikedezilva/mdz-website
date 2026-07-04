@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adpod Intelligence — User Guide</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <style>
+        :root {
+            --bg-color: #0B0E14;
+            --sidebar-bg: #11151C;
+            --text-main: #E2E8F0;
+            --text-muted: #94A3B8;
+            --accent: #FF5E00;
+            --accent-hover: #FF7A2E;
+            --border-color: #1E293B;
+            --font-body: 'Inter', sans-serif;
+            --font-display: 'Space Grotesk', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styling */
+        #sidebar {
+            width: 300px;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+
+        .brand-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .brand-header svg {
+            color: var(--accent);
+        }
+
+        .brand-title {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+            color: #fff;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-links li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links li a:hover, .nav-links li a.active {
+            color: #fff;
+            background-color: rgba(255, 94, 0, 0.1);
+        }
+
+        .nav-links li a.active {
+            border-left: 3px solid var(--accent);
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* Main Content Styling */
+        #main-content {
+            flex-grow: 1;
+            margin-left: 300px;
+            padding: 4rem;
+            max-width: 900px;
+        }
+
+        #markdown-container {
+            font-size: 1.05rem;
+        }
+
+        /* Markdown Elements Formatting */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            color: #fff;
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 0;
+            font-weight: 800;
+        }
+
+        h2 { font-size: 1.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.3em; }
+        h3 { font-size: 1.25rem; color: var(--accent); }
+
+        p, ul, ol { margin-bottom: 1.2em; }
+        
+        ul, ol { padding-left: 1.5rem; }
+        
+        li { margin-bottom: 0.5em; }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+            color: #fff;
+        }
+
+        pre {
+            background-color: var(--sidebar-bg);
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1.5em;
+        }
+
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            color: var(--text-main);
+        }
+
+        blockquote {
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.5rem;
+            background-color: rgba(255, 94, 0, 0.05);
+            margin: 1.5em 0;
+            border-radius: 0 8px 8px 0;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: var(--border-color);
+            margin: 3em 0;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            #sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 1.5rem;
+            }
+            #main-content {
+                margin-left: 0;
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="sidebar">
+        <div class="brand-header">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <div class="brand-title">Adpod Intelligence</div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <!-- Populated via JS -->
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div id="markdown-container"></div>
+    </main>
+
+    <!-- Raw Markdown Content Hidden -->
+    <script type="text/markdown" id="raw-markdown">
+# Adpod Intelligence — Official User Guide
+
+Welcome to the **Adpod Intelligence** user guide. This guide will help you navigate the platform, create your first AI-driven marketing campaign, and leverage our advanced competitive intelligence and Web3 tools.
+
+## Table of Contents
+1. [Chapter 1: Welcome to Adpod](#chapter-1-welcome-to-adpod)
+2. [Chapter 2: Getting Started](#chapter-2-getting-started)
+3. [Chapter 3: Creating Your First Campaign](#chapter-3-creating-your-first-campaign)
+4. [Chapter 4: The Creative Brief](#chapter-4-the-creative-brief)
+5. [Chapter 5: Sharing & Community](#chapter-5-sharing--community)
+6. [Chapter 6: Competitive Intelligence — Watchdog](#chapter-6-competitive-intelligence--watchdog)
+7. [Chapter 7: Nuclear Mode — Competitor Analysis](#chapter-7-nuclear-mode--competitor-analysis)
+8. [Chapter 8: Web3 & On-Chain Intelligence](#chapter-8-web3--on-chain-intelligence)
+9. [Chapter 9: Attribution & Analytics](#chapter-9-attribution--analytics)
+10. [Chapter 10: Adpod Chat](#chapter-10-adpod-chat)
+11. [Chapter 11: Workflow & Agent Builders](#chapter-11-workflow--agent-builders)
+12. [Chapter 12: Jingle Studio](#chapter-12-jingle-studio)
+13. [Chapter 13: Adpod Companion — Browser Extension](#chapter-13-adpod-companion--browser-extension)
+14. [Chapter 14: Plans & Pricing](#chapter-14-plans--pricing)
+15. [Chapter 15: Partner & Affiliate Program](#chapter-15-partner--affiliate-program)
+16. [Chapter 16: Support & Help](#chapter-16-support--help)
+
+---
+
+## Chapter 1: Welcome to Adpod
+
+### What is Adpod Intelligence?
+Adpod Intelligence is a cutting-edge, AI-powered ad targeting and marketing strategy platform. Stop guessing and start knowing your customers. Adpod is designed for founders, marketers, agencies, freelancers, and enterprise teams who need verified, data-backed marketing strategies in seconds.
+
+### The "Truth Engine"
+Unlike generic AI tools that rely on static training data and often hallucinate facts, Adpod acts as a "Truth Engine." Every data point in your generated strategy is grounded against live web signals (like Google Search) and on-chain blockchain analytics. We don't guess your audience; we discover them.
+
+### Meet Pod Prime
+Throughout the platform, you'll be assisted by **Pod Prime**, our official brand mascot and your strategic AI companion. Pod Prime represents the sharp, data-driven, and slightly rebellious spirit of Adpod.
+
+---
+
+## Chapter 2: Getting Started
+
+### Creating Your Account & Verifying Email
+To get started, sign up with your email address. You must verify your email before you can access the dashboard. 
+
+### Your Home Dashboard
+Once logged in, you'll land on your Home Dashboard. Here you can see quick actions, recent campaigns, and access all platform features from the sidebar. 
+*[Screenshot: Home Dashboard overview]*
+
+### Installing Adpod as an App (PWA)
+Adpod is a Progressive Web App (PWA). You can install it directly to your device for a native-like experience:
+- **Desktop (Chrome/Edge):** Click the install icon in the URL bar.
+- **iOS (Safari):** Tap "Share" and select "Add to Home Screen."
+- **Android (Chrome):** Tap the menu and select "Install app."
+
+Be sure to enable **Push Notifications** when prompted to receive real-time alerts on your campaigns and competitive intel.
+
+### Switching Languages
+Adpod fully supports 14 languages! Use the language selector in the navigation bar to switch. When you generate a strategy, the AI will automatically output it in your chosen language.
+
+---
+
+## Chapter 3: Creating Your First Campaign
+
+### Step 1: Setting Up
+Click **New Campaign** to open the creation wizard.
+1. **Name & Description:** Give your campaign a clear title and describe your product/service.
+2. **Campaign Goal:** Choose from Sales, Leads, Awareness, App Installs, or Conversions.
+3. **Region & Audience:** Define where your audience lives and who they are broadly.
+4. **Reference Link:** Provide your website URL so the AI can analyze your actual product.
+5. **File Uploads:** You can upload images or PDFs (like a pitch deck) to give the AI even more context.
+6. **Web3 Contract (Optional):** If you have a token or NFT, paste the contract address here.
+
+### Step 2: Strategic Q&A
+Before generating the strategy, the AI will ask you a few hyper-specific **Clarifying Questions**. These are designed to uncover the "tension" and strategic gaps in your brief.
+- Answer them manually for the highest accuracy.
+- Or, use **Auto-Calibrate (Truth AI)** and let the AI search the web (Reddit, Twitter, forums) to find data-backed answers for you!
+
+### Step 3: Your Strategy Output
+Once processed, you'll receive a comprehensive, verified strategy containing:
+- **Business Problem & Anti-Persona:** Who you are solving a problem for, and who to explicitly avoid targeting.
+- **Demographic Breakdown:** Age, gender, income, and occupations based on real data.
+- **Search Intent Clusters:** Real trending queries and keywords your audience is searching for.
+- **Verified Media Inventory:** Real, verified URLs for Instagram influencers, YouTube channels, Blogs, and Facebook groups.
+- **Competitor Intercepts:** Where your competitors are weak and how to intercept their traffic.
+- **Web3 Wallet Insights:** Provided if a contract address was linked.
+- **Grounding Sources:** A list of cited URLs backing up the strategy.
+
+---
+
+## Chapter 4: The Creative Brief
+
+### Understanding Your Brief
+Alongside your strategy, Adpod generates a comprehensive Creative Brief. This includes your Brand Archetype, Consumer Insight, Human Truth, Big Idea, Key Message, Content Pillars, Visual Style, and Color Palette.
+
+### The Quality Scoring System
+Adpod acts as your Virtual Creative Director. Behind the scenes, the AI scores its own creative drafts to ensure high-quality standards before finalizing the brief.
+
+### Refining Your Brief
+Not quite perfect? You can refine individual creative components using natural language feedback. Just tell the AI what you want changed (e.g., "Make the tone more aggressive" or "Change the color palette to cyberpunk neon"), and it will update the specific section.
+
+---
+
+## Chapter 5: Sharing & Community
+
+### Sharing Your Campaign
+Need to show your strategy to a client or team member? Click the **Share** button on any campaign to generate a public, read-only link. 
+*[Screenshot: Sharing link generation]*
+
+### Community Gallery
+Explore the **Community Gallery** to browse campaigns that other users have marked as public. It's a great place to find inspiration and see how others are leveraging the Truth Engine for their marketing.
+
+---
+
+## Chapter 6: Competitive Intelligence — Watchdog
+
+### Overview of Watchdog
+The Watchdog Dashboard is your real-time competitive intelligence command center. It allows you to set up persistent monitoring on key targets.
+*[Screenshot: Watchdog Dashboard]*
+
+### Setting Up Monitors
+You can track 5 different types of targets:
+1. **Intent:** Monitor Google Search keyword trends.
+2. **Competitor:** Track a competitor's news, PR, and product changes.
+3. **Contract (Web3):** Monitor a token's price, holder count, and verification status.
+4. **Wallet (Web3):** Track a target audience wallet's net worth, active chains, and top holdings.
+5. **Mint (Web3):** Track NFT mint activity and top minters.
+
+### Counter-Strike System
+When Watchdog detects an important change (e.g., a competitor raises prices), it triggers an alert. You can then use the **Counter-Strike** feature to have the AI instantly generate 3 counter-moves (Subtle, Medium, High Aggression) and deploy them directly into a new campaign.
+
+---
+
+## Chapter 7: Nuclear Mode — Competitor Analysis
+
+### What is Nuclear Mode?
+Nuclear Mode is our aggressive competitive analysis tool. It ruthlessly analyzes a specific competitor to find their vulnerabilities.
+
+### Running an Analysis
+Enter a competitor's URL or product name. Adpod will scour the web for real 1-star reviews, customer complaints, and pricing issues.
+
+### Understanding the Results
+You will receive a "VULNERABILITY REPORT" identifying 5-7 real weaknesses, complete with evidence and severity ratings. The system will also generate "Nuclear Option" ad copy designed to directly exploit these weaknesses, along with visual concepts for the creative.
+
+---
+
+## Chapter 8: Web3 & On-Chain Intelligence
+
+Adpod has first-class Web3 support, monitoring 13+ EVM chains and Solana.
+
+### Key Web3 Features
+- **Token Health:** Check any ERC-20 token's metadata, price, market cap, and spam detection status.
+- **NFT Analytics:** Get floor prices, lowest listings, and recent sales for any collection.
+- **Wallet Watch:** Analyze target wallets to understand net worth, active chains, and top token holdings.
+- **Mint Radar:** Monitor live mint transactions and discover top minters.
+
+### Web3 Campaign Insights
+If you provide a contract address during campaign creation, your strategy will include **Wallet Personas** (e.g., "NFT flipper"), **On-Chain Triggers** (events that should trigger marketing), and **Top Correlated Assets** (tokens commonly held by your audience).
+
+---
+
+## Chapter 9: Attribution & Analytics
+
+### The Tracking Pixel
+Adpod provides a lightweight, first-party tracking pixel to monitor your campaign performance.
+Go to the Analytics Dashboard to get your unique installation snippet. Paste it into the \`<head>\` of your website.
+
+### UTM Tracking & Normalization
+The pixel automatically tracks UTM parameters (\`utm_source\`, \`utm_campaign\`, etc.) and intelligently groups them by platform. For example, it knows that \`facebook\`, \`ig\`, and \`meta\` should all roll up under the **Meta** platform dashboard. Supported platforms include Meta, Google, TikTok, X, LinkedIn, and Web3 Ads.
+
+### The Analytics Dashboard
+Track your Return on Ad Spend (ROAS), view daily trends on the 30-day chart, and watch a live stream of attribution events (clicks, views, purchases, leads, etc.).
+*[Screenshot: Analytics Dashboard]*
+
+### AI Analyst & Simulator
+- **AI Analyst:** Chat directly with your analytics data. The embedded AI Analyst can interpret your ROAS and suggest optimizations.
+- **Conversion Simulator:** Test your pixel installation by firing simulated events without spending real ad money.
+
+---
+
+## Chapter 10: Adpod Chat
+
+### Chat v3.1 Overview
+Adpod Chat is a highly capable conversational assistant. 
+- Choose your model speed (Pro for deep thinking, Flash for speed).
+- **Tool Toggles:** Enable **Google Search** for live web grounding, **Google Maps** for location-aware marketing, or **Moralis On-Chain** to ask questions about tokens and wallets.
+- **File Attachments:** Upload images for the AI to analyze visually.
+
+---
+
+## Chapter 11: Workflow & Agent Builders
+
+### Workflow Builder
+Need to automate a complex multi-step process? Describe your task in natural language, and the Workflow Builder will visually generate a sequence of specialized AI agents. You can edit, reorder, and execute these steps on a visual canvas.
+
+### Agent Builder
+Create custom AI agents for specific tasks. Define their role, give them a custom system prompt, and configure their tool access to suit your exact needs.
+
+---
+
+## Chapter 12: Jingle Studio
+
+Need audio creative? Open **Jingle Studio** to generate AI-powered audio jingles and engaging ad scripts tailored perfectly to your campaign strategy.
+
+---
+
+## Chapter 13: Adpod Companion — Browser Extension
+
+### What It Does
+The Adpod Companion is a Chrome extension that safely and privately analyzes your browsing history (e.g., the tools you use, the sites you research) to inject hyper-relevant context into your campaign targeting. 
+
+### Privacy First
+The extension only activates on Adpod.xyz. It filters out noise (like Google search result pages), deduplicates entries, and extracts the top 50 most relevant URLs to empower your strategy generation.
+
+---
+
+## Chapter 14: Plans & Pricing
+
+### Understanding Credits
+1 Credit = 1 AI Action (e.g., generating a strategy, running a Watchdog scan, refining a brief, or Auto-Calibrating answers).
+
+### Tiers
+- **Free:** 5 credits per month. Access to core campaign generation.
+- **Plus (\$20/mo):** 100 credits per month. Unlocks Competitor Analysis, Creative Brief generation, and Web3 features.
+- **Premium (\$225/mo):** 100 credits per month. Unlocks Adpod Chat v3.1, deep research, and access to premium AI models.
+
+---
+
+## Chapter 15: Partner & Affiliate Program
+
+Earn a **30% recurring commission** by referring users to Adpod.
+- **Partner Dashboard:** Track your referrals, clicks, and revenue in real-time.
+- **AI Partner Coach:** Chat with your dedicated Partner Coach to generate high-converting sales templates, tweet drafts, and email copy designed specifically to sell Adpod.
+
+---
+
+## Chapter 16: Support & Help
+
+### Context-Aware Support Chat
+Need help? Use the support chat icon in the bottom corner. Our support AI is context-aware — it knows what page you are on and adapts its personality to help you best (whether you're setting up a pixel, reading analytics, or building a campaign).
+
+### Privacy & Data Security
+Your campaigns are private by default. Adpod uses a privacy-first approach with minimal, first-party cookies for attribution only.
+
+For full legal details, please review our Terms of Service and Privacy Policy.
+
+---
+*Generated by the Adpod Team.*
+
+    </script>
+
+    <script>
+        // Extract raw markdown text and unescape template literal sequences
+        const rawMarkdown = document.getElementById('raw-markdown').textContent
+            .replace(/\\/g, '\')
+            .replace(/\`/g, '`')
+            .replace(/\\$/g, '$');
+
+        // Parse with marked.js
+        document.getElementById('markdown-container').innerHTML = marked.parse(rawMarkdown);
+
+        // Generate Sidebar Navigation automatically based on h2 tags (Chapters)
+        const container = document.getElementById('markdown-container');
+        const headers = container.querySelectorAll('h2');
+        const navList = document.getElementById('nav-links');
+
+        headers.forEach((header, index) => {
+            // Create an ID for linking
+            const id = 'section-' + index;
+            header.id = id;
+
+            // Create nav item
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = '#' + id;
+            a.textContent = header.textContent;
+            
+            // Highlight section on click
+            a.addEventListener('click', (e) => {
+                document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+                a.classList.add('active');
+            });
+
+            li.appendChild(a);
+            navList.appendChild(li);
+        });
+
+        // Set first link as active by default
+        if (navList.firstChild) {
+            navList.firstChild.querySelector('a').classList.add('active');
+        }
+    </script>
+</body>
+</html>
