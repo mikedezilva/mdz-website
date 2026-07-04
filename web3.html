@@ -12,14 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-        /* Editorial Brutalism System */
+        /* Gumroad Neobrutalist System + Adpod Fonts */
         :root {
-            --bg-primary: #FFFFFF;
-            --border-color: #000000;
-            --text-color: #000000;
-            --accent-color: #FF4500; /* Electric Orange */
-            --accent-hover: #E03E00;
-            --surface-muted: #F9FAFB;
+            --bg-cream: #F4F4F0;
+            --surface-white: #FFFFFF;
+            --border-black: #000000;
+            --accent-pink: #FF90E8;
+            --accent-yellow: #FFC900;
+            --accent-mint: #90A8ED;
+            --accent-orange: #FF5E00;
+            --text-black: #000000;
+            --text-dark-gray: #333333;
             
             --font-headline: 'Space Grotesk', sans-serif;
             --font-body: 'Inter', sans-serif;
@@ -30,8 +33,8 @@
         }
 
         body {
-            background-color: var(--bg-primary);
-            color: var(--text-color);
+            background-color: var(--bg-cream);
+            color: var(--text-black);
             font-family: var(--font-body);
             margin: 0;
             padding: 0;
@@ -40,7 +43,7 @@
 
         h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
             font-family: var(--font-headline);
-            color: var(--text-color);
+            color: var(--text-black);
             font-weight: 800;
         }
 
@@ -51,13 +54,13 @@
 
         /* Minimal Header */
         .site-header {
-            background: var(--bg-primary);
+            background: var(--bg-cream);
             padding: 1.5rem 4rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            border-bottom: 2px solid var(--border-color);
+            border-bottom: 3px solid var(--border-black);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -66,7 +69,7 @@
 
         .header-link {
             text-decoration: none;
-            color: var(--text-color);
+            color: var(--text-black);
             font-size: 0.9rem;
             letter-spacing: 1px;
             display: flex;
@@ -83,9 +86,9 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: var(--bg-primary);
+            background: var(--bg-cream);
             position: relative;
-            border-bottom: 2px solid var(--border-color);
+            border-bottom: 3px solid var(--border-black);
         }
 
         .hero-content-wrapper {
@@ -102,23 +105,22 @@
             letter-spacing: -2px;
         }
 
-        .highlight-accent {
-            background-color: var(--accent-color);
-            color: #FFFFFF;
-            padding: 0 12px;
-            border: 2px solid var(--border-color);
-            border-radius: 4px;
+        .highlight-mint {
+            background-color: var(--accent-mint);
+            padding: 0 10px;
+            border: 3px solid var(--border-black);
+            border-radius: 8px;
             display: inline-block;
-            transform: rotate(-1deg);
+            transform: rotate(-2deg);
         }
 
         .hero-subtitle {
             font-size: 1.3rem;
             line-height: 1.6;
-            color: var(--text-color);
+            color: var(--text-dark-gray);
             margin-bottom: 2rem;
             font-weight: 500;
-            max-width: 800px;
+            max-width: 750px;
         }
         
         .cta-group {
@@ -129,11 +131,11 @@
         }
 
         .btn-primary {
-            background-color: var(--accent-color);
-            color: #FFFFFF;
+            background-color: var(--accent-yellow);
+            color: var(--text-black);
             padding: 16px 36px;
-            border-radius: 4px;
-            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            border: 3px solid var(--border-black);
             box-shadow: var(--box-shadow);
             font-size: 1.1rem;
             font-family: var(--font-headline);
@@ -149,35 +151,12 @@
         .btn-primary:active, .btn-primary:hover {
             transform: translate(2px, 2px);
             box-shadow: var(--box-shadow-hover);
-            background-color: var(--accent-hover);
-        }
-        
-        .btn-outline {
-            background-color: var(--bg-primary);
-            color: var(--text-color);
-            padding: 16px 36px;
-            border-radius: 4px;
-            border: 2px solid var(--border-color);
-            box-shadow: var(--box-shadow);
-            font-size: 1.1rem;
-            font-family: var(--font-headline);
-            font-weight: 800;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: all 0.1s ease-in-out;
-            display: inline-block;
-        }
-        
-        .btn-outline:active, .btn-outline:hover {
-            transform: translate(2px, 2px);
-            box-shadow: var(--box-shadow-hover);
-            background-color: var(--surface-muted);
         }
 
         /* Social Proof Bar */
         .social-proof-bar {
-            background-color: var(--surface-muted);
-            border-bottom: 2px solid var(--border-color);
+            background-color: var(--accent-pink);
+            border-bottom: 3px solid var(--border-black);
             padding: 2rem;
             text-align: center;
             overflow: hidden;
@@ -190,10 +169,8 @@
         .social-proof-text {
             font-family: var(--font-accent);
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 1rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-color);
         }
 
         /* Generic Section Styling */
@@ -222,11 +199,11 @@
         }
 
         .neo-card {
-            background: var(--bg-primary);
-            border: 2px solid var(--border-color);
+            background: var(--surface-white);
+            border: 3px solid var(--border-black);
             box-shadow: var(--box-shadow);
             padding: 2.5rem;
-            border-radius: 4px;
+            border-radius: 12px;
             text-align: left;
             transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
         }
@@ -239,18 +216,18 @@
         .icon-box {
             width: 56px;
             height: 56px;
-            border-radius: 4px;
-            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            border: 3px solid var(--border-black);
             box-shadow: 2px 2px 0 #000;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
-            background: var(--bg-primary);
+            background: var(--accent-pink);
         }
         
         .icon-box i {
-            color: var(--accent-color);
+            color: var(--text-black);
             font-size: 1.5rem;
         }
 
@@ -261,10 +238,9 @@
 
         .neo-card p {
             font-size: 1.05rem;
-            color: var(--text-color);
+            color: var(--text-dark-gray);
             line-height: 1.6;
             margin: 0;
-            opacity: 0.8;
         }
 
         /* Evolution Grid & Lists */
@@ -278,19 +254,19 @@
             align-items: flex-start;
             gap: 12px;
             margin-bottom: 1.2rem;
-            color: var(--text-color);
+            color: var(--text-black);
             font-size: 1.1rem;
             font-weight: 500;
         }
-        .evo-list i.fa-xmark { color: var(--accent-color); margin-top: 4px; font-size: 1.2rem; }
-        .evo-list i.fa-check { color: var(--accent-color); margin-top: 4px; font-size: 1.2rem; }
-        .evo-list i.fa-arrow-right { color: var(--accent-color); margin-top: 4px; }
+        .evo-list i.fa-xmark { color: red; margin-top: 4px; font-size: 1.2rem; }
+        .evo-list i.fa-check { color: var(--text-black); margin-top: 4px; font-size: 1.2rem; }
+        .evo-list i.fa-arrow-right { color: var(--text-black); margin-top: 4px; }
 
         /* FAQ Section */
         .faq-item {
-            background: var(--bg-primary);
-            border: 2px solid var(--border-color);
-            border-radius: 4px;
+            background: var(--surface-white);
+            border: 3px solid var(--border-black);
+            border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
             box-shadow: var(--box-shadow);
@@ -300,18 +276,14 @@
             margin-bottom: 0.5rem;
             margin-top: 0;
         }
-        .faq-item p {
-            opacity: 0.8;
-            line-height: 1.6;
-        }
 
         /* Testimonial Section */
         .testimonial-card {
-            background: var(--bg-primary);
-            border: 2px solid var(--border-color);
+            background: var(--accent-mint);
+            border: 3px solid var(--border-black);
             box-shadow: var(--box-shadow);
             padding: 2.5rem;
-            border-radius: 4px;
+            border-radius: 12px;
             margin-bottom: 2rem;
         }
 
@@ -332,16 +304,15 @@
             <i class="fa-solid fa-arrow-left"></i> <span class="back-text">BACK TO ADPOD</span>
         </a>
         <div style="display:flex; align-items:center; gap:10px;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text-color)" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter">
-                <path d="M12 2L2 22h20L12 2z"/>
-                <circle cx="12" cy="15" r="3" fill="var(--accent-color)" stroke="none"/>
+            <svg width="32" height="32" viewBox="0 0 100 100" fill="var(--accent-pink)" stroke="var(--text-black)" stroke-width="6" stroke-linejoin="round">
+                <path d="M50 5 L60 40 L95 50 L60 60 L50 95 L40 60 L5 50 L40 40 Z" />
             </svg>
-            <div style="font-family: var(--font-headline); font-size:1.5rem; font-weight:800; letter-spacing: -1px;">
+            <div style="font-family: var(--font-headline); font-size:1.6rem; font-weight:800; letter-spacing: -1px;">
                 Adpod
             </div>
         </div>
         <div style="display: flex; gap: 10px;">
-            <a href="web3.html" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 4px;">Web3</a>
+            <a href="web3.html" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 6px; background:var(--accent-mint);">Web3</a>
         </div>
     </header>
 
@@ -349,9 +320,9 @@
         <!-- Hero Section -->
         <section class="adpod-hero-section">
             <div class="hero-content-wrapper">
-                <div class="accent-data" style="display:inline-block; padding:8px 16px; background:var(--bg-primary); border:2px solid var(--border-color); box-shadow: 2px 2px 0 #000; border-radius:4px; font-size:0.8rem; letter-spacing:1px; margin-bottom:1.5rem;"><i class="fa-brands fa-ethereum" style="margin-right:8px; color:var(--accent-color);"></i> NATIVE CRYPTO INTELLIGENCE</div>
+                <div class="accent-data" style="display:inline-block; padding:8px 16px; background:var(--accent-mint); border:3px solid var(--border-black); box-shadow: 2px 2px 0 #000; border-radius:6px; font-size:0.8rem; letter-spacing:1px; margin-bottom:1.5rem;"><i class="fa-brands fa-ethereum" style="margin-right:8px;"></i> NATIVE CRYPTO INTELLIGENCE</div>
                 
-                <h1 class="hero-title">Web3 Marketing Strategy, Built for <span class="highlight-accent">Fast-Moving</span> Crypto Markets</h1>
+                <h1 class="hero-title">Web3 Marketing Strategy, Built for <span class="highlight-mint">Fast-Moving</span> Crypto Markets</h1>
                 
                 <p class="hero-subtitle">
                     Adpod helps Web3 teams understand their audience, competitors, and positioning — and build growth strategies for token launches, communities, and on-chain user acquisition.
@@ -363,10 +334,10 @@
             </div>
         </section>
 
-        <!-- Social Proof -->
+        <!-- Social Proof (NEW) -->
         <div class="social-proof-bar">
             <div class="social-proof-text">Trusted by Web3 founders and on-chain growth leads</div>
-            <div style="display:flex; gap:2rem; font-size:2rem; color:var(--text-color);">
+            <div style="display:flex; gap:2rem; font-size:2rem; opacity:0.8;">
                 <i class="fa-brands fa-ethereum"></i>
                 <i class="fa-brands fa-bitcoin"></i>
                 <i class="fa-brands fa-discord"></i>
@@ -383,23 +354,23 @@
             <div class="minimal-grid" style="max-width: 650px; margin: 0 auto; text-align:center;">
                 <div class="neo-card" style="display:flex; flex-direction:column; align-items:center;">
                     <div style="font-size:2.5rem; margin-bottom:1rem;">⏳</div>
-                    <p style="font-size:1.3rem; color:var(--text-color); text-align:center; font-weight:800; line-height:1.6;">Strategies become outdated in days, not months.</p>
-                    <div style="margin-top:2.5rem; padding:1.25rem; background:var(--surface-muted); border-radius:4px; border:2px solid var(--border-color); box-shadow: 2px 2px 0 #000;">
-                        <p style="color:var(--text-color); text-align:center; margin:0; font-weight:600;">You cannot wait 4 weeks for a strategy deck when narrative cycles shift in 4 hours.</p>
+                    <p style="font-size:1.3rem; color:var(--text-black); text-align:center; font-weight:800; line-height:1.6;">Strategies become outdated in days, not months.</p>
+                    <div style="margin-top:2.5rem; padding:1.25rem; background:var(--accent-yellow); border-radius:8px; border:3px solid var(--border-black); box-shadow: 2px 2px 0 #000;">
+                        <p style="color:var(--text-black); text-align:center; margin:0; font-weight:600;">You cannot wait 4 weeks for a strategy deck when narrative cycles shift in 4 hours.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Solution & Features -->
-        <section class="content-section" style="border-top: 2px solid var(--border-color); background: var(--surface-muted);">
+        <section class="content-section" style="border-top: 3px solid var(--border-black); background: var(--surface-white);">
             <div class="section-header">
-                <h2 class="section-title">Adpod gives <span style="background:var(--accent-color); color:#fff; padding:0 8px; border:2px solid #000; display:inline-block; transform:rotate(-1deg); border-radius:4px;">Web3 teams:</span></h2>
+                <h2 class="section-title">Adpod gives <span style="background:var(--accent-yellow); padding:0 8px; border:3px solid #000; display:inline-block; transform:rotate(-1deg);">Web3 teams:</span></h2>
             </div>
             
             <div class="minimal-grid">
                 <div class="neo-card">
-                    <div class="icon-box">
+                    <div class="icon-box" style="background:var(--accent-pink);">
                         <i class="fa-solid fa-wallet"></i>
                     </div>
                     <h3>Wallet-based audience targeting</h3>
@@ -407,7 +378,7 @@
                 </div>
                 
                 <div class="neo-card">
-                    <div class="icon-box">
+                    <div class="icon-box" style="background:var(--accent-mint);">
                         <i class="fa-solid fa-eye"></i>
                     </div>
                     <h3>Competitor tracking</h3>
@@ -415,7 +386,7 @@
                 </div>
                 
                 <div class="neo-card">
-                    <div class="icon-box">
+                    <div class="icon-box" style="background:var(--accent-yellow);">
                         <i class="fa-solid fa-rocket"></i>
                     </div>
                     <h3>Token launch positioning</h3>
@@ -423,7 +394,7 @@
                 </div>
 
                 <div class="neo-card">
-                    <div class="icon-box">
+                    <div class="icon-box" style="background:#fff;">
                         <i class="fa-brands fa-discord"></i>
                     </div>
                     <h3>Community growth strategy</h3>
@@ -432,8 +403,8 @@
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section class="content-section" style="border-top: 2px solid var(--border-color);">
+        <!-- Testimonials (NEW) -->
+        <section class="content-section" style="border-top: 3px solid var(--border-black);">
             <div class="section-header">
                 <h2 class="section-title">Wall of Love</h2>
                 <p class="section-desc">See what founders are saying about replacing their agencies.</p>
@@ -441,26 +412,26 @@
             
             <div class="minimal-grid">
                 <div class="testimonial-card">
-                    <div style="display:flex; gap: 4px; color:var(--accent-color); margin-bottom:1rem; font-size:1.2rem;">
+                    <div style="display:flex; gap: 4px; color:var(--text-black); margin-bottom:1rem; font-size:1.2rem;">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p style="font-size:1.2rem; font-weight:600; margin-bottom:1.5rem; line-height:1.5; color:var(--text-color); opacity:1;">"We fired our $5k/mo agency and used Adpod to build our Q3 strategy in 10 minutes. The clarity is unmatched."</p>
+                    <p style="font-size:1.2rem; font-weight:600; margin-bottom:1.5rem; line-height:1.5;">"We fired our $5k/mo agency and used Adpod to build our Q3 strategy in 10 minutes. The clarity is unmatched."</p>
                     <div style="font-weight:700; font-family:var(--font-headline);">Sarah J.</div>
-                    <div style="font-size:0.9rem; font-family:var(--font-accent); color:var(--accent-color);">SaaS Founder</div>
+                    <div style="font-size:0.9rem; font-family:var(--font-accent);">SaaS Founder</div>
                 </div>
-                <div class="testimonial-card">
-                    <div style="display:flex; gap: 4px; color:var(--accent-color); margin-bottom:1rem; font-size:1.2rem;">
+                <div class="testimonial-card" style="background:var(--accent-pink);">
+                    <div style="display:flex; gap: 4px; color:var(--text-black); margin-bottom:1rem; font-size:1.2rem;">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p style="font-size:1.2rem; font-weight:600; margin-bottom:1.5rem; line-height:1.5; color:var(--text-color); opacity:1;">"It literally does the exact same research a junior strategist takes 3 weeks to do, but instantly."</p>
+                    <p style="font-size:1.2rem; font-weight:600; margin-bottom:1.5rem; line-height:1.5;">"It literally does the exact same research a junior strategist takes 3 weeks to do, but instantly."</p>
                     <div style="font-weight:700; font-family:var(--font-headline);">Mark T.</div>
-                    <div style="font-size:0.9rem; font-family:var(--font-accent); color:var(--accent-color);">Growth Lead</div>
+                    <div style="font-size:0.9rem; font-family:var(--font-accent);">Growth Lead</div>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <section class="content-section" style="border-top: 2px solid var(--border-color); background: var(--surface-muted);">
+        <!-- FAQ Section (NEW) -->
+        <section class="content-section" style="border-top: 3px solid var(--border-black); background: var(--surface-white);">
             <div class="section-header">
                 <h2 class="section-title">Frequently Asked Questions</h2>
             </div>
@@ -482,24 +453,23 @@
         </section>
 
         <!-- Final CTA -->
-        <section id="deploy" style="padding: 10rem 2rem; text-align: center; border-top: 2px solid var(--border-color); background: var(--bg-primary);">
-            <h2 class="section-title" style="font-size: 4.5rem; margin-bottom: 1.5rem; max-width:900px; margin-left:auto; margin-right:auto; line-height:1.05;">Stop paying for <br><span class="highlight-accent">guesswork</span></h2>
+        <section id="deploy" style="padding: 10rem 2rem; text-align: center; border-top: 3px solid var(--border-black); background: var(--accent-yellow);">
+            <h2 class="section-title" style="font-size: 4.5rem; margin-bottom: 1.5rem; max-width:900px; margin-left:auto; margin-right:auto; line-height:1.05;">Stop paying for <br><span class="highlight-mint">guesswork</span></h2>
             
             <p style="font-size:1.4rem; margin-bottom:1rem; font-weight:600;">Most businesses don’t need more meetings or retainers.</p>
             <p style="font-size:1.4rem; margin-bottom:3rem; font-weight:800;">They need clarity.</p>
 
-            <a href="mailto:contact@mikedezilva.com" class="btn-primary" style="padding: 1.5rem 4rem; font-size:1.3rem;">Start Now — $50/month <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="mailto:contact@mikedezilva.com" class="btn-primary" style="padding: 1.5rem 4rem; font-size:1.3rem; background: var(--surface-white);">Start Now — $50/month <i class="fa-solid fa-arrow-right"></i></a>
         </section>
 
     </main>
 
-    <footer style="text-align: center; padding: 4rem 2rem; border-top: 2px solid var(--border-color); font-size: 1rem; background: var(--surface-muted); font-weight:600;">
+    <footer style="text-align: center; padding: 4rem 2rem; border-top: 3px solid var(--border-black); font-size: 1rem; background: var(--bg-cream); font-weight:600;">
         <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom: 1rem;">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--text-color)" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter">
-                <path d="M12 2L2 22h20L12 2z"/>
-                <circle cx="12" cy="15" r="3" fill="var(--accent-color)" stroke="none"/>
+            <svg width="40" height="40" viewBox="0 0 100 100" fill="var(--accent-pink)" stroke="var(--text-black)" stroke-width="6" stroke-linejoin="round">
+                <path d="M50 5 L60 40 L95 50 L60 60 L50 95 L40 60 L5 50 L40 40 Z" />
             </svg>
-            <div style="font-family: var(--font-headline); font-size:2rem; font-weight:800; color:var(--text-color);">Adpod</div>
+            <div style="font-family: var(--font-headline); font-size:2.2rem; font-weight:800; color:var(--text-black);">Adpod</div>
         </div>
         <p>© 2026 Adpod Intelligence Suite™. Built by Mike De Zilva.</p>
     </footer>
