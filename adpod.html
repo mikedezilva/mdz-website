@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-        /* Gumroad Neobrutalist System + Adpod Fonts */
         :root {
             --bg-cream: #F4F4F0;
             --surface-white: #FFFFFF;
@@ -23,13 +22,23 @@
             --accent-orange: #FF5E00;
             --text-black: #000000;
             --text-dark-gray: #333333;
+            --text-inverted: #FFFFFF;
             
             --font-headline: 'Space Grotesk', sans-serif;
             --font-body: 'Inter', sans-serif;
             --font-accent: 'JetBrains Mono', monospace;
 
-            --box-shadow: 4px 4px 0px #000000;
-            --box-shadow-hover: 2px 2px 0px #000000;
+            --box-shadow: 4px 4px 0px var(--border-black);
+            --box-shadow-hover: 2px 2px 0px var(--border-black);
+        }
+
+        [data-theme="dark"] {
+            --bg-cream: #121212;
+            --surface-white: #1E1E1E;
+            --border-black: #FFFFFF;
+            --text-black: #FFFFFF;
+            --text-dark-gray: #A0A0A0;
+            --text-inverted: #000000;
         }
 
         body {
@@ -234,7 +243,7 @@
 
         .neo-card:hover {
             transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px #000000;
+            box-shadow: 6px 6px 0px var(--border-black);
         }
 
         .icon-box {
@@ -242,7 +251,7 @@
             height: 56px;
             border-radius: 8px;
             border: 3px solid var(--border-black);
-            box-shadow: 2px 2px 0 #000;
+            box-shadow: 2px 2px 0 var(--border-black);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -375,22 +384,26 @@
         </a>
         <div style="position: absolute; left: 50%; transform: translateX(-50%); display:flex; align-items:center;">
             <svg width="28" height="35" viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="60" y1="8" x2="60" y2="32" stroke="#000" stroke-width="8" stroke-linecap="round"/>
-                <circle cx="60" cy="8" r="8" fill="#000"/>
-                <rect x="22" y="30" width="76" height="105" rx="38" fill="#FFC900" stroke="#000" stroke-width="6"/>
-                <rect x="30" y="38" width="60" height="89" rx="30" fill="#000"/>
-                <rect x="18" y="68" width="84" height="26" rx="4" fill="#000"/>
+                <line x1="60" y1="8" x2="60" y2="32" stroke="var(--text-black)" stroke-width="8" stroke-linecap="round"/>
+                <circle cx="60" cy="8" r="8" fill="var(--text-black)"/>
+                <rect x="22" y="30" width="76" height="105" rx="38" fill="#FFC900" stroke="var(--text-black)" stroke-width="6"/>
+                <rect x="30" y="38" width="60" height="89" rx="30" fill="var(--text-black)"/>
+                <rect x="18" y="68" width="84" height="26" rx="4" fill="var(--text-black)"/>
                 <rect x="28" y="72" width="64" height="18" rx="3" fill="#FFC900"/>
-                <circle cx="44" cy="81" r="4" fill="#FFF"/>
-                <circle cx="76" cy="81" r="4" fill="#FFF"/>
-                <line x1="40" y1="110" x2="80" y2="110" stroke="#FFF" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="44" cy="81" r="4" fill="var(--text-inverted)"/>
+                <circle cx="76" cy="81" r="4" fill="var(--text-inverted)"/>
+                <line x1="40" y1="110" x2="80" y2="110" stroke="var(--text-inverted)" stroke-width="4" stroke-linecap="round"/>
             </svg>
         </div>
         <div class="desktop-nav">
-            <a href="web3.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 6px;">Web3</a>
-            <a href="enterprise.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 6px; background:var(--accent-mint);">Enterprise</a>
-            <a href="#deploy" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 6px;">Get Started</a>
+            <a href="web3.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 var(--border-black); border-radius: 6px;">Web3</a>
+            <a href="enterprise.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 var(--border-black); border-radius: 6px; background:var(--accent-mint);">Enterprise</a>
+            <a href="#deploy" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 var(--border-black); border-radius: 6px;">Get Started</a>
             
+            <button id="theme-toggle" class="btn-outline" style="padding: 8px 12px; font-size: 1rem; border-radius: 6px; cursor: pointer; box-shadow: 2px 2px 0 var(--border-black);" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
             <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle Menu">
                 <span></span><span></span><span></span>
             </button>
@@ -402,6 +415,7 @@
         <a href="web3.html" class="btn-outline" style="width:100%; text-align:center;">Web3</a>
         <a href="enterprise.html" class="btn-outline" style="width:100%; text-align:center; background:var(--accent-mint);">Enterprise</a>
         <a href="#deploy" class="btn-primary" style="width:100%; text-align:center;">Get Started</a>
+        <button id="mobile-theme-toggle" class="btn-outline" style="width:100%; text-align:center; padding: 12px;">Toggle Dark Mode</button>
     </nav>
 
 
@@ -422,7 +436,7 @@
                     <a href="#deploy" class="btn-primary">Generate My Strategy <i class="fa-solid fa-arrow-right"></i></a>
                     <a href="#how" class="btn-outline">See How It Works</a>
                 </div>
-                <div style="margin-top: 3rem; width: 100%; max-width: 800px; border: 4px solid var(--border-black); box-shadow: 6px 6px 0px #000; border-radius: 12px; overflow: hidden; transform: rotate(-1deg);">
+                <div style="margin-top: 3rem; width: 100%; max-width: 800px; border: 4px solid var(--border-black); box-shadow: 6px 6px 0px var(--border-black); border-radius: 12px; overflow: hidden; transform: rotate(-1deg);">
                     <img src="assets/adpod-hero.jpg" alt="Adpod AI replacing a marketing agency" style="width: 100%; height: auto; display: block;">
                 </div>
             </div>
@@ -456,7 +470,7 @@
                         <li><i class="fa-solid fa-xmark"></i> Lack of real business understanding</li>
                         <li><i class="fa-solid fa-xmark"></i> No transparency in decision-making</li>
                     </ul>
-                    <div style="margin-top:2.5rem; padding:1.25rem; background:var(--accent-yellow); border-radius:8px; border:3px solid var(--border-black); box-shadow: 2px 2px 0 #000;">
+                    <div style="margin-top:2.5rem; padding:1.25rem; background:var(--accent-yellow); border-radius:8px; border:3px solid var(--border-black); box-shadow: 2px 2px 0 var(--border-black);">
                         <p style="color:var(--text-black); margin:0; font-weight:800; font-size:1.1rem;">You’re not just paying for marketing you’re paying for uncertainty.</p>
                     </div>
                 </div>
@@ -466,8 +480,8 @@
         <!-- Solution & Core Capabilities -->
         <section class="content-section" style="border-top: 3px solid var(--border-black); background: var(--surface-white);">
             <div class="section-header">
-                <h2 class="section-title">Adpod replaces your agency with <span style="background:var(--accent-mint); padding:0 8px; border:3px solid #000; display:inline-block; transform:rotate(1deg);">AI intelligence</span></h2>
-                <div style="margin-top:2rem; padding:1.5rem; display:inline-block; background:var(--bg-cream); border-radius:8px; border:3px solid var(--border-black); box-shadow: 4px 4px 0 #000;">
+                <h2 class="section-title">Adpod replaces your agency with <span style="background:var(--accent-mint); padding:0 8px; border:3px solid var(--border-black); display:inline-block; transform:rotate(1deg);">AI intelligence</span></h2>
+                <div style="margin-top:2rem; padding:1.5rem; display:inline-block; background:var(--bg-cream); border-radius:8px; border:3px solid var(--border-black); box-shadow: 4px 4px 0 var(--border-black);">
                     <p style="color:var(--text-black); margin:0; font-weight:700; font-size:1.2rem;">Instead of waiting weeks for an agency, you get a complete, structured marketing plan in minutes.</p>
                 </div>
             </div>
@@ -498,7 +512,7 @@
                 </div>
 
                 <div class="neo-card">
-                    <div class="icon-box" style="background:#fff;">
+                    <div class="icon-box" style="background:var(--surface-white);">
                         <i class="fa-solid fa-map-location-dot"></i>
                     </div>
                     <h3>Media Planning</h3>
@@ -515,28 +529,28 @@
             
             <div class="minimal-grid">
                 <div class="neo-card">
-                    <div class="accent-data" style="display:inline-block; background:var(--text-black); color:#fff; padding:4px 12px; margin-bottom:1rem; border-radius:4px;">STEP 1</div>
-                    <div style="border: 3px solid var(--border-black); border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; box-shadow: 2px 2px 0 #000;">
+                    <div class="accent-data" style="display:inline-block; background:var(--text-black); color:var(--text-inverted); padding:4px 12px; margin-bottom:1rem; border-radius:4px;">STEP 1</div>
+                    <div style="border: 3px solid var(--border-black); border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; box-shadow: 2px 2px 0 var(--border-black);">
                         <img src="assets/adpod-step1.jpg" alt="Step 1: Enter your business" style="width: 100%; height: auto; display: block;">
                     </div>
                     <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">Enter your business</h3>
                     <p>Tell Adpod what you’re selling.</p>
                 </div>
                 <div class="neo-card">
-                    <div class="accent-data" style="display:inline-block; background:var(--text-black); color:#fff; padding:4px 12px; margin-bottom:1rem; border-radius:4px;">STEP 2</div>
-                    <div style="border: 3px solid var(--border-black); border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; box-shadow: 2px 2px 0 #000;">
+                    <div class="accent-data" style="display:inline-block; background:var(--text-black); color:var(--text-inverted); padding:4px 12px; margin-bottom:1rem; border-radius:4px;">STEP 2</div>
+                    <div style="border: 3px solid var(--border-black); border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; box-shadow: 2px 2px 0 var(--border-black);">
                         <img src="assets/adpod-step2.jpg" alt="Step 2: AI analyzes your market" style="width: 100%; height: auto; display: block;">
                     </div>
                     <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">AI analyzes your market</h3>
                     <p>We study your audience, competitors, and category.</p>
                 </div>
                 <div class="neo-card" style="background:var(--accent-pink);">
-                    <div class="accent-data" style="display:inline-block; background:var(--text-black); color:#fff; padding:4px 12px; margin-bottom:1rem; border-radius:4px;">STEP 3</div>
-                    <div style="border: 3px solid var(--border-black); border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; box-shadow: 2px 2px 0 #000;">
+                    <div class="accent-data" style="display:inline-block; background:var(--text-black); color:var(--text-inverted); padding:4px 12px; margin-bottom:1rem; border-radius:4px;">STEP 3</div>
+                    <div style="border: 3px solid var(--border-black); border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; box-shadow: 2px 2px 0 var(--border-black);">
                         <img src="assets/adpod-step3.jpg" alt="Step 3: Get your strategy instantly" style="width: 100%; height: auto; display: block;">
                     </div>
                     <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">Get your strategy instantly</h3>
-                    <p style="color:#000;">Receive a full marketing plan ready to execute.</p>
+                    <p style="color:var(--text-black);">Receive a full marketing plan ready to execute.</p>
                 </div>
             </div>
         </section>
@@ -597,9 +611,9 @@
             <div class="minimal-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: stretch;">
                 <!-- Pricing Card 1 -->
                 <div class="neo-card" style="padding: 2.5rem; display: flex; flex-direction: column; position: relative; background: var(--bg-cream); text-align: center;">
-                    <div class="accent-data" style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: var(--accent-pink); padding: 6px 18px; border-radius: 6px; border: 3px solid var(--border-black); box-shadow: 2px 2px 0 #000; font-size: 0.9rem; font-weight: 800; color: #000; letter-spacing: 1px;">ADPOD PRO</div>
+                    <div class="accent-data" style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: var(--accent-pink); padding: 6px 18px; border-radius: 6px; border: 3px solid var(--border-black); box-shadow: 2px 2px 0 var(--border-black); font-size: 0.9rem; font-weight: 800; color: var(--text-black); letter-spacing: 1px;">ADPOD PRO</div>
                     
-                    <div class="accent-data" style="font-size: 4rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">$50<span style="font-size: 1.2rem; font-weight: 600; letter-spacing: 0;">/mo</span></div>
+                    <div class="accent-data" style="font-size: 4rem; font-weight: 800; color: var(--text-black); margin-bottom: 1rem; letter-spacing: -2px;">$50<span style="font-size: 1.2rem; font-weight: 600; letter-spacing: 0;">/mo</span></div>
                     <p style="font-weight: 700; margin-bottom: 2rem;">10 Credits / Month</p>
                     
                     <ul class="evo-list" style="margin-bottom: 2rem; text-align: left; font-size: 1rem;">
@@ -616,10 +630,10 @@
 
                 <!-- Pricing Card 2 -->
                 <div class="neo-card" style="padding: 2.5rem; display: flex; flex-direction: column; position: relative; background: var(--accent-yellow); text-align: center;">
-                    <div class="accent-data" style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: var(--text-black); padding: 6px 18px; border-radius: 6px; border: 3px solid var(--border-black); box-shadow: 2px 2px 0 #000; font-size: 0.9rem; font-weight: 800; color: #fff; letter-spacing: 1px;">AGENCY</div>
+                    <div class="accent-data" style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: var(--text-black); padding: 6px 18px; border-radius: 6px; border: 3px solid var(--border-black); box-shadow: 2px 2px 0 var(--border-black); font-size: 0.9rem; font-weight: 800; color: var(--text-inverted); letter-spacing: 1px;">AGENCY</div>
                     
-                    <div class="accent-data" style="font-size: 4rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">$350<span style="font-size: 1.2rem; font-weight: 600; letter-spacing: 0;">/mo</span></div>
-                    <p style="font-weight: 700; margin-bottom: 2rem; color: #000;">100 Credits / Month</p>
+                    <div class="accent-data" style="font-size: 4rem; font-weight: 800; color: var(--text-black); margin-bottom: 1rem; letter-spacing: -2px;">$350<span style="font-size: 1.2rem; font-weight: 600; letter-spacing: 0;">/mo</span></div>
+                    <p style="font-weight: 700; margin-bottom: 2rem; color: var(--text-black);">100 Credits / Month</p>
                     
                     <ul class="evo-list" style="margin-bottom: 2rem; text-align: left; font-size: 1rem;">
                         <li><i class="fa-solid fa-check"></i> Manage multiple clients</li>
@@ -635,10 +649,10 @@
 
                 <!-- Pricing Card 3 -->
                 <div class="neo-card" style="padding: 2.5rem; display: flex; flex-direction: column; position: relative; background: var(--accent-mint); text-align: center;">
-                    <div class="accent-data" style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: var(--surface-white); padding: 6px 18px; border-radius: 6px; border: 3px solid var(--border-black); box-shadow: 2px 2px 0 #000; font-size: 0.9rem; font-weight: 800; color: #000; letter-spacing: 1px;">ENTERPRISE</div>
+                    <div class="accent-data" style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: var(--surface-white); padding: 6px 18px; border-radius: 6px; border: 3px solid var(--border-black); box-shadow: 2px 2px 0 var(--border-black); font-size: 0.9rem; font-weight: 800; color: var(--text-black); letter-spacing: 1px;">ENTERPRISE</div>
                     
-                    <div class="accent-data" style="font-size: 3rem; font-weight: 800; color: #000; margin-bottom: 1rem; margin-top: 1rem; letter-spacing: -1px;">Custom</div>
-                    <p style="font-weight: 700; margin-bottom: 2rem; color: #000;">Custom Volume</p>
+                    <div class="accent-data" style="font-size: 3rem; font-weight: 800; color: var(--text-black); margin-bottom: 1rem; margin-top: 1rem; letter-spacing: -1px;">Custom</div>
+                    <p style="font-weight: 700; margin-bottom: 2rem; color: var(--text-black);">Custom Volume</p>
                     
                     <ul class="evo-list" style="margin-bottom: 2rem; text-align: left; font-size: 1rem;">
                         <li><i class="fa-solid fa-check"></i> Unlimited capabilities</li>
@@ -696,31 +710,31 @@
         <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center;">
             <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom: 2rem;">
                 <svg width="32" height="40" viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="60" y1="8" x2="60" y2="32" stroke="#000" stroke-width="8" stroke-linecap="round"/>
-                    <circle cx="60" cy="8" r="8" fill="#000"/>
-                    <rect x="22" y="30" width="76" height="105" rx="38" fill="#FFC900" stroke="#000" stroke-width="6"/>
-                    <rect x="30" y="38" width="60" height="89" rx="30" fill="#000"/>
-                    <rect x="18" y="68" width="84" height="26" rx="4" fill="#000"/>
+                    <line x1="60" y1="8" x2="60" y2="32" stroke="var(--text-black)" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="60" cy="8" r="8" fill="var(--text-black)"/>
+                    <rect x="22" y="30" width="76" height="105" rx="38" fill="#FFC900" stroke="var(--text-black)" stroke-width="6"/>
+                    <rect x="30" y="38" width="60" height="89" rx="30" fill="var(--text-black)"/>
+                    <rect x="18" y="68" width="84" height="26" rx="4" fill="var(--text-black)"/>
                     <rect x="28" y="72" width="64" height="18" rx="3" fill="#FFC900"/>
-                    <circle cx="44" cy="81" r="4" fill="#FFF"/>
-                    <circle cx="76" cy="81" r="4" fill="#FFF"/>
-                    <line x1="40" y1="110" x2="80" y2="110" stroke="#FFF" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="44" cy="81" r="4" fill="var(--text-inverted)"/>
+                    <circle cx="76" cy="81" r="4" fill="var(--text-inverted)"/>
+                    <line x1="40" y1="110" x2="80" y2="110" stroke="var(--text-inverted)" stroke-width="4" stroke-linecap="round"/>
                 </svg>
                 <div style="font-family: var(--font-headline); font-size:2.5rem; font-weight:800;">Adpod</div>
             </div>
             
             <div style="display: flex; gap: 2rem; margin-bottom: 2.5rem; font-weight: 700;">
-                <a href="index.html" style="color: #000; text-decoration: none;">Home</a>
-                <a href="web3.html" style="color: #000; text-decoration: none;">Web3</a>
-                <a href="enterprise.html" style="color: #000; text-decoration: none;">Enterprise</a>
-                <a href="mailto:contact@mikedezilva.com" style="color: #000; text-decoration: none;">Contact</a>
+                <a href="index.html" style="color: var(--text-black); text-decoration: none;">Home</a>
+                <a href="web3.html" style="color: var(--text-black); text-decoration: none;">Web3</a>
+                <a href="enterprise.html" style="color: var(--text-black); text-decoration: none;">Enterprise</a>
+                <a href="mailto:contact@mikedezilva.com" style="color: var(--text-black); text-decoration: none;">Contact</a>
             </div>
 
             <div style="display: flex; gap: 1.5rem; margin-bottom: 3rem; font-size: 1.8rem;">
-                <a href="#" style="color: #000; transition: transform 0.1s;"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" style="color: #000; transition: transform 0.1s;"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#" style="color: #000; transition: transform 0.1s;"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" style="color: #000; transition: transform 0.1s;"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" style="color: var(--text-black); transition: transform 0.1s;"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" style="color: var(--text-black); transition: transform 0.1s;"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" style="color: var(--text-black); transition: transform 0.1s;"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" style="color: var(--text-black); transition: transform 0.1s;"><i class="fa-brands fa-youtube"></i></a>
             </div>
 
             <p style="font-weight: 600; font-size: 0.9rem; color: var(--text-dark-gray);">
@@ -738,8 +752,52 @@
             menuToggle.addEventListener('click', () => {
                 mobileNav.classList.toggle('active');
             });
-            mobileNav.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
+            mobileNav.addEventListener('click', (e) => {
+                if(e.target.id !== 'mobile-theme-toggle') {
+                    mobileNav.classList.remove('active');
+                }
+            });
+        }
+
+        // Dark Mode Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+        const rootElement = document.documentElement;
+        
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                rootElement.setAttribute('data-theme', 'dark');
+                if (themeToggle) themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+                if (mobileThemeToggle) mobileThemeToggle.innerText = 'Toggle Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                rootElement.removeAttribute('data-theme');
+                if (themeToggle) themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+                if (mobileThemeToggle) mobileThemeToggle.innerText = 'Toggle Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setTheme('dark');
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = rootElement.getAttribute('data-theme');
+                setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            });
+        }
+
+        if (mobileThemeToggle) {
+            mobileThemeToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const currentTheme = rootElement.getAttribute('data-theme');
+                setTheme(currentTheme === 'dark' ? 'light' : 'dark');
             });
         }
     </script>
