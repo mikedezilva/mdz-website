@@ -475,10 +475,9 @@ For full legal details, please review our Terms of Service and Privacy Policy.
 
     <script>
         // Extract raw markdown text and unescape template literal sequences
-        const rawMarkdown = document.getElementById('raw-markdown').textContent
-            .replace(/\\/g, '\')
-            .replace(/\`/g, '`')
-            .replace(/\\$/g, '$');
+        let rawMarkdown = document.getElementById('raw-markdown').textContent;
+        // Fix the escaped characters from the build script
+        rawMarkdown = rawMarkdown.replace(/\\`/g, '`').replace(/\\\$/g, '$');
 
         // Parse with marked.js
         document.getElementById('markdown-container').innerHTML = marked.parse(rawMarkdown);
