@@ -7,47 +7,61 @@
     <meta name="description" content="Adpod helps Web3 teams understand their audience, competitors, and positioning — and build growth strategies for token launches, communities, and on-chain user acquisition.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-        /* Ultra-Minimalist Dark Aesthetic Overrides */
+        /* High-Conversion Financial System Aesthetics */
         :root {
-            --bg-color: #050505;
-            --surface-color: #0a0a0a;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --accent-orange: #FF5E00;
-            --purple: #a855f7;
-            --green: #10b981;
+            --bg-navy: #0B1220;
+            --surface-card: #111827;
+            --border-dark: #1F2937;
+            --action-blue: #2F6BFF;
+            --action-blue-hover: #1e52d3;
+            --value-green: #22C55E;
+            --urgency-amber: #F59E0B;
+            --text-main: #F9FAFB;
+            --text-muted: #9CA3AF;
+            
+            --font-headline: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-accent: 'JetBrains Mono', monospace;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-navy);
+            color: var(--text-main);
+            font-family: var(--font-body);
             margin: 0;
             padding: 0;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Text Gradient (Crypto Blue/Purple) */
-        .text-gradient {
-            background: linear-gradient(to right, #60A5FA, #A855F7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline;
+        h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
+            font-family: var(--font-headline);
+            color: var(--text-main);
         }
+
+        .accent-data {
+            font-family: var(--font-accent);
+        }
+
+        /* Strong Text Highlight Colors (Replacing Gradients) */
+        .text-blue { color: var(--action-blue); }
+        .text-green { color: var(--value-green); }
+        .text-amber { color: var(--urgency-amber); }
 
         /* Minimal Header */
         .site-header {
-            background: rgba(5,5,5,0.4);
+            background: rgba(11, 18, 32, 0.9);
             backdrop-filter: blur(15px);
             padding: 1.5rem 4rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-dark);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -56,7 +70,7 @@
 
         .header-link {
             text-decoration: none;
-            color: var(--text-primary);
+            color: var(--text-main);
             font-size: 0.8rem;
             letter-spacing: 1px;
             display: flex;
@@ -67,52 +81,37 @@
 
         /* Minimalist Hero */
         .adpod-hero-section {
-            padding: 18rem 2rem 10rem;
+            padding: 16rem 2rem 10rem;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            position: relative;
-            background-image: url('Images/ambient_glass_vibe.jpg');
-            background-size: cover;
-            background-position: center top;
-            background-attachment: fixed;
-        }
-
-        .adpod-hero-section::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, rgba(5,5,5,0.4) 0%, rgba(5,5,5,0.9) 70%, #050505 100%);
-            z-index: 1;
+            background: var(--bg-navy);
         }
 
         .hero-content-wrapper {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
+            max-width: 1000px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .hero-title {
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            color: #ffffff;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
         }
 
         .hero-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             line-height: 1.6;
-            color: #cccccc;
-            margin-bottom: 3rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
             font-weight: 400;
-            max-width: 700px;
+            max-width: 800px;
         }
         
         .cta-group {
@@ -122,16 +121,14 @@
             margin-bottom: 3rem;
         }
 
-        .btn-gradient {
-            background: linear-gradient(to right, #60A5FA, #A855F7);
+        .btn-primary {
+            background-color: var(--action-blue);
             color: #ffffff;
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
             text-decoration: none;
-            text-transform: uppercase;
             transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
@@ -139,36 +136,32 @@
             border: none;
         }
 
-        .btn-gradient:hover {
-            transform: scale(1.02);
-            filter: brightness(1.1);
+        .btn-primary:hover {
+            background-color: var(--action-blue-hover);
         }
         
         .btn-outline {
-            background-color: rgba(255,255,255,0.02);
-            color: #ffffff;
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+            background-color: transparent;
+            color: var(--text-main);
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
             text-decoration: none;
-            text-transform: uppercase;
             transition: all 0.2s ease;
             display: inline-block;
-            border: 1px solid var(--border-color);
-            backdrop-filter: blur(5px);
+            border: 1px solid var(--border-dark);
         }
         
         .btn-outline:hover {
-            border-color: rgba(255,255,255,0.3);
-            background-color: rgba(255,255,255,0.05);
+            border-color: var(--text-muted);
+            background-color: var(--surface-card);
         }
 
         /* Generic Section Styling */
         .content-section {
             padding: 6rem 2rem;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -178,18 +171,17 @@
         }
 
         .section-title {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: #fff;
             letter-spacing: -1px;
         }
 
         .section-desc {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
             line-height: 1.6;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
@@ -201,83 +193,69 @@
         }
 
         .minimal-card {
-            background: var(--surface-color);
-            border: 1px solid var(--border-color);
-            padding: 3rem 2rem;
-            border-radius: 20px;
+            background: var(--surface-card);
+            border: 1px solid var(--border-dark);
+            padding: 2.5rem;
+            border-radius: 12px;
             text-align: left;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.2s ease;
         }
 
         .minimal-card:hover {
-            border-color: rgba(96, 165, 250, 0.2);
+            border-color: var(--action-blue);
         }
 
         .icon-box {
             width: 48px;
             height: 48px;
-            border-radius: 12px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(47, 107, 255, 0.1);
+            border: 1px solid rgba(47, 107, 255, 0.2);
+        }
+        
+        .icon-box i {
+            color: var(--action-blue);
+            font-size: 1.2rem;
         }
 
         .minimal-card h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-size: 1.25rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            color: #fff;
         }
 
         .minimal-card p {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
+            font-size: 1rem;
+            color: var(--text-muted);
             line-height: 1.6;
-        }
-
-        .evo-list {
-            list-style: none;
-            padding: 0;
             margin: 0;
         }
-        .evo-list li {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 1.2rem;
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-        .evo-list i.fa-xmark { color: #ef4444; }
-        .evo-list i.fa-check { color: #10b981; }
-        .evo-list li.highlight-text { color: #fff; font-weight: 500; }
 
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.2rem; }
-            .section-title { font-size: 2rem; }
+            .hero-title { font-size: 2.5rem; }
+            .section-title { font-size: 2.2rem; }
             .cta-group { flex-direction: column; }
             .site-header { padding: 1rem 1.5rem !important; }
             .back-text { display: none; }
         }
-
-        .adpod-logo-center { position: absolute; left: 50%; transform: translateX(-50%); }
     </style>
 </head>
 <body>
 
     <!-- Header -->
     <header class="site-header">
-        <a href="adpod.html" class="header-link" style="z-index: 2;">
+        <a href="adpod.html" class="header-link">
             <i class="fa-solid fa-arrow-left"></i> <span class="back-text">BACK TO ADPOD</span>
         </a>
-        <div class="adpod-logo-center" style="display:flex; align-items:center; gap: 10px; opacity: 0.8; z-index: 1;">
-            <img src="Images/adpod-logo.svg" alt="Adpod Logo" style="height: 20px;">
+        <div style="font-family: var(--font-headline); font-size:1.25rem; font-weight:700; letter-spacing: -0.5px;">
+            Adpod
         </div>
-        <div style="z-index: 2; display: flex; gap: 10px;">
-            <a href="web3.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.7rem; border-color: rgba(96,165,250,0.5); color: #60A5FA;">WEB3</a>
+        <div style="display: flex; gap: 10px;">
+            <a href="web3.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; border-color: rgba(47, 107, 255, 0.5); color: var(--action-blue);">Web3</a>
         </div>
     </header>
 
@@ -285,92 +263,92 @@
         <!-- Hero Section -->
         <section class="adpod-hero-section">
             <div class="hero-content-wrapper">
-                <div style="display:inline-block; padding:8px 16px; background:rgba(96,165,250,0.1); border:1px solid rgba(96,165,250,0.3); border-radius:50px; font-size:0.75rem; font-weight:700; letter-spacing:1px; color:#60A5FA; margin-bottom:1.5rem;"><i class="fa-brands fa-ethereum" style="margin-right:8px;"></i> NATIVE CRYPTO INTELLIGENCE</div>
+                <div class="accent-data" style="display:inline-block; padding:8px 16px; background:rgba(47, 107, 255, 0.1); border:1px solid rgba(47, 107, 255, 0.3); border-radius:6px; font-size:0.8rem; font-weight:700; letter-spacing:1px; color:var(--action-blue); margin-bottom:1.5rem;"><i class="fa-brands fa-ethereum" style="margin-right:8px;"></i> NATIVE CRYPTO INTELLIGENCE</div>
                 
-                <h1 class="hero-title">Web3 Marketing Strategy, Built for <span class="text-gradient">Fast-Moving Crypto Markets</span></h1>
+                <h1 class="hero-title">Web3 Marketing Strategy, Built for <span class="text-blue">Fast-Moving Crypto Markets</span></h1>
                 
                 <p class="hero-subtitle">
                     Adpod helps Web3 teams understand their audience, competitors, and positioning — and build growth strategies for token launches, communities, and on-chain user acquisition.
                 </p>
                 
                 <div class="cta-group">
-                    <a href="mailto:contact@mikedezilva.com" class="btn-gradient">Build My Web3 Growth Strategy <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="mailto:contact@mikedezilva.com" class="btn-primary">Build My Web3 Growth Strategy <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
 
         <!-- Problem Section -->
-        <section class="content-section" style="border-top: 1px solid var(--border-color);">
+        <section class="content-section" style="border-top: 1px solid var(--border-dark);">
             <div class="section-header">
-                <h2 class="section-title">Web3 moves too fast for <span class="text-gradient">traditional agencies.</span></h2>
+                <h2 class="section-title">Web3 moves too fast for <span class="text-amber">traditional agencies.</span></h2>
             </div>
             
             <div class="minimal-grid" style="max-width: 600px; margin: 0 auto; text-align:center;">
                 <div class="minimal-card" style="display:flex; flex-direction:column; align-items:center;">
                     <div style="font-size:2rem; margin-bottom:1rem; opacity:0.8;">⏳</div>
-                    <p style="font-size:1.2rem; color:#fff; text-align:center; font-weight:600; line-height:1.6;">Strategies become outdated in days, not months.</p>
-                    <p style="color:var(--text-secondary); text-align:center; margin-top:1rem;">You cannot wait 4 weeks for a strategy deck when narrative cycles shift in 4 hours.</p>
+                    <p style="font-size:1.2rem; color:var(--text-main); text-align:center; font-weight:600; line-height:1.6;">Strategies become outdated in days, not months.</p>
+                    <p style="color:var(--text-muted); text-align:center; margin-top:1rem;">You cannot wait 4 weeks for a strategy deck when narrative cycles shift in 4 hours.</p>
                 </div>
             </div>
         </section>
 
         <!-- Solution & Features -->
-        <section class="content-section" style="border-top: 1px solid var(--border-color);">
+        <section class="content-section" style="border-top: 1px solid var(--border-dark);">
             <div class="section-header">
-                <h2 class="section-title">Adpod gives <span class="text-gradient">Web3 teams:</span></h2>
+                <h2 class="section-title">Adpod gives <span class="text-blue">Web3 teams:</span></h2>
             </div>
             
             <div class="minimal-grid">
                 <div class="minimal-card">
-                    <div class="icon-box" style="background: rgba(96, 165, 250, 0.1); border-color: rgba(96, 165, 250, 0.2);">
-                        <i class="fa-solid fa-wallet" style="color: #60A5FA; font-size: 1.2rem; margin: 0;"></i>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-wallet"></i>
                     </div>
                     <h3>Wallet-based audience targeting</h3>
                     <p>Track on-chain behaviors and find users based on what they hold, not just what they search.</p>
                 </div>
                 
                 <div class="minimal-card">
-                    <div class="icon-box" style="background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.2);">
-                        <i class="fa-solid fa-eye" style="color: #A855F7; font-size: 1.2rem; margin: 0;"></i>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-eye"></i>
                     </div>
                     <h3>Competitor tracking</h3>
                     <p>Monitor rival protocols, TVL shifts, and narrative momentum in real-time.</p>
                 </div>
                 
                 <div class="minimal-card">
-                    <div class="icon-box" style="background: rgba(236, 72, 153, 0.1); border-color: rgba(236, 72, 153, 0.2);">
-                        <i class="fa-solid fa-rocket" style="color: #ec4899; font-size: 1.2rem; margin: 0;"></i>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-rocket"></i>
                     </div>
                     <h3>Token launch positioning</h3>
                     <p>Craft the perfect narrative and go-to-market strategy for TGEs and airdrops.</p>
                 </div>
 
                 <div class="minimal-card">
-                    <div class="icon-box" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2);">
-                        <i class="fa-brands fa-discord" style="color: #10b981; font-size: 1.2rem; margin: 0;"></i>
+                    <div class="icon-box">
+                        <i class="fa-brands fa-discord"></i>
                     </div>
                     <h3>Community growth strategy</h3>
                     <p>Grow loyal communities across Discord, X, and Farcaster with data-backed content.</p>
                 </div>
 
                 <div class="minimal-card" style="grid-column: span auto;">
-                    <div class="icon-box" style="background: rgba(234, 179, 8, 0.1); border-color: rgba(234, 179, 8, 0.2);">
-                        <i class="fa-solid fa-chart-line" style="color: #eab308; font-size: 1.2rem; margin: 0;"></i>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-chart-line"></i>
                     </div>
                     <h3>On-chain marketing insights</h3>
                     <p>Correlate marketing spend directly with on-chain interactions and TVL growth.</p>
                 </div>
             </div>
             
-            <div style="text-align:center; margin-top: 4rem;">
-                <a href="mailto:contact@mikedezilva.com" class="btn-gradient">Build My Web3 Growth Strategy <i class="fa-solid fa-arrow-right"></i></a>
+            <div style="text-align:center; margin-top: 5rem;">
+                <a href="mailto:contact@mikedezilva.com" class="btn-primary">Build My Web3 Growth Strategy <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </section>
 
     </main>
 
-    <footer style="text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border-color); color: #666; font-size: 0.8rem;">
-        <img src="Images/adpod-logo.svg" alt="Adpod Logo" style="height: 20px; opacity: 0.5; margin-bottom: 1rem;">
+    <footer style="text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border-dark); color: var(--text-muted); font-size: 0.9rem;">
+        <div style="font-family: var(--font-headline); font-size:1.5rem; font-weight:700; margin-bottom: 1rem; color:var(--text-main);">Adpod</div>
         <p>© 2026 Adpod Intelligence Suite™. Built by Mike De Zilva.</p>
     </footer>
 
