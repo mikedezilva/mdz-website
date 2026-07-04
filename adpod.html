@@ -362,16 +362,49 @@
             top: 73px; /* Header height approx */
             left: 0;
             right: 0;
+            bottom: 0;
             background: var(--bg-cream);
-            border-bottom: 3px solid var(--border-black);
             padding: 2rem;
             flex-direction: column;
-            gap: 1rem;
-            box-shadow: 0 10px 0 rgba(0,0,0,1);
             z-index: 99;
+            overflow-y: auto;
         }
         .mobile-nav-overlay.active {
             display: flex;
+            animation: slideDown 0.3s ease-out forwards;
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .mobile-nav-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .mobile-link {
+            font-size: 2.2rem;
+            font-family: var(--font-headline);
+            color: var(--text-black);
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-bottom: 3px solid var(--border-black);
+            padding-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .mobile-link::after {
+            content: '\f061';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 1.5rem;
         }
     </style>
 
@@ -419,10 +452,17 @@
 
     <!-- Mobile Nav -->
     <nav id="mobile-nav" class="mobile-nav-overlay">
-        <a href="web3.html" class="btn-outline" style="width:100%; text-align:center;">Web3</a>
-        <a href="enterprise.html" class="btn-outline" style="width:100%; text-align:center; background:var(--accent-mint);">Enterprise</a>
-        <a href="#deploy" class="btn-primary" style="width:100%; text-align:center;">Get Started</a>
-        <button id="mobile-theme-toggle" class="btn-outline" style="width:100%; text-align:center; padding: 12px;">Toggle Dark Mode</button>
+        <div class="mobile-nav-content">
+            <a href="web3.html" class="mobile-link">Web3</a>
+            <a href="enterprise.html" class="mobile-link">Enterprise</a>
+            
+            <div style="margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                <a href="#deploy" class="btn-primary" style="width:100%; text-align:center; justify-content:center;">Get Started</a>
+                <button id="mobile-theme-toggle" class="btn-outline" style="width:100%; text-align:center; display:flex; justify-content:center; align-items:center; gap:10px;">
+                    <i class="fa-solid fa-moon"></i> Dark Mode
+                </button>
+            </div>
+        </div>
     </nav>
 
 
@@ -777,12 +817,12 @@
             if (theme === 'dark') {
                 rootElement.setAttribute('data-theme', 'dark');
                 if (themeToggle) themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-                if (mobileThemeToggle) mobileThemeToggle.innerText = 'Toggle Light Mode';
+                if (mobileThemeToggle) mobileThemeToggle.innerHTML = '<i class="fa-solid fa-sun"></i> Light Mode';
                 localStorage.setItem('theme', 'dark');
             } else {
                 rootElement.removeAttribute('data-theme');
                 if (themeToggle) themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-                if (mobileThemeToggle) mobileThemeToggle.innerText = 'Toggle Dark Mode';
+                if (mobileThemeToggle) mobileThemeToggle.innerHTML = '<i class="fa-solid fa-moon"></i> Dark Mode';
                 localStorage.setItem('theme', 'light');
             }
         }
