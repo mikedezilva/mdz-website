@@ -21,6 +21,13 @@
     <link rel="shortcut icon" href="favicon.ico">
     <!-- Lenis Smooth Scroll -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0,0);
+    </script>
 </head>
 <body>
     <!-- Under Development Banner -->
