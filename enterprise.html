@@ -130,7 +130,7 @@
 
         .btn-primary {
             background-color: var(--accent-yellow);
-            color: var(--text-black);
+            color: var(--text-black) !important;
             padding: 16px 36px;
             border-radius: 8px;
             border: 3px solid var(--border-black);
@@ -149,6 +149,32 @@
         .btn-primary:active, .btn-primary:hover {
             transform: translate(2px, 2px);
             box-shadow: var(--box-shadow-hover);
+            color: var(--text-black) !important;
+        }
+
+        .btn-outline {
+            background-color: var(--surface-white);
+            color: var(--text-black) !important;
+            padding: 16px 36px;
+            border-radius: 8px;
+            border: 3px solid var(--border-black);
+            box-shadow: var(--box-shadow);
+            font-size: 1.1rem;
+            font-family: var(--font-headline);
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.1s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-outline:active, .btn-outline:hover {
+            transform: translate(2px, 2px);
+            box-shadow: var(--box-shadow-hover);
+            background-color: var(--accent-pink);
+            color: var(--text-black) !important;
         }
 
         /* Generic Section Styling */
@@ -293,7 +319,7 @@
         <a href="index.html" class="header-link">
             <i class="fa-solid fa-arrow-left"></i> <span class="back-text">BACK TO MAIN</span>
         </a>
-        <div style="display:flex; align-items:center;">
+        <div style="position: absolute; left: 50%; transform: translateX(-50%); display:flex; align-items:center;">
             <svg width="28" height="35" viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <line x1="60" y1="8" x2="60" y2="32" stroke="#000" stroke-width="8" stroke-linecap="round"/>
                 <circle cx="60" cy="8" r="8" fill="#000"/>
