@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Marketing Intelligence | Adpod Intelligence Suite</title>
+    <meta name="description" content="End-to-end Adpod Intelligence Suite for enterprise. Transform global market noise into actionable, zero-hallucination human truth in real-time.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        /* Gumroad Neobrutalist System */
+        :root {
+            --bg-cream: #F4F4F0;
+            --surface-white: #FFFFFF;
+            --border-black: #000000;
+            --accent-pink: #FF90E8;
+            --accent-yellow: #FFC900;
+            --accent-mint: #90A8ED;
+            --text-black: #000000;
+            --text-dark-gray: #333333;
+            
+            --font-headline: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-accent: 'JetBrains Mono', monospace;
+
+            --box-shadow: 4px 4px 0px #000000;
+            --box-shadow-hover: 2px 2px 0px #000000;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-black);
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
+            font-family: var(--font-headline);
+            color: var(--text-black);
+            font-weight: 800;
+        }
+
+        .accent-data {
+            font-family: var(--font-accent);
+            font-weight: 700;
+        }
+
+        /* Minimal Header */
+        .site-header {
+            background: var(--bg-cream);
+            padding: 1.5rem 4rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--border-black);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .header-link {
+            text-decoration: none;
+            color: var(--text-black);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .adpod-hero-section {
+            padding: 14rem 2rem 8rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-cream);
+            position: relative;
+            border-bottom: 3px solid var(--border-black);
+        }
+
+        .hero-content-wrapper {
+            max-width: 950px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 5.5rem;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .highlight-yellow {
+            background-color: var(--accent-yellow);
+            padding: 0 10px;
+            border: 3px solid var(--border-black);
+            border-radius: 8px;
+            display: inline-block;
+            transform: rotate(-1deg);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: var(--text-dark-gray);
+            margin-bottom: 3rem;
+            font-weight: 500;
+            max-width: 850px;
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-yellow);
+            color: var(--text-black);
+            padding: 16px 36px;
+            border-radius: 8px;
+            border: 3px solid var(--border-black);
+            box-shadow: var(--box-shadow);
+            font-size: 1.1rem;
+            font-family: var(--font-headline);
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.1s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:active, .btn-primary:hover {
+            transform: translate(2px, 2px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        /* Generic Section Styling */
+        .content-section {
+            padding: 7rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+        }
+
+        /* Minimal Grid */
+        .minimal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .neo-card {
+            background: var(--surface-white);
+            border: 3px solid var(--border-black);
+            box-shadow: var(--box-shadow);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: left;
+            transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+            position: relative;
+        }
+
+        .neo-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #000000;
+        }
+
+        .icon-box {
+            width: 56px;
+            height: 56px;
+            border-radius: 8px;
+            border: 3px solid var(--border-black);
+            box-shadow: 2px 2px 0 #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            background: var(--accent-pink);
+        }
+        
+        .icon-box i {
+            color: var(--text-black);
+            font-size: 1.5rem;
+        }
+
+        /* Metric Banner */
+        .metric-banner {
+            display: flex;
+            flex-wrap: wrap;
+            border: 3px solid var(--border-black);
+            box-shadow: var(--box-shadow);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 4rem;
+        }
+        .metric-item {
+            flex: 1;
+            min-width: 250px;
+            padding: 2.5rem;
+            text-align: center;
+            border-right: 3px solid var(--border-black);
+            background: var(--surface-white);
+        }
+        .metric-item:last-child {
+            border-right: none;
+        }
+        .metric-number {
+            font-family: var(--font-accent);
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--accent-pink);
+        }
+        .metric-label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Logo Grid */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .logo-item {
+            background: var(--bg-cream);
+            border: 2px solid var(--border-black);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-family: var(--font-accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 2px 2px 0 #000;
+        }
+
+        /* Badges */
+        .neo-badge {
+            display: inline-block;
+            background: var(--text-black);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-family: var(--font-accent);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            border: 2px solid var(--border-black);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3.5rem; }
+            .section-title { font-size: 2.5rem; }
+            .site-header { padding: 1rem 1.5rem !important; }
+            .back-text { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <a href="index.html" class="header-link">
+            <i class="fa-solid fa-arrow-left"></i> <span class="back-text">BACK TO MAIN</span>
+        </a>
+        <div style="display:flex; align-items:center; gap:10px;">
+            <svg width="32" height="32" viewBox="0 0 100 100" fill="var(--accent-pink)" stroke="var(--text-black)" stroke-width="6" stroke-linejoin="round">
+                <path d="M50 5 L60 40 L95 50 L60 60 L50 95 L40 60 L5 50 L40 40 Z" />
+            </svg>
+            <div style="font-family: var(--font-headline); font-size:1.6rem; font-weight:800; letter-spacing: -1px;">
+                Adpod <span style="font-family:var(--font-accent); font-weight:700; font-size:1rem; margin-left:8px; opacity:0.5;">ENTERPRISE</span>
+            </div>
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <a href="mailto:contact@mikedezilva.com" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 6px; background:var(--accent-yellow);">Deploy Node</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="adpod-hero-section">
+            <div class="hero-content-wrapper">
+                <div class="accent-data" style="display:inline-block; padding:8px 16px; background:var(--text-black); color:#fff; border:3px solid var(--border-black); box-shadow: 2px 2px 0 #000; border-radius:6px; font-size:0.9rem; letter-spacing:1px; margin-bottom:1.5rem;">ADPOD INTELLIGENCE SUITE™</div>
+                
+                <h1 class="hero-title">Uncover Your <span class="highlight-yellow">Human Truth</span></h1>
+                
+                <p class="hero-subtitle">
+                    Legacy platforms deliver static insights days after the conversation peaks. Adpod transforms global market noise into actionable, zero-hallucination brand strategy in real-time.
+                </p>
+                
+                <div class="cta-group">
+                    <a href="mailto:contact@mikedezilva.com" class="btn-primary">Initialize Dedicated Node <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section (Metrics) -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Your Data Is Already Old.</h2>
+                <p style="font-size:1.3rem; max-width:800px; margin: 0 auto; line-height:1.6;">By the time legacy tools finish compiling weekly reports, the market has moved on. The result? Brands operate on expired intelligence.</p>
+            </div>
+            
+            <div class="metric-banner">
+                <div class="metric-item">
+                    <div class="metric-number">72h</div>
+                    <div class="metric-label">Average Report Latency</div>
+                    <p style="font-size:0.95rem; margin-top:1rem; opacity:0.8;">Legacy platforms deliver insights days after trends peak.</p>
+                </div>
+                <div class="metric-item" style="background:var(--accent-mint);">
+                    <div class="metric-number" style="color:var(--text-black);">40%</div>
+                    <div class="metric-label">Signals Are Bot Noise</div>
+                    <p style="font-size:0.95rem; margin-top:1rem; opacity:0.8;">Without filtering, fake engagement leads to fatal miscalculations.</p>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number" style="color:var(--accent-yellow);">$0</div>
+                    <div class="metric-label">Actionable Strategy</div>
+                    <p style="font-size:0.95rem; margin-top:1rem; opacity:0.8;">Current tools visualize data. They don't think. You're paying for dashboards.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8 Steps to Truth -->
+        <section class="content-section" style="border-top: 3px solid var(--border-black); background:var(--surface-white);">
+            <div class="section-header">
+                <div class="neo-badge" style="background:var(--accent-pink); color:#000;">THE CORE METHODOLOGY</div>
+                <h2 class="section-title">Digital Data Purification:<br>8 Steps to the Truth</h2>
+                <p style="font-size:1.2rem; max-width:800px; margin: 0 auto; line-height:1.6;">Unlike standard AI that hallucinates, Adpod is rooted strictly in verified digital signals via our Grounded LLM self-correcting neural pipeline.</p>
+            </div>
+            
+            <div class="minimal-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <!-- Step 1 -->
+                <div class="neo-card">
+                    <div class="neo-badge">Stage 01</div>
+                    <h3 style="font-size:1.4rem;">Active Recon</h3>
+                    <p>Google Search Grounding via live API.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="neo-card">
+                    <div class="neo-badge">Stage 02</div>
+                    <h3 style="font-size:1.4rem;">Strategic Q&A</h3>
+                    <p>Identifying & filling logic gaps autonomously.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="neo-card">
+                    <div class="neo-badge">Stage 03</div>
+                    <h3 style="font-size:1.4rem;">Inventory Scout</h3>
+                    <p>Verifying real media placements globally.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="neo-card">
+                    <div class="neo-badge">Stage 04</div>
+                    <h3 style="font-size:1.4rem;">Demographics</h3>
+                    <p>Real-world audience and persona mapping.</p>
+                </div>
+                <!-- Step 5 -->
+                <div class="neo-card">
+                    <div class="neo-badge">Stage 05</div>
+                    <h3 style="font-size:1.4rem;">Search Intent</h3>
+                    <p>Real-time query velocity detection.</p>
+                </div>
+                <!-- Step 6 -->
+                <div class="neo-card">
+                    <div class="neo-badge">Stage 06</div>
+                    <h3 style="font-size:1.4rem;">Competitor Recon</h3>
+                    <p>Weakness, narrative, and pricing analysis.</p>
+                </div>
+                <!-- Step 7 -->
+                <div class="neo-card" style="background:var(--accent-mint);">
+                    <div class="neo-badge">Stage 07</div>
+                    <h3 style="font-size:1.4rem;">Synthesis Engine</h3>
+                    <p>Adpod 3.1 Pro core processing.</p>
+                </div>
+                <!-- Step 8 -->
+                <div class="neo-card" style="background:var(--accent-yellow);">
+                    <div class="neo-badge">Stage 08</div>
+                    <h3 style="font-size:1.4rem;">Verified Truth</h3>
+                    <p>Final deterministic output & on-chain grounding.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Neural Index & Yelo -->
+        <section class="content-section" style="border-top: 3px solid var(--border-black);">
+            <div class="minimal-grid" style="grid-template-columns: 1fr 1fr; gap:4rem;">
+                
+                <!-- ANI Index -->
+                <div>
+                    <div class="neo-badge" style="background:var(--accent-mint); color:#000;">BRAND EQUITY</div>
+                    <h2 style="font-size:3rem; margin-bottom:1.5rem; letter-spacing:-1px;">Adpod Neural Index (ANI™)</h2>
+                    <p style="font-size:1.2rem; line-height:1.6; margin-bottom:2rem;">Measures what people <i>actually do</i> in real-time across the live web, rather than what they say in static surveys.</p>
+                    
+                    <div class="neo-card" style="background:var(--bg-cream);">
+                        <h4 style="margin-top:0; font-size:1.2rem; margin-bottom:1.5rem;">Key Driver Analysis:</h4>
+                        <ul style="list-style:none; padding:0; margin:0; font-weight:600; font-size:1.1rem; line-height:2;">
+                            <li><i class="fa-solid fa-bolt" style="color:var(--accent-pink); width:24px;"></i> Velocity of Emotion™</li>
+                            <li><i class="fa-solid fa-magnifying-glass" style="color:var(--accent-pink); width:24px;"></i> Search Intent</li>
+                            <li><i class="fa-solid fa-link" style="color:var(--accent-pink); width:24px;"></i> On-Chain Data</li>
+                            <li><i class="fa-solid fa-tower-broadcast" style="color:var(--accent-pink); width:24px;"></i> Media Authority</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Yelo Creative Index -->
+                <div>
+                    <div class="neo-badge" style="background:var(--accent-yellow); color:#000;">QUALITY GOVERNANCE</div>
+                    <h2 style="font-size:3rem; margin-bottom:1.5rem; letter-spacing:-1px;">yelo™ Creative Index</h2>
+                    <p style="font-size:1.2rem; line-height:1.6; margin-bottom:2rem;">A rigorous simulated focus group ensuring all creative strategy generated meets AAA standards before execution.</p>
+                    
+                    <div class="neo-card" style="background:var(--surface-white);">
+                        <div style="margin-bottom:1.5rem;">
+                            <span class="neo-badge" style="background:var(--text-black); color:white; margin-bottom:0.5rem;">TARGET SCORE: 8.0+</span>
+                            <p style="font-size:0.95rem; font-weight:600; margin-top:0.5rem;">Scores < 8.0 trigger a Mandatory Refinement Loop.</p>
+                        </div>
+                        <h4 style="margin-top:0; font-size:1.2rem; margin-bottom:1rem;">Simulated Focus Group:</h4>
+                        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                            <span style="background:var(--bg-cream); border:2px solid #000; padding:4px 12px; border-radius:4px; font-weight:700; font-size:0.9rem;">THE SKEPTIC</span>
+                            <span style="background:var(--accent-mint); border:2px solid #000; padding:4px 12px; border-radius:4px; font-weight:700; font-size:0.9rem;">TARGET USER</span>
+                            <span style="background:var(--accent-pink); border:2px solid #000; padding:4px 12px; border-radius:4px; font-weight:700; font-size:0.9rem;">TREND WATCHER</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- God Mode Integrations -->
+        <section class="content-section" style="border-top: 3px solid var(--border-black); background:var(--surface-white);">
+            <div class="section-header">
+                <div class="neo-badge">THE ENGINE ROOM</div>
+                <h2 class="section-title">Multi-Source Intelligence</h2>
+                <p style="font-size:1.3rem; max-width:800px; margin: 0 auto; line-height:1.6;">Aggregating 75+ data streams from social, news, Web3, and proprietary datasets into a unified truth layer via the Adpod Central Processing Unit.</p>
+            </div>
+            
+            <div class="neo-card" style="background:var(--bg-cream); margin-bottom: 2rem;">
+                <h3 style="font-size:1.5rem; margin-bottom:1rem;">Core AI Orchestration</h3>
+                <div class="logo-grid">
+                    <div class="logo-item">OPENAI</div>
+                    <div class="logo-item">CLAUDE</div>
+                    <div class="logo-item">GEMINI</div>
+                    <div class="logo-item">DEEPSEEK</div>
+                    <div class="logo-item">MISTRAL</div>
+                    <div class="logo-item">PERPLEXITY</div>
+                    <div class="logo-item">GROQ</div>
+                    <div class="logo-item">LLAMA</div>
+                </div>
+            </div>
+
+            <div class="minimal-grid">
+                <div class="neo-card" style="padding:1.5rem;">
+                    <h4 style="margin-top:0;">Social Ecosystem</h4>
+                    <div class="logo-grid" style="grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));">
+                        <div class="logo-item">X (TWITTER)</div>
+                        <div class="logo-item">DISCORD</div>
+                        <div class="logo-item">TIKTOK</div>
+                        <div class="logo-item">LINKEDIN</div>
+                        <div class="logo-item">REDDIT</div>
+                        <div class="logo-item">FARCASTER</div>
+                    </div>
+                </div>
+                <div class="neo-card" style="padding:1.5rem;">
+                    <h4 style="margin-top:0;">Global News & Traffic</h4>
+                    <div class="logo-grid" style="grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));">
+                        <div class="logo-item">BLOOMBERG</div>
+                        <div class="logo-item">WSJ</div>
+                        <div class="logo-item">FORBES</div>
+                        <div class="logo-item">SEMRUSH</div>
+                        <div class="logo-item">SIMILARWEB</div>
+                        <div class="logo-item">TRENDS</div>
+                    </div>
+                </div>
+                <div class="neo-card" style="padding:1.5rem;">
+                    <h4 style="margin-top:0;">Web3 Ecosystem</h4>
+                    <div class="logo-grid" style="grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));">
+                        <div class="logo-item">ARKHAM</div>
+                        <div class="logo-item">NANSEN</div>
+                        <div class="logo-item">DEXSCREENER</div>
+                        <div class="logo-item">CHAINLINK</div>
+                        <div class="logo-item">DUNE</div>
+                        <div class="logo-item">ETHERSCAN</div>
+                    </div>
+                </div>
+                <div class="neo-card" style="padding:1.5rem;">
+                    <h4 style="margin-top:0;">Custom Data Integration</h4>
+                    <div class="logo-grid" style="grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));">
+                        <div class="logo-item">SALESFORCE</div>
+                        <div class="logo-item">SNOWFLAKE</div>
+                        <div class="logo-item">REST API</div>
+                        <div class="logo-item">GRAPHQL</div>
+                        <div class="logo-item">POSTGRES</div>
+                        <div class="logo-item">JSON / CSV</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Engagement Model -->
+        <section class="content-section" style="border-top: 3px solid var(--border-black);">
+            <div class="section-header">
+                <h2 class="section-title">Deployment Infrastructure</h2>
+                <p style="font-size:1.3rem; max-width:800px; margin: 0 auto; line-height:1.6;">Deployment of your dedicated POD AI agent starts with a single node initialization.</p>
+            </div>
+            
+            <div class="minimal-grid">
+                <div class="neo-card">
+                    <div class="icon-box" style="background:var(--accent-yellow);">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3 style="font-size:1.5rem;">Virtual GPU Clusters</h3>
+                    <p>Dedicated compute clusters provisioned for high-velocity processing (100x conventional strategic speed).</p>
+                </div>
+                <div class="neo-card">
+                    <div class="icon-box" style="background:var(--accent-mint);">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 style="font-size:1.5rem;">LORAS Training</h3>
+                    <p>Brand-specific intelligence layers (Low-Rank Adaptation) trained securely on your proprietary enterprise data.</p>
+                </div>
+                <div class="neo-card">
+                    <div class="icon-box" style="background:var(--accent-pink);">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+                    <h3 style="font-size:1.5rem;">Autonomous Sequences</h3>
+                    <p>Proprietary AI workflows designed for seamless API integration and complex execution chains inside your existing stack.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section style="padding: 10rem 2rem; text-align: center; border-top: 3px solid var(--border-black); background: var(--accent-pink);">
+            <div class="neo-badge" style="background:var(--text-black); color:#fff;">SYSTEM ONLINE</div>
+            <h2 class="section-title" style="font-size: 5rem; margin-bottom: 1.5rem; max-width:900px; margin-left:auto; margin-right:auto; line-height:1.05;">Stop guessing.<br>Start <span class="highlight-yellow">knowing.</span></h2>
+            
+            <p style="font-size:1.5rem; margin-bottom:3rem; font-weight:600;">Initialize your dedicated enterprise POD today.</p>
+
+            <a href="mailto:contact@mikedezilva.com" class="btn-primary" style="padding: 1.5rem 4rem; font-size:1.3rem; background: var(--surface-white);">Deploy Node <i class="fa-solid fa-arrow-right"></i></a>
+        </section>
+
+    </main>
+
+    <footer style="text-align: center; padding: 4rem 2rem; border-top: 3px solid var(--border-black); font-size: 1rem; background: var(--bg-cream); font-weight:600;">
+        <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom: 1rem;">
+            <svg width="40" height="40" viewBox="0 0 100 100" fill="var(--accent-pink)" stroke="var(--text-black)" stroke-width="6" stroke-linejoin="round">
+                <path d="M50 5 L60 40 L95 50 L60 60 L50 95 L40 60 L5 50 L40 40 Z" />
+            </svg>
+            <div style="font-family: var(--font-headline); font-size:2.2rem; font-weight:800; color:var(--text-black);">Adpod</div>
+        </div>
+        <p>© 2026 Adpod Intelligence Suite™. Enterprise Division.</p>
+    </footer>
+
+</body>
+</html>
