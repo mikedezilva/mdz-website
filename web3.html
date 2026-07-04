@@ -9,29 +9,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-        /* Modern Charcoal + Lime System */
+        /* Gumroad Neobrutalist System + Adpod Fonts */
         :root {
-            --bg-charcoal: #0A0F0D;
-            --surface-card: #111814;
-            --border-dark: #1F2A23;
-            --accent-lime: #A3E635;
-            --accent-lime-hover: #84CC16;
-            --accent-mint: #34D399;
-            --urgency-amber: #F59E0B;
-            --text-primary: #E6E8E6;
-            --text-secondary: #9CA3AF;
+            --bg-cream: #F4F4F0;
+            --surface-white: #FFFFFF;
+            --border-black: #000000;
+            --accent-pink: #FF90E8;
+            --accent-yellow: #FFC900;
+            --accent-mint: #90A8ED;
+            --accent-orange: #FF5E00;
+            --text-black: #000000;
+            --text-dark-gray: #333333;
             
             --font-headline: 'Space Grotesk', sans-serif;
             --font-body: 'Inter', sans-serif;
             --font-accent: 'JetBrains Mono', monospace;
+
+            --box-shadow: 4px 4px 0px #000000;
+            --box-shadow-hover: 2px 2px 0px #000000;
         }
 
         body {
-            background-color: var(--bg-charcoal);
-            color: var(--text-primary);
+            background-color: var(--bg-cream);
+            color: var(--text-black);
             font-family: var(--font-body);
             margin: 0;
             padding: 0;
@@ -40,27 +43,24 @@
 
         h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
             font-family: var(--font-headline);
-            color: var(--text-primary);
+            color: var(--text-black);
+            font-weight: 800;
         }
 
         .accent-data {
             font-family: var(--font-accent);
+            font-weight: 700;
         }
-
-        .text-lime { color: var(--accent-lime); }
-        .text-mint { color: var(--accent-mint); }
-        .text-amber { color: var(--urgency-amber); }
 
         /* Minimal Header */
         .site-header {
-            background: rgba(10, 15, 13, 0.9);
-            backdrop-filter: blur(15px);
+            background: var(--bg-cream);
             padding: 1.5rem 4rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid var(--border-dark);
+            border-bottom: 3px solid var(--border-black);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -69,92 +69,108 @@
 
         .header-link {
             text-decoration: none;
-            color: var(--text-primary);
-            font-size: 0.8rem;
+            color: var(--text-black);
+            font-size: 0.9rem;
             letter-spacing: 1px;
             display: flex;
             align-items: center;
             gap: 8px;
-            font-weight: 500;
+            font-weight: 700;
         }
 
-        /* Minimalist Hero */
+        /* Hero Section */
         .adpod-hero-section {
-            padding: 16rem 2rem 10rem;
+            padding: 14rem 2rem 8rem;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: var(--bg-charcoal);
+            background: var(--bg-cream);
+            position: relative;
+            border-bottom: 3px solid var(--border-black);
         }
 
         .hero-content-wrapper {
-            max-width: 1000px;
+            max-width: 900px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .hero-title {
-            font-size: 4.5rem;
-            font-weight: 700;
-            line-height: 1.1;
+            font-size: 5rem;
+            line-height: 1.05;
             margin-bottom: 1.5rem;
-            letter-spacing: -1.5px;
+            letter-spacing: -2px;
+        }
+
+        .highlight-mint {
+            background-color: var(--accent-mint);
+            padding: 0 10px;
+            border: 3px solid var(--border-black);
+            border-radius: 8px;
+            display: inline-block;
+            transform: rotate(-2deg);
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             line-height: 1.6;
-            color: var(--text-secondary);
+            color: var(--text-dark-gray);
             margin-bottom: 2rem;
-            font-weight: 400;
-            max-width: 800px;
+            font-weight: 500;
+            max-width: 750px;
         }
         
         .cta-group {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             margin-bottom: 3rem;
         }
 
         .btn-primary {
-            background-color: var(--accent-lime);
-            color: var(--bg-charcoal);
+            background-color: var(--accent-yellow);
+            color: var(--text-black);
             padding: 16px 36px;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 600;
+            border-radius: 8px;
+            border: 3px solid var(--border-black);
+            box-shadow: var(--box-shadow);
+            font-size: 1.1rem;
+            font-family: var(--font-headline);
+            font-weight: 800;
             text-decoration: none;
-            transition: all 0.2s ease;
+            text-transform: uppercase;
+            transition: all 0.1s ease-in-out;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            border: none;
+            gap: 10px;
         }
 
-        .btn-primary:hover {
-            background-color: var(--accent-lime-hover);
-            box-shadow: 0 0 15px rgba(163, 230, 53, 0.3);
+        .btn-primary:active, .btn-primary:hover {
+            transform: translate(2px, 2px);
+            box-shadow: var(--box-shadow-hover);
         }
-        
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-primary);
-            padding: 16px 36px;
-            border-radius: 12px;
+
+        /* Social Proof Bar */
+        .social-proof-bar {
+            background-color: var(--accent-pink);
+            border-bottom: 3px solid var(--border-black);
+            padding: 2rem;
+            text-align: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-proof-text {
+            font-family: var(--font-accent);
+            font-weight: 700;
             font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            display: inline-block;
-            border: 1px solid var(--accent-lime);
-        }
-        
-        .btn-outline:hover {
-            background-color: rgba(163, 230, 53, 0.05);
+            text-transform: uppercase;
         }
 
         /* Generic Section Styling */
@@ -170,73 +186,110 @@
         }
 
         .section-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
-
-        .section-desc {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            line-height: 1.6;
-            max-width: 650px;
-            margin: 0 auto;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
         }
 
         /* Minimal Grid */
         .minimal-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
-        .minimal-card {
-            background: var(--surface-card);
-            border: 1px solid var(--border-dark);
+        .neo-card {
+            background: var(--surface-white);
+            border: 3px solid var(--border-black);
+            box-shadow: var(--box-shadow);
             padding: 2.5rem;
             border-radius: 12px;
             text-align: left;
-            transition: border-color 0.2s ease;
+            transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
         }
 
-        .minimal-card:hover {
-            border-color: rgba(163, 230, 53, 0.5);
+        .neo-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #000000;
         }
 
         .icon-box {
-            width: 48px;
-            height: 48px;
+            width: 56px;
+            height: 56px;
             border-radius: 8px;
+            border: 3px solid var(--border-black);
+            box-shadow: 2px 2px 0 #000;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
-            background: rgba(163, 230, 53, 0.05);
-            border: 1px solid rgba(163, 230, 53, 0.2);
+            background: var(--accent-pink);
         }
         
         .icon-box i {
-            color: var(--accent-lime);
-            font-size: 1.2rem;
+            color: var(--text-black);
+            font-size: 1.5rem;
         }
 
-        .minimal-card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
+        .neo-card h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
-        .minimal-card p {
-            font-size: 1rem;
-            color: var(--text-secondary);
+        .neo-card p {
+            font-size: 1.05rem;
+            color: var(--text-dark-gray);
             line-height: 1.6;
             margin: 0;
         }
 
+        /* Evolution Grid & Lists */
+        .evo-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .evo-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 1.2rem;
+            color: var(--text-black);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .evo-list i.fa-xmark { color: red; margin-top: 4px; font-size: 1.2rem; }
+        .evo-list i.fa-check { color: var(--text-black); margin-top: 4px; font-size: 1.2rem; }
+        .evo-list i.fa-arrow-right { color: var(--text-black); margin-top: 4px; }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--surface-white);
+            border: 3px solid var(--border-black);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--box-shadow);
+        }
+        .faq-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        /* Testimonial Section */
+        .testimonial-card {
+            background: var(--accent-mint);
+            border: 3px solid var(--border-black);
+            box-shadow: var(--box-shadow);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
-            .section-title { font-size: 2.2rem; }
+            .hero-title { font-size: 3rem; }
+            .section-title { font-size: 2.5rem; }
             .cta-group { flex-direction: column; }
             .site-header { padding: 1rem 1.5rem !important; }
             .back-text { display: none; }
@@ -250,11 +303,11 @@
         <a href="adpod.html" class="header-link">
             <i class="fa-solid fa-arrow-left"></i> <span class="back-text">BACK TO ADPOD</span>
         </a>
-        <div style="font-family: var(--font-headline); font-size:1.25rem; font-weight:700; letter-spacing: -0.5px;">
+        <div style="font-family: var(--font-headline); font-size:1.5rem; font-weight:800; letter-spacing: -1px;">
             Adpod
         </div>
         <div style="display: flex; gap: 10px;">
-            <a href="web3.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; border: 1px solid transparent; color: var(--accent-mint);">Web3</a>
+            <a href="web3.html" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 6px; background:var(--accent-mint);">Web3</a>
         </div>
     </header>
 
@@ -262,92 +315,152 @@
         <!-- Hero Section -->
         <section class="adpod-hero-section">
             <div class="hero-content-wrapper">
-                <div class="accent-data" style="display:inline-block; padding:8px 16px; background:rgba(163, 230, 53, 0.1); border:1px solid rgba(163, 230, 53, 0.3); border-radius:6px; font-size:0.8rem; font-weight:700; letter-spacing:1px; color:var(--accent-lime); margin-bottom:1.5rem;"><i class="fa-brands fa-ethereum" style="margin-right:8px;"></i> NATIVE CRYPTO INTELLIGENCE</div>
+                <div class="accent-data" style="display:inline-block; padding:8px 16px; background:var(--accent-mint); border:3px solid var(--border-black); box-shadow: 2px 2px 0 #000; border-radius:6px; font-size:0.8rem; letter-spacing:1px; margin-bottom:1.5rem;"><i class="fa-brands fa-ethereum" style="margin-right:8px;"></i> NATIVE CRYPTO INTELLIGENCE</div>
                 
-                <h1 class="hero-title">Web3 Marketing Strategy, Built for <span class="text-lime">Fast-Moving Crypto Markets</span></h1>
+                <h1 class="hero-title">Web3 Marketing Strategy, Built for <span class="highlight-mint">Fast-Moving</span> Crypto Markets</h1>
                 
                 <p class="hero-subtitle">
                     Adpod helps Web3 teams understand their audience, competitors, and positioning — and build growth strategies for token launches, communities, and on-chain user acquisition.
                 </p>
                 
                 <div class="cta-group">
-                    <a href="mailto:contact@mikedezilva.com" class="btn-primary">Build My Web3 Growth Strategy <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="mailto:contact@mikedezilva.com" class="btn-primary">Build My Web3 Strategy <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
 
+        <!-- Social Proof (NEW) -->
+        <div class="social-proof-bar">
+            <div class="social-proof-text">Trusted by Web3 founders and on-chain growth leads</div>
+            <div style="display:flex; gap:2rem; font-size:2rem; opacity:0.8;">
+                <i class="fa-brands fa-ethereum"></i>
+                <i class="fa-brands fa-bitcoin"></i>
+                <i class="fa-brands fa-discord"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        </div>
+
         <!-- Problem Section -->
-        <section class="content-section" style="border-top: 1px solid var(--border-dark);">
+        <section class="content-section">
             <div class="section-header">
-                <h2 class="section-title">Web3 moves too fast for <span class="text-amber">traditional agencies.</span></h2>
+                <h2 class="section-title">Web3 moves too fast for traditional agencies.</h2>
             </div>
             
-            <div class="minimal-grid" style="max-width: 600px; margin: 0 auto; text-align:center;">
-                <div class="minimal-card" style="display:flex; flex-direction:column; align-items:center;">
-                    <div style="font-size:2rem; margin-bottom:1rem; opacity:0.8;">⏳</div>
-                    <p style="font-size:1.2rem; color:var(--text-primary); text-align:center; font-weight:600; line-height:1.6;">Strategies become outdated in days, not months.</p>
-                    <p style="color:var(--text-secondary); text-align:center; margin-top:1rem;">You cannot wait 4 weeks for a strategy deck when narrative cycles shift in 4 hours.</p>
+            <div class="minimal-grid" style="max-width: 650px; margin: 0 auto; text-align:center;">
+                <div class="neo-card" style="display:flex; flex-direction:column; align-items:center;">
+                    <div style="font-size:2.5rem; margin-bottom:1rem;">⏳</div>
+                    <p style="font-size:1.3rem; color:var(--text-black); text-align:center; font-weight:800; line-height:1.6;">Strategies become outdated in days, not months.</p>
+                    <div style="margin-top:2.5rem; padding:1.25rem; background:var(--accent-yellow); border-radius:8px; border:3px solid var(--border-black); box-shadow: 2px 2px 0 #000;">
+                        <p style="color:var(--text-black); text-align:center; margin:0; font-weight:600;">You cannot wait 4 weeks for a strategy deck when narrative cycles shift in 4 hours.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Solution & Features -->
-        <section class="content-section" style="border-top: 1px solid var(--border-dark);">
+        <section class="content-section" style="border-top: 3px solid var(--border-black); background: var(--surface-white);">
             <div class="section-header">
-                <h2 class="section-title">Adpod gives <span class="text-lime">Web3 teams:</span></h2>
+                <h2 class="section-title">Adpod gives <span style="background:var(--accent-yellow); padding:0 8px; border:3px solid #000; display:inline-block; transform:rotate(-1deg);">Web3 teams:</span></h2>
             </div>
             
             <div class="minimal-grid">
-                <div class="minimal-card">
-                    <div class="icon-box">
+                <div class="neo-card">
+                    <div class="icon-box" style="background:var(--accent-pink);">
                         <i class="fa-solid fa-wallet"></i>
                     </div>
                     <h3>Wallet-based audience targeting</h3>
                     <p>Track on-chain behaviors and find users based on what they hold, not just what they search.</p>
                 </div>
                 
-                <div class="minimal-card">
-                    <div class="icon-box">
+                <div class="neo-card">
+                    <div class="icon-box" style="background:var(--accent-mint);">
                         <i class="fa-solid fa-eye"></i>
                     </div>
                     <h3>Competitor tracking</h3>
                     <p>Monitor rival protocols, TVL shifts, and narrative momentum in real-time.</p>
                 </div>
                 
-                <div class="minimal-card">
-                    <div class="icon-box">
+                <div class="neo-card">
+                    <div class="icon-box" style="background:var(--accent-yellow);">
                         <i class="fa-solid fa-rocket"></i>
                     </div>
                     <h3>Token launch positioning</h3>
                     <p>Craft the perfect narrative and go-to-market strategy for TGEs and airdrops.</p>
                 </div>
 
-                <div class="minimal-card">
-                    <div class="icon-box">
+                <div class="neo-card">
+                    <div class="icon-box" style="background:#fff;">
                         <i class="fa-brands fa-discord"></i>
                     </div>
                     <h3>Community growth strategy</h3>
                     <p>Grow loyal communities across Discord, X, and Farcaster with data-backed content.</p>
                 </div>
+            </div>
+        </section>
 
-                <div class="minimal-card" style="grid-column: span auto;">
-                    <div class="icon-box">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-                    <h3>On-chain marketing insights</h3>
-                    <p>Correlate marketing spend directly with on-chain interactions and TVL growth.</p>
-                </div>
+        <!-- Testimonials (NEW) -->
+        <section class="content-section" style="border-top: 3px solid var(--border-black);">
+            <div class="section-header">
+                <h2 class="section-title">Wall of Love</h2>
+                <p class="section-desc">See what founders are saying about replacing their agencies.</p>
             </div>
             
-            <div style="text-align:center; margin-top: 5rem;">
-                <a href="mailto:contact@mikedezilva.com" class="btn-primary">Build My Web3 Growth Strategy <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="minimal-grid">
+                <div class="testimonial-card">
+                    <div style="display:flex; gap: 4px; color:var(--text-black); margin-bottom:1rem; font-size:1.2rem;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-size:1.2rem; font-weight:600; margin-bottom:1.5rem; line-height:1.5;">"We fired our $5k/mo agency and used Adpod to build our Q3 strategy in 10 minutes. The clarity is unmatched."</p>
+                    <div style="font-weight:700; font-family:var(--font-headline);">Sarah J.</div>
+                    <div style="font-size:0.9rem; font-family:var(--font-accent);">SaaS Founder</div>
+                </div>
+                <div class="testimonial-card" style="background:var(--accent-pink);">
+                    <div style="display:flex; gap: 4px; color:var(--text-black); margin-bottom:1rem; font-size:1.2rem;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-size:1.2rem; font-weight:600; margin-bottom:1.5rem; line-height:1.5;">"It literally does the exact same research a junior strategist takes 3 weeks to do, but instantly."</p>
+                    <div style="font-weight:700; font-family:var(--font-headline);">Mark T.</div>
+                    <div style="font-size:0.9rem; font-family:var(--font-accent);">Growth Lead</div>
+                </div>
             </div>
+        </section>
+
+        <!-- FAQ Section (NEW) -->
+        <section class="content-section" style="border-top: 3px solid var(--border-black); background: var(--surface-white);">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            
+            <div style="max-width:800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <h4>How is this different from ChatGPT?</h4>
+                    <p>ChatGPT is a blank canvas. Adpod is a structured marketing intelligence system that automatically runs specific competitor and audience research workflows to output a ready-to-execute strategy.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do I need marketing experience?</h4>
+                    <p>No. Adpod is designed for founders and operators who don't want to learn marketing jargon. It tells you exactly who to target and what to say.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can I cancel anytime?</h4>
+                    <p>Yes. There are no contracts or long-term retainers like a traditional agency. Pause or cancel whenever you want.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section id="deploy" style="padding: 10rem 2rem; text-align: center; border-top: 3px solid var(--border-black); background: var(--accent-yellow);">
+            <h2 class="section-title" style="font-size: 4.5rem; margin-bottom: 1.5rem; max-width:900px; margin-left:auto; margin-right:auto; line-height:1.05;">Stop paying for <br><span class="highlight-mint">guesswork</span></h2>
+            
+            <p style="font-size:1.4rem; margin-bottom:1rem; font-weight:600;">Most businesses don’t need more meetings or retainers.</p>
+            <p style="font-size:1.4rem; margin-bottom:3rem; font-weight:800;">They need clarity.</p>
+
+            <a href="mailto:contact@mikedezilva.com" class="btn-primary" style="padding: 1.5rem 4rem; font-size:1.3rem; background: var(--surface-white);">Start Now — $50/month <i class="fa-solid fa-arrow-right"></i></a>
         </section>
 
     </main>
 
-    <footer style="text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border-dark); color: var(--text-secondary); font-size: 0.9rem;">
-        <div style="font-family: var(--font-headline); font-size:1.5rem; font-weight:700; margin-bottom: 1rem; color:var(--text-primary);">Adpod</div>
+    <footer style="text-align: center; padding: 4rem 2rem; border-top: 3px solid var(--border-black); font-size: 1rem; background: var(--bg-cream); font-weight:600;">
+        <div style="font-family: var(--font-headline); font-size:2rem; font-weight:800; margin-bottom: 1rem; color:var(--text-black);">Adpod</div>
         <p>© 2026 Adpod Intelligence Suite™. Built by Mike De Zilva.</p>
     </footer>
 
