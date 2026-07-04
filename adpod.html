@@ -12,17 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-        /* Gumroad Neobrutalist System + Adpod Fonts */
+        /* Editorial Brutalism System */
         :root {
-            --bg-cream: #F4F4F0;
-            --surface-white: #FFFFFF;
-            --border-black: #000000;
-            --accent-pink: #FF90E8;
-            --accent-yellow: #FFC900;
-            --accent-mint: #90A8ED;
-            --accent-orange: #FF5E00;
-            --text-black: #000000;
-            --text-dark-gray: #333333;
+            --bg-primary: #FFFFFF;
+            --border-color: #000000;
+            --text-color: #000000;
+            --accent-color: #FF4500; /* Electric Orange */
+            --accent-hover: #E03E00;
+            --surface-muted: #F9FAFB;
             
             --font-headline: 'Space Grotesk', sans-serif;
             --font-body: 'Inter', sans-serif;
@@ -33,8 +30,8 @@
         }
 
         body {
-            background-color: var(--bg-cream);
-            color: var(--text-black);
+            background-color: var(--bg-primary);
+            color: var(--text-color);
             font-family: var(--font-body);
             margin: 0;
             padding: 0;
@@ -43,7 +40,7 @@
 
         h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
             font-family: var(--font-headline);
-            color: var(--text-black);
+            color: var(--text-color);
             font-weight: 800;
         }
 
@@ -54,13 +51,13 @@
 
         /* Minimal Header */
         .site-header {
-            background: var(--bg-cream);
+            background: var(--bg-primary);
             padding: 1.5rem 4rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            border-bottom: 3px solid var(--border-black);
+            border-bottom: 2px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -69,7 +66,7 @@
 
         .header-link {
             text-decoration: none;
-            color: var(--text-black);
+            color: var(--text-color);
             font-size: 0.9rem;
             letter-spacing: 1px;
             display: flex;
@@ -86,9 +83,9 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: var(--bg-cream);
+            background: var(--bg-primary);
             position: relative;
-            border-bottom: 3px solid var(--border-black);
+            border-bottom: 2px solid var(--border-color);
         }
 
         .hero-content-wrapper {
@@ -105,19 +102,20 @@
             letter-spacing: -2px;
         }
 
-        .highlight-pink {
-            background-color: var(--accent-pink);
-            padding: 0 10px;
-            border: 3px solid var(--border-black);
-            border-radius: 8px;
+        .highlight-accent {
+            background-color: var(--accent-color);
+            color: #FFFFFF;
+            padding: 0 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
             display: inline-block;
-            transform: rotate(-2deg);
+            transform: rotate(-1deg);
         }
 
         .hero-subtitle {
             font-size: 1.3rem;
             line-height: 1.6;
-            color: var(--text-dark-gray);
+            color: var(--text-color);
             margin-bottom: 2rem;
             font-weight: 500;
             max-width: 750px;
@@ -131,11 +129,11 @@
         }
 
         .btn-primary {
-            background-color: var(--accent-pink);
-            color: var(--text-black);
+            background-color: var(--accent-color);
+            color: #FFFFFF;
             padding: 16px 36px;
-            border-radius: 8px;
-            border: 3px solid var(--border-black);
+            border-radius: 4px;
+            border: 2px solid var(--border-color);
             box-shadow: var(--box-shadow);
             font-size: 1.1rem;
             font-family: var(--font-headline);
@@ -151,14 +149,15 @@
         .btn-primary:active, .btn-primary:hover {
             transform: translate(2px, 2px);
             box-shadow: var(--box-shadow-hover);
+            background-color: var(--accent-hover);
         }
         
         .btn-outline {
-            background-color: var(--surface-white);
-            color: var(--text-black);
+            background-color: var(--bg-primary);
+            color: var(--text-color);
             padding: 16px 36px;
-            border-radius: 8px;
-            border: 3px solid var(--border-black);
+            border-radius: 4px;
+            border: 2px solid var(--border-color);
             box-shadow: var(--box-shadow);
             font-size: 1.1rem;
             font-family: var(--font-headline);
@@ -172,13 +171,13 @@
         .btn-outline:active, .btn-outline:hover {
             transform: translate(2px, 2px);
             box-shadow: var(--box-shadow-hover);
-            background-color: var(--accent-yellow);
+            background-color: var(--surface-muted);
         }
 
         /* Social Proof Bar */
         .social-proof-bar {
-            background-color: var(--accent-yellow);
-            border-bottom: 3px solid var(--border-black);
+            background-color: var(--surface-muted);
+            border-bottom: 2px solid var(--border-color);
             padding: 2rem;
             text-align: center;
             overflow: hidden;
@@ -191,8 +190,10 @@
         .social-proof-text {
             font-family: var(--font-accent);
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-color);
         }
 
         /* Generic Section Styling */
@@ -221,11 +222,11 @@
         }
 
         .neo-card {
-            background: var(--surface-white);
-            border: 3px solid var(--border-black);
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
             box-shadow: var(--box-shadow);
             padding: 2.5rem;
-            border-radius: 12px;
+            border-radius: 4px;
             text-align: left;
             transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
         }
@@ -238,18 +239,18 @@
         .icon-box {
             width: 56px;
             height: 56px;
-            border-radius: 8px;
-            border: 3px solid var(--border-black);
+            border-radius: 4px;
+            border: 2px solid var(--border-color);
             box-shadow: 2px 2px 0 #000;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
-            background: var(--accent-mint);
+            background: var(--bg-primary);
         }
         
         .icon-box i {
-            color: var(--text-black);
+            color: var(--accent-color);
             font-size: 1.5rem;
         }
 
@@ -260,9 +261,10 @@
 
         .neo-card p {
             font-size: 1.05rem;
-            color: var(--text-dark-gray);
+            color: var(--text-color);
             line-height: 1.6;
             margin: 0;
+            opacity: 0.8;
         }
 
         /* Evolution Grid & Lists */
@@ -276,19 +278,19 @@
             align-items: flex-start;
             gap: 12px;
             margin-bottom: 1.2rem;
-            color: var(--text-black);
+            color: var(--text-color);
             font-size: 1.1rem;
             font-weight: 500;
         }
-        .evo-list i.fa-xmark { color: red; margin-top: 4px; font-size: 1.2rem; }
-        .evo-list i.fa-check { color: var(--text-black); margin-top: 4px; font-size: 1.2rem; }
-        .evo-list i.fa-arrow-right { color: var(--text-black); margin-top: 4px; }
+        .evo-list i.fa-xmark { color: var(--accent-color); margin-top: 4px; font-size: 1.2rem; }
+        .evo-list i.fa-check { color: var(--accent-color); margin-top: 4px; font-size: 1.2rem; }
+        .evo-list i.fa-arrow-right { color: var(--accent-color); margin-top: 4px; }
 
         /* FAQ Section */
         .faq-item {
-            background: var(--surface-white);
-            border: 3px solid var(--border-black);
-            border-radius: 8px;
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
             box-shadow: var(--box-shadow);
@@ -298,14 +300,18 @@
             margin-bottom: 0.5rem;
             margin-top: 0;
         }
+        .faq-item p {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
 
         /* Testimonial Section */
         .testimonial-card {
-            background: var(--accent-yellow);
-            border: 3px solid var(--border-black);
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
             box-shadow: var(--box-shadow);
             padding: 2.5rem;
-            border-radius: 12px;
+            border-radius: 4px;
             margin-bottom: 2rem;
         }
 
@@ -329,8 +335,8 @@
             Adpod
         </div>
         <div style="display: flex; gap: 10px;">
-            <a href="web3.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 6px;">Web3</a>
-            <a href="#deploy" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 6px;">Get Started</a>
+            <a href="web3.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 4px;">Web3</a>
+            <a href="#deploy" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 4px;">Get Started</a>
         </div>
     </header>
 
@@ -338,12 +344,12 @@
         <!-- Hero Section -->
         <section class="adpod-hero-section">
             <div class="hero-content-wrapper">
-                <h1 class="hero-title">Replace Your <span class="highlight-pink">Agency</span> With AI</h1>
+                <h1 class="hero-title">Replace Your <span class="highlight-accent">Agency</span> With AI</h1>
                 
                 <p class="hero-subtitle">
                     Adpod helps you design your entire marketing strategy — from audience targeting to messaging, competitors, and media planning — without hiring expensive agencies or consultants.
                 </p>
-                <p style="color:var(--text-dark-gray); font-size:1.15rem; margin-bottom:2.5rem; max-width:600px; font-weight:600;">
+                <p style="color:var(--text-color); font-size:1.15rem; margin-bottom:2.5rem; max-width:600px; font-weight:600;">
                     Get a complete, structured marketing strategy in minutes using AI.
                 </p>
                 
@@ -354,10 +360,10 @@
             </div>
         </section>
 
-        <!-- Social Proof (NEW) -->
+        <!-- Social Proof -->
         <div class="social-proof-bar">
             <div class="social-proof-text">Trusted by forward-thinking founders and marketers worldwide</div>
-            <div style="display:flex; gap:2rem; font-size:2rem; opacity:0.8;">
+            <div style="display:flex; gap:2rem; font-size:2rem; color:var(--text-color);">
                 <i class="fa-brands fa-aws"></i>
                 <i class="fa-brands fa-stripe"></i>
                 <i class="fa-brands fa-hubspot"></i>
@@ -373,7 +379,7 @@
             </div>
             
             <div class="minimal-grid" style="max-width: 650px; margin: 0 auto;">
-                <div class="neo-card" style="background:var(--surface-white);">
+                <div class="neo-card">
                     <p style="font-size:1.2rem; margin-bottom: 1.5rem; font-weight:700;">Most businesses rely on agencies. This creates problems:</p>
                     <ul class="evo-list">
                         <li><i class="fa-solid fa-xmark"></i> High monthly retainers</li>
@@ -382,25 +388,25 @@
                         <li><i class="fa-solid fa-xmark"></i> Lack of real business understanding</li>
                         <li><i class="fa-solid fa-xmark"></i> No transparency in decision-making</li>
                     </ul>
-                    <div style="margin-top:2.5rem; padding:1.25rem; background:var(--accent-yellow); border-radius:8px; border:3px solid var(--border-black); box-shadow: 2px 2px 0 #000;">
-                        <p style="color:var(--text-black); margin:0; font-weight:800; font-size:1.1rem;">You’re not just paying for marketing — you’re paying for uncertainty.</p>
+                    <div style="margin-top:2.5rem; padding:1.25rem; background:var(--surface-muted); border-radius:4px; border:2px solid var(--border-color); box-shadow: 2px 2px 0 #000;">
+                        <p style="color:var(--text-color); margin:0; font-weight:800; font-size:1.1rem;">You’re not just paying for marketing — you’re paying for uncertainty.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Solution & Core Capabilities -->
-        <section class="content-section" style="border-top: 3px solid var(--border-black); background: var(--surface-white);">
+        <section class="content-section" style="border-top: 2px solid var(--border-color); background: var(--surface-muted);">
             <div class="section-header">
-                <h2 class="section-title">Adpod replaces your agency with <span style="background:var(--accent-mint); padding:0 8px; border:3px solid #000; display:inline-block; transform:rotate(1deg);">AI intelligence</span></h2>
-                <div style="margin-top:2rem; padding:1.5rem; display:inline-block; background:var(--bg-cream); border-radius:8px; border:3px solid var(--border-black); box-shadow: 4px 4px 0 #000;">
-                    <p style="color:var(--text-black); margin:0; font-weight:700; font-size:1.2rem;">Instead of waiting weeks for an agency, you get a complete, structured marketing plan in minutes.</p>
+                <h2 class="section-title">Adpod replaces your agency with <span style="background:var(--accent-color); color:#fff; padding:0 8px; border:2px solid #000; display:inline-block; transform:rotate(1deg); border-radius:4px;">AI intelligence</span></h2>
+                <div style="margin-top:2rem; padding:1.5rem; display:inline-block; background:var(--bg-primary); border-radius:4px; border:2px solid var(--border-color); box-shadow: 4px 4px 0 #000;">
+                    <p style="color:var(--text-color); margin:0; font-weight:700; font-size:1.2rem;">Instead of waiting weeks for an agency, you get a complete, structured marketing plan in minutes.</p>
                 </div>
             </div>
             
             <div class="minimal-grid">
                 <div class="neo-card">
-                    <div class="icon-box" style="background:var(--accent-pink);">
+                    <div class="icon-box">
                         <i class="fa-solid fa-bullseye"></i>
                     </div>
                     <h3>Audience Targeting</h3>
@@ -408,7 +414,7 @@
                 </div>
                 
                 <div class="neo-card">
-                    <div class="icon-box" style="background:var(--accent-yellow);">
+                    <div class="icon-box">
                         <i class="fa-solid fa-brain"></i>
                     </div>
                     <h3>Competitor Analysis</h3>
@@ -416,7 +422,7 @@
                 </div>
                 
                 <div class="neo-card">
-                    <div class="icon-box" style="background:var(--accent-mint);">
+                    <div class="icon-box">
                         <i class="fa-solid fa-comment-dots"></i>
                     </div>
                     <h3>Messaging Strategy</h3>
@@ -424,7 +430,7 @@
                 </div>
 
                 <div class="neo-card">
-                    <div class="icon-box" style="background:#fff;">
+                    <div class="icon-box">
                         <i class="fa-solid fa-map-location-dot"></i>
                     </div>
                     <h3>Media Planning</h3>
@@ -434,37 +440,37 @@
         </section>
 
         <!-- How it works -->
-        <section id="how" class="content-section" style="border-top: 3px solid var(--border-black);">
+        <section id="how" class="content-section" style="border-top: 2px solid var(--border-color);">
             <div class="section-header">
                 <h2 class="section-title">Build your marketing strategy in 3 steps</h2>
             </div>
             
             <div class="minimal-grid">
                 <div class="neo-card">
-                    <div class="accent-data" style="display:inline-block; background:var(--text-black); color:#fff; padding:4px 12px; margin-bottom:1rem; border-radius:4px;">STEP 1</div>
+                    <div class="accent-data" style="display:inline-block; background:var(--text-color); color:#fff; padding:4px 12px; margin-bottom:1rem; border-radius:4px;">STEP 1</div>
                     <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">Enter your business</h3>
                     <p>Tell Adpod what you’re selling.</p>
                 </div>
                 <div class="neo-card">
-                    <div class="accent-data" style="display:inline-block; background:var(--text-black); color:#fff; padding:4px 12px; margin-bottom:1rem; border-radius:4px;">STEP 2</div>
+                    <div class="accent-data" style="display:inline-block; background:var(--text-color); color:#fff; padding:4px 12px; margin-bottom:1rem; border-radius:4px;">STEP 2</div>
                     <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">AI analyzes your market</h3>
                     <p>We study your audience, competitors, and category.</p>
                 </div>
-                <div class="neo-card" style="background:var(--accent-pink);">
-                    <div class="accent-data" style="display:inline-block; background:var(--text-black); color:#fff; padding:4px 12px; margin-bottom:1rem; border-radius:4px;">STEP 3</div>
+                <div class="neo-card" style="border-color:var(--accent-color);">
+                    <div class="accent-data" style="display:inline-block; background:var(--accent-color); color:#fff; padding:4px 12px; margin-bottom:1rem; border-radius:4px;">STEP 3</div>
                     <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">Get your strategy instantly</h3>
-                    <p style="color:#000;">Receive a full marketing plan ready to execute.</p>
+                    <p>Receive a full marketing plan ready to execute.</p>
                 </div>
             </div>
         </section>
 
         <!-- What You Get -->
-        <section class="content-section" style="border-top: 3px solid var(--border-black); background: var(--surface-white);">
+        <section class="content-section" style="border-top: 2px solid var(--border-color); background: var(--surface-muted);">
             <div class="section-header">
                 <h2 class="section-title">What you get with Adpod</h2>
             </div>
             
-            <div class="neo-card" style="max-width:800px; margin: 0 auto; display:flex; justify-content:center; padding: 4rem; background: var(--bg-cream);">
+            <div class="neo-card" style="max-width:800px; margin: 0 auto; display:flex; justify-content:center; padding: 4rem;">
                 <ul class="evo-list" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:2rem; width:100%;">
                     <li><i class="fa-solid fa-check"></i> Full marketing strategy</li>
                     <li><i class="fa-solid fa-check"></i> Audience breakdown</li>
@@ -478,8 +484,8 @@
             </div>
         </section>
 
-        <!-- Testimonials (NEW) -->
-        <section class="content-section" style="border-top: 3px solid var(--border-black);">
+        <!-- Testimonials -->
+        <section class="content-section" style="border-top: 2px solid var(--border-color);">
             <div class="section-header">
                 <h2 class="section-title">Wall of Love</h2>
                 <p class="section-desc">See what founders are saying about replacing their agencies.</p>
@@ -487,34 +493,34 @@
             
             <div class="minimal-grid">
                 <div class="testimonial-card">
-                    <div style="display:flex; gap: 4px; color:var(--text-black); margin-bottom:1rem; font-size:1.2rem;">
+                    <div style="display:flex; gap: 4px; color:var(--accent-color); margin-bottom:1rem; font-size:1.2rem;">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p style="font-size:1.2rem; font-weight:600; margin-bottom:1.5rem; line-height:1.5;">"We fired our $5k/mo agency and used Adpod to build our Q3 strategy in 10 minutes. The clarity is unmatched."</p>
+                    <p style="font-size:1.2rem; font-weight:600; margin-bottom:1.5rem; line-height:1.5; color:var(--text-color); opacity:1;">"We fired our $5k/mo agency and used Adpod to build our Q3 strategy in 10 minutes. The clarity is unmatched."</p>
                     <div style="font-weight:700; font-family:var(--font-headline);">Sarah J.</div>
-                    <div style="font-size:0.9rem; font-family:var(--font-accent);">SaaS Founder</div>
+                    <div style="font-size:0.9rem; font-family:var(--font-accent); color:var(--accent-color);">SaaS Founder</div>
                 </div>
-                <div class="testimonial-card" style="background:var(--accent-mint);">
-                    <div style="display:flex; gap: 4px; color:var(--text-black); margin-bottom:1rem; font-size:1.2rem;">
+                <div class="testimonial-card">
+                    <div style="display:flex; gap: 4px; color:var(--accent-color); margin-bottom:1rem; font-size:1.2rem;">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p style="font-size:1.2rem; font-weight:600; margin-bottom:1.5rem; line-height:1.5;">"It literally does the exact same research a junior strategist takes 3 weeks to do, but instantly."</p>
+                    <p style="font-size:1.2rem; font-weight:600; margin-bottom:1.5rem; line-height:1.5; color:var(--text-color); opacity:1;">"It literally does the exact same research a junior strategist takes 3 weeks to do, but instantly."</p>
                     <div style="font-weight:700; font-family:var(--font-headline);">Mark T.</div>
-                    <div style="font-size:0.9rem; font-family:var(--font-accent);">Growth Lead</div>
+                    <div style="font-size:0.9rem; font-family:var(--font-accent); color:var(--accent-color);">Growth Lead</div>
                 </div>
             </div>
         </section>
 
         <!-- Pricing Section -->
-        <section class="content-section" style="border-top: 3px solid var(--border-black); background: var(--surface-white);">
+        <section class="content-section" style="border-top: 2px solid var(--border-color); background: var(--surface-muted);">
             <div class="section-header">
                 <h2 class="section-title">Simple pricing. No agency fees.</h2>
             </div>
             
             <div style="display:flex; justify-content:center;">
                 <!-- Pricing Card -->
-                <div class="neo-card" style="width: 100%; max-width: 450px; padding: 3.5rem; display: flex; flex-direction: column; position: relative; background: var(--bg-cream);">
-                    <div class="accent-data" style="position: absolute; top: -18px; left: 50%; transform: translateX(-50%); background: var(--accent-pink); padding: 8px 24px; border-radius: 6px; border: 3px solid var(--border-black); box-shadow: 2px 2px 0 #000; font-size: 1rem; font-weight: 800; color: #000; letter-spacing: 1px;">ADPOD PRO</div>
+                <div class="neo-card" style="width: 100%; max-width: 450px; padding: 3.5rem; display: flex; flex-direction: column; position: relative;">
+                    <div class="accent-data" style="position: absolute; top: -18px; left: 50%; transform: translateX(-50%); background: var(--bg-primary); padding: 8px 24px; border-radius: 4px; border: 2px solid var(--border-color); box-shadow: 2px 2px 0 #000; font-size: 1rem; font-weight: 800; color: #000; letter-spacing: 1px;">ADPOD PRO</div>
                     
                     <div class="accent-data" style="font-size: 5rem; font-weight: 800; color: #000; margin-bottom: 2rem; letter-spacing: -2px; text-align:center;">$50<span style="font-size: 1.5rem; font-weight: 600; letter-spacing: 0;">/mo</span></div>
                     
@@ -529,14 +535,14 @@
                     </ul>
                     
                     <div style="margin-top:auto;">
-                        <a href="#deploy" class="btn-primary" style="text-align: center; width: 100%; justify-content:center; padding: 1.25rem; background: var(--accent-yellow);">Start replacing your agency</a>
+                        <a href="#deploy" class="btn-primary" style="text-align: center; width: 100%; justify-content:center; padding: 1.25rem;">Start replacing your agency</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ Section (NEW) -->
-        <section class="content-section" style="border-top: 3px solid var(--border-black);">
+        <!-- FAQ Section -->
+        <section class="content-section" style="border-top: 2px solid var(--border-color);">
             <div class="section-header">
                 <h2 class="section-title">Frequently Asked Questions</h2>
             </div>
@@ -558,19 +564,19 @@
         </section>
 
         <!-- Final CTA -->
-        <section id="deploy" style="padding: 10rem 2rem; text-align: center; border-top: 3px solid var(--border-black); background: var(--accent-mint);">
-            <h2 class="section-title" style="font-size: 4.5rem; margin-bottom: 1.5rem; max-width:900px; margin-left:auto; margin-right:auto; line-height:1.05;">Stop paying for <br><span class="highlight-pink">guesswork</span></h2>
+        <section id="deploy" style="padding: 10rem 2rem; text-align: center; border-top: 2px solid var(--border-color); background: var(--bg-primary);">
+            <h2 class="section-title" style="font-size: 4.5rem; margin-bottom: 1.5rem; max-width:900px; margin-left:auto; margin-right:auto; line-height:1.05;">Stop paying for <br><span class="highlight-accent">guesswork</span></h2>
             
             <p style="font-size:1.4rem; margin-bottom:1rem; font-weight:600;">Most businesses don’t need more meetings or retainers.</p>
             <p style="font-size:1.4rem; margin-bottom:3rem; font-weight:800;">They need clarity.</p>
 
-            <a href="mailto:contact@mikedezilva.com" class="btn-primary" style="padding: 1.5rem 4rem; font-size:1.3rem; background: var(--surface-white);">Start Now — $50/month <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="mailto:contact@mikedezilva.com" class="btn-primary" style="padding: 1.5rem 4rem; font-size:1.3rem;">Start Now — $50/month <i class="fa-solid fa-arrow-right"></i></a>
         </section>
 
     </main>
 
-    <footer style="text-align: center; padding: 4rem 2rem; border-top: 3px solid var(--border-black); font-size: 1rem; background: var(--bg-cream); font-weight:600;">
-        <div style="font-family: var(--font-headline); font-size:2rem; font-weight:800; margin-bottom: 1rem; color:var(--text-black);">Adpod</div>
+    <footer style="text-align: center; padding: 4rem 2rem; border-top: 2px solid var(--border-color); font-size: 1rem; background: var(--surface-muted); font-weight:600;">
+        <div style="font-family: var(--font-headline); font-size:2rem; font-weight:800; margin-bottom: 1rem; color:var(--text-color);">Adpod</div>
         <p>© 2026 Adpod Intelligence Suite™. Built by Mike De Zilva.</p>
     </footer>
 
