@@ -317,6 +317,52 @@
             .cta-group { flex-direction: column; }
             .site-header { padding: 1rem 1.5rem !important; }
             .back-text { display: none; }
+            
+            .desktop-nav .btn-outline { display: none; }
+            .desktop-nav .btn-primary { display: none; }
+            .mobile-menu-btn { display: flex !important; }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            padding: 8px;
+            z-index: 101;
+        }
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--text-black);
+            border-radius: 2px;
+            transition: all 0.2s;
+        }
+        .desktop-nav {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .mobile-nav-overlay {
+            display: none;
+            position: fixed;
+            top: 73px; /* Header height approx */
+            left: 0;
+            right: 0;
+            background: var(--bg-cream);
+            border-bottom: 3px solid var(--border-black);
+            padding: 2rem;
+            flex-direction: column;
+            gap: 1rem;
+            box-shadow: 0 10px 0 rgba(0,0,0,1);
+            z-index: 99;
+        }
+        .mobile-nav-overlay.active {
+            display: flex;
         }
     </style>
 </head>
@@ -340,12 +386,24 @@
                 <line x1="40" y1="110" x2="80" y2="110" stroke="#FFF" stroke-width="4" stroke-linecap="round"/>
             </svg>
         </div>
-        <div style="display: flex; gap: 10px;">
+        <div class="desktop-nav">
             <a href="web3.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 6px;">Web3</a>
             <a href="enterprise.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 6px; background:var(--accent-mint);">Enterprise</a>
             <a href="#deploy" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 6px;">Get Started</a>
+            
+            <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Nav -->
+    <nav id="mobile-nav" class="mobile-nav-overlay">
+        <a href="web3.html" class="btn-outline" style="width:100%; text-align:center;">Web3</a>
+        <a href="enterprise.html" class="btn-outline" style="width:100%; text-align:center; background:var(--accent-mint);">Enterprise</a>
+        <a href="#deploy" class="btn-primary" style="width:100%; text-align:center;">Get Started</a>
+    </nav>
+
 
     <main>
         <!-- Hero Section -->
@@ -673,5 +731,17 @@
         </div>
     </footer>
 
+    <script>
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        if(menuToggle && mobileNav) {
+            menuToggle.addEventListener('click', () => {
+                mobileNav.classList.toggle('active');
+            });
+            mobileNav.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+            });
+        }
+    </script>
 </body>
 </html>
