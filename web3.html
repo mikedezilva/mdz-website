@@ -12,17 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-        /* High-Conversion Financial System Aesthetics */
+        /* Modern Charcoal + Lime System */
         :root {
-            --bg-navy: #0B1220;
-            --surface-card: #111827;
-            --border-dark: #1F2937;
-            --action-blue: #2F6BFF;
-            --action-blue-hover: #1e52d3;
-            --value-green: #22C55E;
+            --bg-charcoal: #0A0F0D;
+            --surface-card: #111814;
+            --border-dark: #1F2A23;
+            --accent-lime: #A3E635;
+            --accent-lime-hover: #84CC16;
+            --accent-mint: #34D399;
             --urgency-amber: #F59E0B;
-            --text-main: #F9FAFB;
-            --text-muted: #9CA3AF;
+            --text-primary: #E6E8E6;
+            --text-secondary: #9CA3AF;
             
             --font-headline: 'Space Grotesk', sans-serif;
             --font-body: 'Inter', sans-serif;
@@ -30,8 +30,8 @@
         }
 
         body {
-            background-color: var(--bg-navy);
-            color: var(--text-main);
+            background-color: var(--bg-charcoal);
+            color: var(--text-primary);
             font-family: var(--font-body);
             margin: 0;
             padding: 0;
@@ -40,21 +40,20 @@
 
         h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
             font-family: var(--font-headline);
-            color: var(--text-main);
+            color: var(--text-primary);
         }
 
         .accent-data {
             font-family: var(--font-accent);
         }
 
-        /* Strong Text Highlight Colors (Replacing Gradients) */
-        .text-blue { color: var(--action-blue); }
-        .text-green { color: var(--value-green); }
+        .text-lime { color: var(--accent-lime); }
+        .text-mint { color: var(--accent-mint); }
         .text-amber { color: var(--urgency-amber); }
 
         /* Minimal Header */
         .site-header {
-            background: rgba(11, 18, 32, 0.9);
+            background: rgba(10, 15, 13, 0.9);
             backdrop-filter: blur(15px);
             padding: 1.5rem 4rem;
             position: fixed;
@@ -70,7 +69,7 @@
 
         .header-link {
             text-decoration: none;
-            color: var(--text-main);
+            color: var(--text-primary);
             font-size: 0.8rem;
             letter-spacing: 1px;
             display: flex;
@@ -87,7 +86,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: var(--bg-navy);
+            background: var(--bg-charcoal);
         }
 
         .hero-content-wrapper {
@@ -108,7 +107,7 @@
         .hero-subtitle {
             font-size: 1.25rem;
             line-height: 1.6;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             margin-bottom: 2rem;
             font-weight: 400;
             max-width: 800px;
@@ -122,10 +121,10 @@
         }
 
         .btn-primary {
-            background-color: var(--action-blue);
-            color: #ffffff;
+            background-color: var(--accent-lime);
+            color: var(--bg-charcoal);
             padding: 16px 36px;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 1rem;
             font-weight: 600;
             text-decoration: none;
@@ -137,25 +136,25 @@
         }
 
         .btn-primary:hover {
-            background-color: var(--action-blue-hover);
+            background-color: var(--accent-lime-hover);
+            box-shadow: 0 0 15px rgba(163, 230, 53, 0.3);
         }
         
         .btn-outline {
             background-color: transparent;
-            color: var(--text-main);
+            color: var(--text-primary);
             padding: 16px 36px;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 1rem;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.2s ease;
             display: inline-block;
-            border: 1px solid var(--border-dark);
+            border: 1px solid var(--accent-lime);
         }
         
         .btn-outline:hover {
-            border-color: var(--text-muted);
-            background-color: var(--surface-card);
+            background-color: rgba(163, 230, 53, 0.05);
         }
 
         /* Generic Section Styling */
@@ -178,7 +177,7 @@
         }
 
         .section-desc {
-            color: var(--text-muted);
+            color: var(--text-secondary);
             font-size: 1.1rem;
             line-height: 1.6;
             max-width: 650px;
@@ -202,7 +201,7 @@
         }
 
         .minimal-card:hover {
-            border-color: var(--action-blue);
+            border-color: rgba(163, 230, 53, 0.5);
         }
 
         .icon-box {
@@ -213,12 +212,12 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
-            background: rgba(47, 107, 255, 0.1);
-            border: 1px solid rgba(47, 107, 255, 0.2);
+            background: rgba(163, 230, 53, 0.05);
+            border: 1px solid rgba(163, 230, 53, 0.2);
         }
         
         .icon-box i {
-            color: var(--action-blue);
+            color: var(--accent-lime);
             font-size: 1.2rem;
         }
 
@@ -230,7 +229,7 @@
 
         .minimal-card p {
             font-size: 1rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             line-height: 1.6;
             margin: 0;
         }
@@ -255,7 +254,7 @@
             Adpod
         </div>
         <div style="display: flex; gap: 10px;">
-            <a href="web3.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; border-color: rgba(47, 107, 255, 0.5); color: var(--action-blue);">Web3</a>
+            <a href="web3.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; border: 1px solid transparent; color: var(--accent-mint);">Web3</a>
         </div>
     </header>
 
@@ -263,9 +262,9 @@
         <!-- Hero Section -->
         <section class="adpod-hero-section">
             <div class="hero-content-wrapper">
-                <div class="accent-data" style="display:inline-block; padding:8px 16px; background:rgba(47, 107, 255, 0.1); border:1px solid rgba(47, 107, 255, 0.3); border-radius:6px; font-size:0.8rem; font-weight:700; letter-spacing:1px; color:var(--action-blue); margin-bottom:1.5rem;"><i class="fa-brands fa-ethereum" style="margin-right:8px;"></i> NATIVE CRYPTO INTELLIGENCE</div>
+                <div class="accent-data" style="display:inline-block; padding:8px 16px; background:rgba(163, 230, 53, 0.1); border:1px solid rgba(163, 230, 53, 0.3); border-radius:6px; font-size:0.8rem; font-weight:700; letter-spacing:1px; color:var(--accent-lime); margin-bottom:1.5rem;"><i class="fa-brands fa-ethereum" style="margin-right:8px;"></i> NATIVE CRYPTO INTELLIGENCE</div>
                 
-                <h1 class="hero-title">Web3 Marketing Strategy, Built for <span class="text-blue">Fast-Moving Crypto Markets</span></h1>
+                <h1 class="hero-title">Web3 Marketing Strategy, Built for <span class="text-lime">Fast-Moving Crypto Markets</span></h1>
                 
                 <p class="hero-subtitle">
                     Adpod helps Web3 teams understand their audience, competitors, and positioning — and build growth strategies for token launches, communities, and on-chain user acquisition.
@@ -286,8 +285,8 @@
             <div class="minimal-grid" style="max-width: 600px; margin: 0 auto; text-align:center;">
                 <div class="minimal-card" style="display:flex; flex-direction:column; align-items:center;">
                     <div style="font-size:2rem; margin-bottom:1rem; opacity:0.8;">⏳</div>
-                    <p style="font-size:1.2rem; color:var(--text-main); text-align:center; font-weight:600; line-height:1.6;">Strategies become outdated in days, not months.</p>
-                    <p style="color:var(--text-muted); text-align:center; margin-top:1rem;">You cannot wait 4 weeks for a strategy deck when narrative cycles shift in 4 hours.</p>
+                    <p style="font-size:1.2rem; color:var(--text-primary); text-align:center; font-weight:600; line-height:1.6;">Strategies become outdated in days, not months.</p>
+                    <p style="color:var(--text-secondary); text-align:center; margin-top:1rem;">You cannot wait 4 weeks for a strategy deck when narrative cycles shift in 4 hours.</p>
                 </div>
             </div>
         </section>
@@ -295,7 +294,7 @@
         <!-- Solution & Features -->
         <section class="content-section" style="border-top: 1px solid var(--border-dark);">
             <div class="section-header">
-                <h2 class="section-title">Adpod gives <span class="text-blue">Web3 teams:</span></h2>
+                <h2 class="section-title">Adpod gives <span class="text-lime">Web3 teams:</span></h2>
             </div>
             
             <div class="minimal-grid">
@@ -347,8 +346,8 @@
 
     </main>
 
-    <footer style="text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border-dark); color: var(--text-muted); font-size: 0.9rem;">
-        <div style="font-family: var(--font-headline); font-size:1.5rem; font-weight:700; margin-bottom: 1rem; color:var(--text-main);">Adpod</div>
+    <footer style="text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border-dark); color: var(--text-secondary); font-size: 0.9rem;">
+        <div style="font-family: var(--font-headline); font-size:1.5rem; font-weight:700; margin-bottom: 1rem; color:var(--text-primary);">Adpod</div>
         <p>© 2026 Adpod Intelligence Suite™. Built by Mike De Zilva.</p>
     </footer>
 
