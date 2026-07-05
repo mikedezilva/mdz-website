@@ -309,6 +309,85 @@
             .section-title { font-size: 2.5rem; }
             .site-header { padding: 1rem 1.5rem !important; }
             .back-text { display: none; }
+            
+            .desktop-nav .btn-outline { display: none; }
+            .desktop-nav .btn-primary { display: none; }
+            .mobile-menu-btn { display: flex !important; }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            padding: 8px;
+            z-index: 101;
+        }
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--text-black);
+            border-radius: 2px;
+            transition: all 0.2s;
+        }
+        .desktop-nav {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .mobile-nav-overlay {
+            display: none;
+            position: fixed;
+            top: 73px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-cream);
+            padding: 2rem;
+            flex-direction: column;
+            z-index: 99;
+            overflow-y: auto;
+        }
+        .mobile-nav-overlay.active {
+            display: flex;
+            animation: slideDown 0.3s ease-out forwards;
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .mobile-nav-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .mobile-link {
+            font-size: 2.2rem;
+            font-family: var(--font-headline);
+            color: var(--text-black);
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-bottom: 3px solid var(--border-black);
+            padding-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .mobile-link::after {
+            content: '\f061';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 1.5rem;
         }
     </style>
 
@@ -651,5 +730,61 @@
         <p>© 2026 Adpod Intelligence Suite™. Enterprise Division.</p>
     </footer>
 
+    <script>
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        if(menuToggle && mobileNav) {
+            menuToggle.addEventListener('click', () => {
+                mobileNav.classList.toggle('active');
+            });
+            mobileNav.addEventListener('click', (e) => {
+                if(e.target.id !== 'mobile-theme-toggle') {
+                    mobileNav.classList.remove('active');
+                }
+            });
+        }
+
+        // Dark Mode Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+        const rootElement = document.documentElement;
+        
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                rootElement.setAttribute('data-theme', 'dark');
+                if (themeToggle) themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+                if (mobileThemeToggle) mobileThemeToggle.innerHTML = '<i class="fa-solid fa-sun"></i> Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                rootElement.removeAttribute('data-theme');
+                if (themeToggle) themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+                if (mobileThemeToggle) mobileThemeToggle.innerHTML = '<i class="fa-solid fa-moon"></i> Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setTheme('dark');
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = rootElement.getAttribute('data-theme');
+                setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            });
+        }
+
+        if (mobileThemeToggle) {
+            mobileThemeToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const currentTheme = rootElement.getAttribute('data-theme');
+                setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            });
+        }
+    </script>
 </body>
 </html>
