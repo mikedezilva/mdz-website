@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Creator Growth System | Adpod</title>
+    <meta name="description" content="Adpod helps musicians, YouTubers, influencers, and artists design a complete growth strategy using AI.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        :root {
+            --bg-cream: #F4F4F0;
+            --surface-white: #FFFFFF;
+            --border-black: #000000;
+            --accent-pink: #FF90E8;
+            --accent-yellow: #FFC900;
+            --accent-mint: #90A8ED;
+            --accent-orange: #FF5E00;
+            --text-black: #000000;
+            --text-dark-gray: #333333;
+            --text-inverted: #FFFFFF;
+            
+            --font-headline: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-accent: 'JetBrains Mono', monospace;
+
+            --box-shadow: 4px 4px 0px var(--border-black);
+            --box-shadow-hover: 2px 2px 0px var(--border-black);
+        }
+
+        [data-theme="dark"] {
+            --bg-cream: #000000;
+            --surface-white: #0a0a0a;
+            --border-black: #FFFFFF;
+            --text-black: #FFFFFF;
+            --text-dark-gray: #A0A0A0;
+            --text-inverted: #000000;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-black);
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
+            font-family: var(--font-headline);
+            color: var(--text-black);
+            font-weight: 800;
+        }
+
+        .accent-data {
+            font-family: var(--font-accent);
+            font-weight: 700;
+        }
+
+        /* Minimal Header */
+        .site-header {
+            background: var(--bg-cream);
+            padding: 1.5rem 4rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--border-black);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .header-link {
+            text-decoration: none;
+            color: var(--text-black);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .adpod-hero-section {
+            padding: 14rem 2rem 8rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-cream);
+            position: relative;
+            border-bottom: 3px solid var(--border-black);
+            overflow: hidden;
+        }
+
+        /* Vibrant background elements for creator page */
+        .creator-bg-circle-1 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-pink) 0%, transparent 70%);
+            opacity: 0.15;
+            top: -100px;
+            left: -100px;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .creator-bg-circle-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--accent-mint) 0%, transparent 70%);
+            opacity: 0.15;
+            bottom: -50px;
+            right: -50px;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content-wrapper {
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            font-weight: 900;
+        }
+
+        .highlight-pink {
+            background-color: var(--accent-pink);
+            padding: 0 10px;
+            border: 3px solid var(--border-black);
+            border-radius: 8px;
+            display: inline-block;
+            transform: rotate(-2deg);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: var(--text-dark-gray);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            max-width: 750px;
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-pink);
+            color: var(--text-black) !important;
+            padding: 16px 36px;
+            border-radius: 8px;
+            border: 3px solid var(--border-black);
+            box-shadow: var(--box-shadow);
+            font-size: 1.1rem;
+            font-family: var(--font-headline);
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.1s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:active, .btn-primary:hover {
+            transform: translate(2px, 2px);
+            box-shadow: var(--box-shadow-hover);
+            color: var(--text-black) !important;
+        }
+        
+        .btn-outline {
+            background-color: var(--surface-white);
+            color: var(--text-black) !important;
+            padding: 16px 36px;
+            border-radius: 8px;
+            border: 3px solid var(--border-black);
+            box-shadow: var(--box-shadow);
+            font-size: 1.1rem;
+            font-family: var(--font-headline);
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.1s ease-in-out;
+            display: inline-block;
+        }
+        
+        .btn-outline:active, .btn-outline:hover {
+            transform: translate(2px, 2px);
+            box-shadow: var(--box-shadow-hover);
+            background-color: var(--accent-yellow);
+            color: var(--text-black) !important;
+        }
+
+        /* Generic Section Styling */
+        .content-section {
+            padding: 6rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+        }
+
+        /* Minimal Grid */
+        .minimal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .neo-card {
+            background: var(--surface-white);
+            border: 3px solid var(--border-black);
+            box-shadow: var(--box-shadow);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: left;
+            transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+        }
+
+        .neo-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--border-black);
+        }
+
+        .icon-box {
+            width: 56px;
+            height: 56px;
+            border-radius: 8px;
+            border: 3px solid var(--border-black);
+            box-shadow: 2px 2px 0 var(--border-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            background: var(--accent-mint);
+        }
+        
+        .icon-box i {
+            color: var(--text-black);
+            font-size: 1.5rem;
+        }
+
+        .neo-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .neo-card p {
+            font-size: 1.05rem;
+            color: var(--text-dark-gray);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Evolution Grid & Lists */
+        .evo-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .evo-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 1.2rem;
+            color: var(--text-black);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .evo-list i.fa-xmark { color: red; margin-top: 4px; font-size: 1.2rem; }
+        .evo-list i.fa-check { color: var(--text-black); margin-top: 4px; font-size: 1.2rem; }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; }
+            .section-title { font-size: 2.5rem; }
+            .cta-group { flex-direction: column; }
+            .site-header { padding: 1rem 1.5rem !important; }
+            .back-text { display: none; }
+            
+            .desktop-nav .btn-outline { display: none; }
+            .desktop-nav .btn-primary { display: none; }
+            .mobile-menu-btn { display: flex !important; }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            padding: 8px;
+            z-index: 101;
+        }
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--text-black);
+            border-radius: 2px;
+            transition: all 0.2s;
+        }
+        .desktop-nav {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .mobile-nav-overlay {
+            display: none;
+            position: fixed;
+            top: 73px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-cream);
+            padding: 2rem;
+            flex-direction: column;
+            z-index: 99;
+            overflow-y: auto;
+        }
+        .mobile-nav-overlay.active {
+            display: flex;
+            animation: slideDown 0.3s ease-out forwards;
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .mobile-nav-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .mobile-link {
+            font-size: 2.2rem;
+            font-family: var(--font-headline);
+            color: var(--text-black);
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-bottom: 3px solid var(--border-black);
+            padding-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .mobile-link::after {
+            content: '\f061';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        /* Creator specific styling */
+        .creator-type-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-creator-type {
+            background-color: var(--surface-white);
+            color: var(--text-black);
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: 3px solid var(--border-black);
+            box-shadow: 2px 2px 0px var(--border-black);
+            font-family: var(--font-headline);
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+
+        .btn-creator-type:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px var(--border-black);
+            background-color: var(--accent-pink);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <a href="index.html" class="header-link">
+            <i class="fa-solid fa-arrow-left"></i> <span class="back-text">BACK</span>
+        </a>
+        <div style="position: absolute; left: 50%; transform: translateX(-50%); display:flex; align-items:center;">
+            <svg width="28" height="35" viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="60" y1="8" x2="60" y2="32" stroke="var(--text-black)" stroke-width="8" stroke-linecap="round"/>
+                <circle cx="60" cy="8" r="8" fill="var(--text-black)"/>
+                <rect x="22" y="30" width="76" height="105" rx="38" fill="#FFC900" stroke="var(--text-black)" stroke-width="6"/>
+                <rect x="30" y="38" width="60" height="89" rx="30" fill="var(--text-black)"/>
+                <rect x="18" y="68" width="84" height="26" rx="4" fill="var(--text-black)"/>
+                <rect x="28" y="72" width="64" height="18" rx="3" fill="#FFC900"/>
+                <circle cx="44" cy="81" r="4" fill="var(--text-inverted)"/>
+                <circle cx="76" cy="81" r="4" fill="var(--text-inverted)"/>
+                <line x1="40" y1="110" x2="80" y2="110" stroke="var(--text-inverted)" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="desktop-nav">
+            <a href="web3.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 var(--border-black); border-radius: 6px;">Web3</a>
+            <a href="enterprise.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 var(--border-black); border-radius: 6px; background:var(--accent-mint);">Enterprise</a>
+            <a href="creators.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 var(--border-black); border-radius: 6px; background:var(--accent-pink);">Creators</a>
+            <a href="#deploy" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 var(--border-black); border-radius: 6px;">Get Started</a>
+            
+            <button id="theme-toggle" class="btn-outline" style="padding: 8px 12px; font-size: 1rem; border-radius: 6px; cursor: pointer; box-shadow: 2px 2px 0 var(--border-black);" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav id="mobile-nav" class="mobile-nav-overlay">
+        <div class="mobile-nav-content">
+            <a href="web3.html" class="mobile-link">Web3</a>
+            <a href="enterprise.html" class="mobile-link">Enterprise</a>
+            <a href="creators.html" class="mobile-link">Creators</a>
+            
+            <div style="margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                <a href="#deploy" class="btn-primary" style="width:100%; text-align:center; justify-content:center;">Get Started</a>
+                <button id="mobile-theme-toggle" class="btn-outline" style="width:100%; text-align:center; display:flex; justify-content:center; align-items:center; gap:10px;">
+                    <i class="fa-solid fa-moon"></i> Dark Mode
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <main>
+        <!-- Hero Section -->
+        <section class="adpod-hero-section">
+            <div class="creator-bg-circle-1"></div>
+            <div class="creator-bg-circle-2"></div>
+            <div class="hero-content-wrapper">
+                <div style="display:inline-block; border:2px solid var(--border-black); border-radius:50px; padding:6px 16px; font-family:var(--font-accent); font-weight:700; font-size:0.8rem; background:var(--surface-white); box-shadow:2px 2px 0 var(--border-black); margin-bottom:1.5rem; text-transform:uppercase;">
+                    Adpod For Creators
+                </div>
+                <h1 class="hero-title">Grow Your Audience. <br>Build Your Brand. <br><span class="highlight-pink">Get Discovered.</span></h1>
+                
+                <p class="hero-subtitle" style="font-weight:700; color:var(--text-black);">
+                    Stop guessing how to grow as a creator.
+                </p>
+                <p style="color:var(--text-dark-gray); font-size:1.15rem; margin-bottom:2rem; max-width:700px; font-weight:500;">
+                    Adpod helps musicians, YouTubers, influencers, and artists design a complete growth strategy using AI — so you can focus on creating while your audience grows.
+                </p>
+
+                <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; font-family:var(--font-accent); font-weight:700; font-size:0.9rem; color:var(--text-black); margin-bottom:2.5rem;">
+                    <span>Audience insights</span>
+                    <span>•</span>
+                    <span>Content strategy</span>
+                    <span>•</span>
+                    <span>Growth planning</span>
+                    <span>•</span>
+                    <span>Positioning</span>
+                </div>
+                
+                <div class="cta-group">
+                    <a href="#deploy" class="btn-primary">Start growing with Adpod <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div style="font-size:0.9rem; font-weight:700; background:var(--accent-yellow); padding:8px 16px; border:2px solid var(--border-black); border-radius:4px;">
+                    ⚡ Used by creators who want to grow beyond algorithms, trends, and luck.
+                </div>
+
+                <!-- Pick your creator type -->
+                <div class="creator-type-buttons">
+                    <button class="btn-creator-type"><i class="fa-solid fa-music"></i> I'm a musician</button>
+                    <button class="btn-creator-type"><i class="fa-brands fa-youtube"></i> I'm a YouTuber</button>
+                    <button class="btn-creator-type"><i class="fa-solid fa-camera"></i> I'm an influencer</button>
+                    <button class="btn-creator-type"><i class="fa-solid fa-microphone"></i> I'm a podcaster</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Why most creators never grow <br><span style="font-size:2rem; color:var(--text-dark-gray);">(even with great content)</span></h2>
+            </div>
+            
+            <div class="minimal-grid" style="max-width: 650px; margin: 0 auto;">
+                <div class="neo-card" style="background:var(--surface-white);">
+                    <p style="font-size:1.4rem; margin-bottom: 0.5rem; font-weight:700;">You’re not lacking talent.</p>
+                    <p style="font-size:1.4rem; margin-bottom: 1.5rem; font-weight:800; color:#e11d48;">You’re lacking direction.</p>
+                    <p style="font-size:1.1rem; margin-bottom: 1rem; font-weight:600;">Most creators struggle because they:</p>
+                    <ul class="evo-list">
+                        <li><i class="fa-solid fa-xmark"></i> Don’t know who their real audience is</li>
+                        <li><i class="fa-solid fa-xmark"></i> Post content without a strategy</li>
+                        <li><i class="fa-solid fa-xmark"></i> Rely on trends instead of positioning</li>
+                        <li><i class="fa-solid fa-xmark"></i> Don’t understand what actually drives growth</li>
+                        <li><i class="fa-solid fa-xmark"></i> Guess what to post next</li>
+                    </ul>
+                    <div style="margin-top:2.5rem; padding:1.25rem; background:var(--accent-pink); border-radius:8px; border:3px solid var(--border-black); box-shadow: 2px 2px 0 var(--border-black);">
+                        <p style="color:var(--text-black); margin:0; font-weight:700; font-family:var(--font-accent); font-size:0.9rem; margin-bottom:4px; text-transform:uppercase;">The result?</p>
+                        <p style="color:var(--text-black); margin:0; font-weight:800; font-size:1.1rem;">Inconsistent growth. Burnout. And invisible content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shift Section -->
+        <section class="content-section" style="border-top: 3px solid var(--border-black); background: var(--accent-yellow);">
+            <div class="section-header">
+                <h2 class="section-title">Content doesn’t fail. <span style="background:var(--surface-white); padding:0 8px; border:3px solid var(--border-black); display:inline-block; transform:rotate(-1deg);">Strategy does.</span></h2>
+            </div>
+            
+            <div class="minimal-grid" style="align-items:center;">
+                <div style="font-size:1.3rem; font-weight:700; line-height:1.6; color:var(--text-black);">
+                    <p style="margin-bottom:0.5rem; font-size:1.8rem; font-weight:800;">Virality is not random.</p>
+                    <p style="margin-bottom:1.5rem; font-size:1.8rem; font-weight:800;">Growth is not luck.</p>
+                    <p style="margin-bottom:1.5rem;">And successful creators aren’t just better at content…</p>
+                    <p style="margin-bottom:1.5rem; color:#e11d48;">They’re better at understanding:</p>
+                    <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+                        <li><i class="fa-solid fa-circle" style="font-size:10px; margin-right:8px;"></i> Who they’re speaking to</li>
+                        <li><i class="fa-solid fa-circle" style="font-size:10px; margin-right:8px;"></i> What their audience actually wants</li>
+                        <li><i class="fa-solid fa-circle" style="font-size:10px; margin-right:8px;"></i> How to position their identity</li>
+                        <li><i class="fa-solid fa-circle" style="font-size:10px; margin-right:8px;"></i> Where attention is coming from</li>
+                        <li><i class="fa-solid fa-circle" style="font-size:10px; margin-right:8px;"></i> What to post next (and why)</li>
+                    </ul>
+                </div>
+                <div class="neo-card" style="background:var(--surface-white);">
+                    <div style="font-size:3rem; text-align:center; margin-bottom:1rem;">🤖</div>
+                    <h3 style="font-size:2rem; line-height:1.1; margin-bottom:1rem; text-align:center;">That’s what Adpod builds for you.</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="content-section" style="border-top: 3px solid var(--border-black); background: var(--surface-white);">
+            <div class="section-header">
+                <h2 class="section-title">Your AI-powered creator growth system</h2>
+                <p style="font-size:1.2rem; font-weight:500; max-width:600px; margin:0 auto;">Adpod helps you design a full growth system around your creative brand. In minutes, you can generate:</p>
+            </div>
+            
+            <div class="minimal-grid">
+                <div class="neo-card">
+                    <div class="icon-box" style="background:var(--accent-pink);">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3>Audience Strategy</h3>
+                    <p>Understand exactly who your content is for.</p>
+                </div>
+                
+                <div class="neo-card">
+                    <div class="icon-box" style="background:var(--accent-mint);">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <h3>Content Direction</h3>
+                    <p>Know what to post before you create.</p>
+                </div>
+                
+                <div class="neo-card">
+                    <div class="icon-box" style="background:var(--accent-yellow);">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <h3>Positioning Strategy</h3>
+                    <p>Define how people perceive you online.</p>
+                </div>
+
+                <div class="neo-card">
+                    <div class="icon-box" style="background:var(--surface-white);">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3>Growth Plan</h3>
+                    <p>Identify how to actually scale your audience.</p>
+                </div>
+                <div class="neo-card">
+                    <div class="icon-box" style="background:var(--accent-orange);">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+                    <h3>Platform Strategy</h3>
+                    <p>Know where to focus (YouTube, Instagram, TikTok, Spotify).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="content-section" style="border-top: 3px solid var(--border-black);">
+            <div class="section-header">
+                <h2 class="section-title">From confusion → clarity in 3 steps</h2>
+            </div>
+            
+            <div class="minimal-grid">
+                <div class="neo-card">
+                    <div class="accent-data" style="display:inline-block; background:var(--text-black); color:var(--text-inverted); padding:4px 12px; margin-bottom:1rem; border-radius:4px; font-size:1.5rem;">1</div>
+                    <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">Tell us about your creative brand</h3>
+                    <p>Music, content, niche, style, goals.</p>
+                </div>
+                <div class="neo-card" style="background:var(--accent-pink);">
+                    <div class="accent-data" style="display:inline-block; background:var(--text-black); color:var(--text-inverted); padding:4px 12px; margin-bottom:1rem; border-radius:4px; font-size:1.5rem;">2</div>
+                    <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">AI builds your growth strategy</h3>
+                    <p style="color:var(--text-black);">Audience, positioning, content direction, and opportunities.</p>
+                </div>
+                <div class="neo-card">
+                    <div class="accent-data" style="display:inline-block; background:var(--text-black); color:var(--text-inverted); padding:4px 12px; margin-bottom:1rem; border-radius:4px; font-size:1.5rem;">3</div>
+                    <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">Execute with clarity</h3>
+                    <p>Post with purpose, not guesswork.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section class="content-section" style="border-top: 3px solid var(--border-black); background: var(--surface-white);">
+            <div class="section-header">
+                <h2 class="section-title">Built for modern creators</h2>
+            </div>
+            <div class="minimal-grid">
+                <div class="neo-card" style="text-align:center;">
+                    <i class="fa-solid fa-music" style="font-size:2rem; color:var(--accent-pink); margin-bottom:1rem;"></i>
+                    <h4 style="font-size:1.2rem; margin-bottom:0.5rem; margin-top:0;">Musicians</h4>
+                    <p style="font-size:0.9rem;">Grow streams, listeners, and fanbase</p>
+                </div>
+                <div class="neo-card" style="text-align:center;">
+                    <i class="fa-brands fa-youtube" style="font-size:2rem; color:#e11d48; margin-bottom:1rem;"></i>
+                    <h4 style="font-size:1.2rem; margin-bottom:0.5rem; margin-top:0;">YouTubers</h4>
+                    <p style="font-size:0.9rem;">Increase views, subscribers, and retention</p>
+                </div>
+                <div class="neo-card" style="text-align:center;">
+                    <i class="fa-solid fa-camera" style="font-size:2rem; color:var(--accent-mint); margin-bottom:1rem;"></i>
+                    <h4 style="font-size:1.2rem; margin-bottom:0.5rem; margin-top:0;">Influencers</h4>
+                    <p style="font-size:0.9rem;">Build consistent engagement and brand deals</p>
+                </div>
+                <div class="neo-card" style="text-align:center;">
+                    <i class="fa-solid fa-microphone" style="font-size:2rem; color:var(--accent-orange); margin-bottom:1rem;"></i>
+                    <h4 style="font-size:1.2rem; margin-bottom:0.5rem; margin-top:0;">Podcasters</h4>
+                    <p style="font-size:0.9rem;">Attract loyal listeners and niche authority</p>
+                </div>
+                <div class="neo-card" style="text-align:center;">
+                    <i class="fa-solid fa-palette" style="font-size:2rem; color:var(--accent-yellow); margin-bottom:1rem;"></i>
+                    <h4 style="font-size:1.2rem; margin-bottom:0.5rem; margin-top:0;">Artists & Designers</h4>
+                    <p style="font-size:0.9rem;">Turn creativity into audience growth</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Before VS After Section -->
+        <section class="content-section" style="border-top: 3px solid var(--border-black);">
+            <div class="minimal-grid">
+                <div class="neo-card" style="background:var(--surface-white);">
+                    <h3 style="font-size:2rem; margin-bottom:1.5rem; font-family:var(--font-accent); text-transform:uppercase;">Before Adpod</h3>
+                    <ul class="evo-list">
+                        <li><i class="fa-solid fa-xmark"></i> Posting without direction</li>
+                        <li><i class="fa-solid fa-xmark"></i> Random content ideas</li>
+                        <li><i class="fa-solid fa-xmark"></i> No clear audience</li>
+                        <li><i class="fa-solid fa-xmark"></i> Slow or inconsistent growth</li>
+                        <li><i class="fa-solid fa-xmark"></i> Relying on algorithms</li>
+                    </ul>
+                </div>
+                <div class="neo-card" style="background:var(--accent-mint);">
+                    <h3 style="font-size:2rem; margin-bottom:1.5rem; font-family:var(--font-accent); text-transform:uppercase;">After Adpod</h3>
+                    <ul class="evo-list">
+                        <li><i class="fa-solid fa-check"></i> Clear audience strategy</li>
+                        <li><i class="fa-solid fa-check"></i> Defined content direction</li>
+                        <li><i class="fa-solid fa-check"></i> Strong creative positioning</li>
+                        <li><i class="fa-solid fa-check"></i> Consistent growth system</li>
+                        <li><i class="fa-solid fa-check"></i> Intentional content creation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Building -->
+        <section class="content-section" style="border-top: 3px solid var(--border-black); text-align:center; background:var(--bg-cream);">
+            <div class="neo-card" style="max-width:700px; margin:0 auto; background:var(--surface-white);">
+                <h2 class="section-title" style="font-size:2.5rem; margin-bottom:1rem;">Adpod doesn’t make you “go viral.”</h2>
+                <p style="font-size:1.2rem; font-weight:600; margin-bottom:1.5rem;">It helps you understand:</p>
+                <div style="background:var(--accent-pink); padding:1rem 2rem; border-radius:8px; border:3px solid var(--border-black); box-shadow:4px 4px 0 var(--border-black);">
+                    <p style="font-size:1.4rem; font-weight:800; color:var(--text-black); margin:0;">Why people follow creators in the first place — and how to design content around that.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="content-section" style="border-top: 3px solid var(--border-black); background: var(--surface-white);">
+            <div class="neo-card" style="max-width:600px; margin: 0 auto; display: flex; flex-direction: column; position: relative; background: var(--accent-yellow); text-align: center;">
+                <div class="accent-data" style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: var(--surface-white); padding: 6px 18px; border-radius: 6px; border: 3px solid var(--border-black); box-shadow: 2px 2px 0 var(--border-black); font-size: 0.9rem; font-weight: 800; color: var(--text-black); letter-spacing: 1px;">CREATOR PLAN</div>
+                
+                <div class="accent-data" style="font-size: 4rem; font-weight: 800; color: var(--text-black); margin-bottom: 1rem; letter-spacing: -2px;">$50<span style="font-size: 1.2rem; font-weight: 600; letter-spacing: 0;">/mo</span></div>
+                <p style="font-weight: 800; margin-bottom: 1rem; font-size:1.2rem;">Start building your audience.</p>
+                <p style="font-weight: 500; margin-bottom: 2rem;">No agencies. No guesswork. No expensive consultants.<br>Just a structured AI system designed for creator growth.</p>
+                
+                <div style="margin-top:auto;">
+                    <a href="#deploy" class="btn-primary" style="text-align: center; width: 100%; justify-content:center; padding: 1rem; font-size: 1rem; background: var(--surface-white);">Start your growth system</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section id="deploy" style="padding: 10rem 2rem; text-align: center; border-top: 3px solid var(--border-black); background: var(--accent-pink);">
+            <h2 class="section-title" style="font-size: 4.5rem; margin-bottom: 1.5rem; max-width:900px; margin-left:auto; margin-right:auto; line-height:1.05;">Stop posting <span style="background:var(--surface-white); padding:0 10px; border:3px solid var(--border-black); border-radius:8px; display:inline-block; transform:rotate(-2deg);">blindly.</span></h2>
+            
+            <p style="font-size:1.4rem; margin-bottom:3rem; font-weight:800;">Start building a creative brand people actually follow.</p>
+
+            <a href="mailto:contact@mikedezilva.com" class="btn-primary" style="padding: 1.5rem 4rem; font-size:1.3rem; background: var(--surface-white);">Get your AI growth strategy <i class="fa-solid fa-arrow-right"></i></a>
+        </section>
+
+    </main>
+
+    <footer style="padding: 6rem 2rem 4rem; border-top: 3px solid var(--border-black); background: var(--bg-cream); color: var(--text-black);">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom: 2rem;">
+                <svg width="32" height="40" viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="60" y1="8" x2="60" y2="32" stroke="var(--text-black)" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="60" cy="8" r="8" fill="var(--text-black)"/>
+                    <rect x="22" y="30" width="76" height="105" rx="38" fill="#FFC900" stroke="var(--text-black)" stroke-width="6"/>
+                    <rect x="30" y="38" width="60" height="89" rx="30" fill="var(--text-black)"/>
+                    <rect x="18" y="68" width="84" height="26" rx="4" fill="var(--text-black)"/>
+                    <rect x="28" y="72" width="64" height="18" rx="3" fill="#FFC900"/>
+                    <circle cx="44" cy="81" r="4" fill="var(--text-inverted)"/>
+                    <circle cx="76" cy="81" r="4" fill="var(--text-inverted)"/>
+                    <line x1="40" y1="110" x2="80" y2="110" stroke="var(--text-inverted)" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                <div style="font-family: var(--font-headline); font-size:2.5rem; font-weight:800;">Adpod</div>
+            </div>
+            
+            <div style="display: flex; gap: 2rem; margin-bottom: 2.5rem; font-weight: 700;">
+                <a href="index.html" style="color: var(--text-black); text-decoration: none;">Home</a>
+                <a href="web3.html" style="color: var(--text-black); text-decoration: none;">Web3</a>
+                <a href="enterprise.html" style="color: var(--text-black); text-decoration: none;">Enterprise</a>
+                <a href="creators.html" style="color: var(--accent-pink); text-decoration: none;">Creators</a>
+                <a href="adpod_guide.html" target="_blank" style="color: var(--text-black); text-decoration: none;">User Guide</a>
+                <a href="mailto:contact@mikedezilva.com" style="color: var(--text-black); text-decoration: none;">Contact</a>
+            </div>
+
+            <p style="font-weight: 600; font-size: 0.9rem; color: var(--text-dark-gray); max-width:600px; margin-bottom:2rem; line-height:1.5;">
+                Adpod is an AI-powered growth system for creators, musicians, and digital artists who want to build real audiences — not just views.
+            </p>
+
+            <p style="font-weight: 600; font-size: 0.9rem; color: var(--text-dark-gray);">
+                © 2026 Adpod Intelligence Suite™. Built by Mike De Zilva. <br>
+                <a href="#" style="color: var(--text-dark-gray); text-decoration: underline; margin: 0 10px;">Privacy</a>
+                <a href="#" style="color: var(--text-dark-gray); text-decoration: underline; margin: 0 10px;">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+        });
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+        
+        function toggleTheme() {
+            const isDark = document.body.getAttribute('data-theme') === 'dark';
+            document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            const icon = isDark ? 'fa-moon' : 'fa-sun';
+            themeToggle.innerHTML = `<i class="fa-solid ${icon}"></i>`;
+            mobileThemeToggle.innerHTML = `<i class="fa-solid ${icon}"></i> Dark Mode`;
+        }
+        
+        themeToggle.addEventListener('click', toggleTheme);
+        mobileThemeToggle.addEventListener('click', toggleTheme);
+    </script>
+</body>
+</html>
