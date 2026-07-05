@@ -361,26 +361,31 @@
 
     <!-- Header -->
     <header class="site-header">
-        <a href="adpod.html" class="header-link">
-            <i class="fa-solid fa-arrow-left"></i> <span class="back-text">BACK TO ADPOD</span>
+        <a href="index.html" class="header-link">
+            <i class="fa-solid fa-arrow-left"></i> <span class="back-text">BACK</span>
         </a>
         <div style="position: absolute; left: 50%; transform: translateX(-50%); display:flex; align-items:center;">
             <svg width="28" height="35" viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="60" y1="8" x2="60" y2="32" stroke="#000" stroke-width="8" stroke-linecap="round"/>
-                <circle cx="60" cy="8" r="8" fill="#000"/>
-                <rect x="22" y="30" width="76" height="105" rx="38" fill="#FFC900" stroke="#000" stroke-width="6"/>
-                <rect x="30" y="38" width="60" height="89" rx="30" fill="#000"/>
-                <rect x="18" y="68" width="84" height="26" rx="4" fill="#000"/>
+                <line x1="60" y1="8" x2="60" y2="32" stroke="var(--text-black)" stroke-width="8" stroke-linecap="round"/>
+                <circle cx="60" cy="8" r="8" fill="var(--text-black)"/>
+                <rect x="22" y="30" width="76" height="105" rx="38" fill="#FFC900" stroke="var(--text-black)" stroke-width="6"/>
+                <rect x="30" y="38" width="60" height="89" rx="30" fill="var(--text-black)"/>
+                <rect x="18" y="68" width="84" height="26" rx="4" fill="var(--text-black)"/>
                 <rect x="28" y="72" width="64" height="18" rx="3" fill="#FFC900"/>
-                <circle cx="44" cy="81" r="4" fill="#FFF"/>
-                <circle cx="76" cy="81" r="4" fill="#FFF"/>
-                <line x1="40" y1="110" x2="80" y2="110" stroke="#FFF" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="44" cy="81" r="4" fill="var(--text-inverted)"/>
+                <circle cx="76" cy="81" r="4" fill="var(--text-inverted)"/>
+                <line x1="40" y1="110" x2="80" y2="110" stroke="var(--text-inverted)" stroke-width="4" stroke-linecap="round"/>
             </svg>
         </div>
         <div class="desktop-nav">
-            <a href="web3.html" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 6px; background:var(--accent-mint);">Web3</a>
-            <a href="enterprise.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 #000; border-radius: 6px; background:var(--bg-cream);">Enterprise</a>
+            <a href="web3.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 var(--border-black); border-radius: 6px;">Web3</a>
+            <a href="enterprise.html" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 var(--border-black); border-radius: 6px; background:var(--accent-mint);">Enterprise</a>
+            <a href="#deploy" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 var(--border-black); border-radius: 6px;">Get Started</a>
             
+            <button id="theme-toggle" class="btn-outline" style="padding: 8px 12px; font-size: 1rem; border-radius: 6px; cursor: pointer; box-shadow: 2px 2px 0 var(--border-black);" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
             <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle Menu">
                 <span></span><span></span><span></span>
             </button>
@@ -389,8 +394,17 @@
 
     <!-- Mobile Nav -->
     <nav id="mobile-nav" class="mobile-nav-overlay">
-        <a href="web3.html" class="btn-primary" style="width:100%; text-align:center; background:var(--accent-mint);">Web3</a>
-        <a href="enterprise.html" class="btn-outline" style="width:100%; text-align:center; background:var(--bg-cream);">Enterprise</a>
+        <div class="mobile-nav-content">
+            <a href="web3.html" class="mobile-link">Web3</a>
+            <a href="enterprise.html" class="mobile-link">Enterprise</a>
+            
+            <div style="margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                <a href="#deploy" class="btn-primary" style="width:100%; text-align:center; justify-content:center;">Get Started</a>
+                <button id="mobile-theme-toggle" class="btn-outline" style="width:100%; text-align:center; display:flex; justify-content:center; align-items:center; gap:10px;">
+                    <i class="fa-solid fa-moon"></i> Dark Mode
+                </button>
+            </div>
+        </div>
     </nav>
 
     <main>

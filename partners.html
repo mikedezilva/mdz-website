@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adpod Partners | Earn 30% Lifetime Revenue</title>
+    <meta name="description" content="Join the Adpod Partner Program. Refer clients to Adpod Intelligence and earn 30% lifetime recurring revenue. Build a passive income stream replacing outdated agencies.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        :root {
+            --bg-cream: #F4F4F0;
+            --surface-white: #FFFFFF;
+            --border-black: #000000;
+            --accent-pink: #FF90E8;
+            --accent-yellow: #FFC900;
+            --accent-mint: #90A8ED;
+            --accent-orange: #FF5E00;
+            --text-black: #000000;
+            --text-dark-gray: #333333;
+            --text-inverted: #FFFFFF;
+            
+            --font-headline: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-accent: 'JetBrains Mono', monospace;
+
+            --box-shadow: 4px 4px 0px var(--border-black);
+            --box-shadow-hover: 2px 2px 0px var(--border-black);
+        }
+
+        [data-theme="dark"] {
+            --bg-cream: #000000;
+            --surface-white: #0a0a0a;
+            --border-black: #FFFFFF;
+            --text-black: #FFFFFF;
+            --text-dark-gray: #A0A0A0;
+            --text-inverted: #000000;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-black);
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
+            font-family: var(--font-headline);
+            color: var(--text-black);
+            font-weight: 800;
+        }
+
+        .accent-data {
+            font-family: var(--font-accent);
+            font-weight: 700;
+        }
+
+        .site-header {
+            background: var(--bg-cream);
+            padding: 1.5rem 4rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--border-black);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .header-link {
+            text-decoration: none;
+            color: var(--text-black);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+        }
+
+        .adpod-hero-section {
+            padding: 14rem 2rem 8rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-cream);
+            position: relative;
+            border-bottom: 3px solid var(--border-black);
+        }
+
+        .hero-content-wrapper {
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .highlight-mint {
+            background-color: var(--accent-mint);
+            padding: 0 10px;
+            border: 3px solid var(--border-black);
+            border-radius: 8px;
+            display: inline-block;
+            transform: rotate(2deg);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: var(--text-dark-gray);
+            margin-bottom: 2rem;
+            font-weight: 500;
+            max-width: 750px;
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-orange);
+            color: var(--surface-white) !important;
+            padding: 16px 36px;
+            border-radius: 8px;
+            border: 3px solid var(--border-black);
+            box-shadow: var(--box-shadow);
+            font-size: 1.1rem;
+            font-family: var(--font-headline);
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.1s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:active, .btn-primary:hover {
+            transform: translate(2px, 2px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .content-section {
+            padding: 6rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+        }
+
+        .minimal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .neo-card {
+            background: var(--surface-white);
+            border: 3px solid var(--border-black);
+            box-shadow: var(--box-shadow);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: left;
+            transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+        }
+
+        .neo-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--border-black);
+        }
+
+        .icon-box {
+            width: 56px;
+            height: 56px;
+            border-radius: 8px;
+            border: 3px solid var(--border-black);
+            box-shadow: 2px 2px 0 var(--border-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            background: var(--accent-mint);
+        }
+        
+        .icon-box i {
+            color: var(--text-black);
+            font-size: 1.5rem;
+        }
+
+        /* Earning Table */
+        .earnings-table-wrapper {
+            background: var(--surface-white);
+            border: 3px solid var(--border-black);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            margin-top: 3rem;
+        }
+
+        .earnings-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .earnings-table th, .earnings-table td {
+            padding: 1.5rem;
+            border-bottom: 3px solid var(--border-black);
+        }
+
+        .earnings-table th {
+            font-family: var(--font-headline);
+            font-size: 1.2rem;
+            background: var(--accent-yellow);
+            border-bottom: 3px solid var(--border-black);
+        }
+
+        .earnings-table th:not(:last-child), .earnings-table td:not(:last-child) {
+            border-right: 3px solid var(--border-black);
+        }
+
+        .earnings-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .earnings-table td {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .earnings-table .highlight-td {
+            font-family: var(--font-accent);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--accent-orange);
+            background: var(--bg-cream);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; }
+            .section-title { font-size: 2.5rem; }
+            .site-header { padding: 1rem 1.5rem !important; }
+            .desktop-nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <a href="adpod.html" class="header-link">
+            <i class="fa-solid fa-arrow-left"></i> <span class="back-text">BACK TO ADPOD</span>
+        </a>
+        <div style="position: absolute; left: 50%; transform: translateX(-50%); display:flex; align-items:center;">
+            <svg width="28" height="35" viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="60" y1="8" x2="60" y2="32" stroke="var(--text-black)" stroke-width="8" stroke-linecap="round"/>
+                <circle cx="60" cy="8" r="8" fill="var(--text-black)"/>
+                <rect x="22" y="30" width="76" height="105" rx="38" fill="#FFC900" stroke="var(--text-black)" stroke-width="6"/>
+                <rect x="30" y="38" width="60" height="89" rx="30" fill="var(--text-black)"/>
+                <rect x="18" y="68" width="84" height="26" rx="4" fill="var(--text-black)"/>
+                <rect x="28" y="72" width="64" height="18" rx="3" fill="#FFC900"/>
+                <circle cx="44" cy="81" r="4" fill="var(--text-inverted)"/>
+                <circle cx="76" cy="81" r="4" fill="var(--text-inverted)"/>
+                <line x1="40" y1="110" x2="80" y2="110" stroke="var(--text-inverted)" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="desktop-nav">
+            <a href="mailto:contact@mikedezilva.com" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; box-shadow: 2px 2px 0 var(--border-black); border-radius: 6px;">Apply to Partner</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="adpod-hero-section">
+            <div class="hero-content-wrapper">
+                <div class="accent-data" style="margin-bottom: 1.5rem; background: var(--text-black); color: var(--text-inverted); padding: 8px 24px; border-radius: 50px; text-transform: uppercase;">The Adpod Partner Program</div>
+                <h1 class="hero-title">Earn <span class="highlight-mint">30% Lifetime</span> Revenue Share</h1>
+                
+                <p class="hero-subtitle">
+                    Bring agencies and founders into the Truth Engine. Earn a massive 30% recurring payout every single month for the lifetime of every customer you refer to Adpod.
+                </p>
+                
+                <div class="cta-group">
+                    <a href="mailto:contact@mikedezilva.com" class="btn-primary">Become a Partner <i class="fa-solid fa-bolt"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Earnings Diagram -->
+        <section class="content-section" style="background: var(--surface-white); border-bottom: 3px solid var(--border-black);">
+            <div class="section-header">
+                <h2 class="section-title">Your Earning Potential</h2>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto; color: var(--text-dark-gray);">Calculate your recurring monthly income when you refer subscribers to Adpod's $50/mo PRO plan.</p>
+            </div>
+            
+            <div class="earnings-table-wrapper" style="max-width: 800px; margin: 0 auto;">
+                <table class="earnings-table">
+                    <thead>
+                        <tr>
+                            <th>Referred Subscribers</th>
+                            <th>Total Volume Generated</th>
+                            <th>Your Monthly Payout (MRR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10 Users</td>
+                            <td>$500/mo</td>
+                            <td class="highlight-td">$150/mo</td>
+                        </tr>
+                        <tr>
+                            <td>50 Users</td>
+                            <td>$2,500/mo</td>
+                            <td class="highlight-td">$750/mo</td>
+                        </tr>
+                        <tr>
+                            <td>100 Users</td>
+                            <td>$5,000/mo</td>
+                            <td class="highlight-td">$1,500/mo</td>
+                        </tr>
+                        <tr style="background: var(--accent-yellow);">
+                            <td>500 Users</td>
+                            <td>$25,000/mo</td>
+                            <td class="highlight-td" style="color: var(--text-black); background: transparent;">$7,500/mo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+            </div>
+            
+            <div class="minimal-grid">
+                <div class="neo-card">
+                    <div class="icon-box" style="background:var(--accent-pink);">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <h3>1. Apply</h3>
+                    <p>Contact us to generate your unique partner tracking link and get access to our affiliate dashboard.</p>
+                </div>
+                
+                <div class="neo-card">
+                    <div class="icon-box" style="background:var(--accent-yellow);">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3>2. Promote</h3>
+                    <p>Share Adpod with your audience, clients, or network. Show them how they can replace their agency.</p>
+                </div>
+                
+                <div class="neo-card">
+                    <div class="icon-box" style="background:var(--accent-mint);">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                    </div>
+                    <h3>3. Earn 30%</h3>
+                    <p>Get paid 30% of every subscription plan every month, for as long as they remain an Adpod customer.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section style="padding: 8rem 2rem; text-align: center; border-top: 3px solid var(--border-black); background: var(--text-black); color: var(--text-inverted);">
+            <h2 class="section-title" style="font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--text-inverted);">Ready to start earning?</h2>
+            <p style="font-size:1.2rem; margin-bottom:3rem; color: #A0A0A0;">Join the fastest growing network of AI marketing advocates.</p>
+            <a href="mailto:contact@mikedezilva.com" class="btn-primary" style="background: var(--accent-orange); color: var(--text-inverted) !important; border-color: var(--text-inverted);">Apply to Partner <i class="fa-solid fa-arrow-right"></i></a>
+        </section>
+
+    </main>
+
+    <footer style="padding: 6rem 2rem 4rem; border-top: 3px solid var(--border-black); background: var(--bg-cream); color: var(--text-black);">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom: 2rem;">
+                <svg width="32" height="40" viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="60" y1="8" x2="60" y2="32" stroke="var(--text-black)" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="60" cy="8" r="8" fill="var(--text-black)"/>
+                    <rect x="22" y="30" width="76" height="105" rx="38" fill="#FFC900" stroke="var(--text-black)" stroke-width="6"/>
+                    <rect x="30" y="38" width="60" height="89" rx="30" fill="var(--text-black)"/>
+                    <rect x="18" y="68" width="84" height="26" rx="4" fill="var(--text-black)"/>
+                    <rect x="28" y="72" width="64" height="18" rx="3" fill="#FFC900"/>
+                    <circle cx="44" cy="81" r="4" fill="var(--text-inverted)"/>
+                    <circle cx="76" cy="81" r="4" fill="var(--text-inverted)"/>
+                    <line x1="40" y1="110" x2="80" y2="110" stroke="var(--text-inverted)" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                <div style="font-family: var(--font-headline); font-size:2.5rem; font-weight:800;">Adpod</div>
+            </div>
+            
+            <div style="display: flex; gap: 2rem; margin-bottom: 2.5rem; font-weight: 700;">
+                <a href="index.html" style="color: var(--text-black); text-decoration: none;">Home</a>
+                <a href="web3.html" style="color: var(--text-black); text-decoration: none;">Web3</a>
+                <a href="enterprise.html" style="color: var(--text-black); text-decoration: none;">Enterprise</a>
+                <a href="adpod_guide.html" target="_blank" style="color: var(--text-black); text-decoration: none;">User Guide</a>
+                <a href="mailto:contact@mikedezilva.com" style="color: var(--text-black); text-decoration: none;">Contact</a>
+                <a href="partners.html" style="color: var(--accent-orange); text-decoration: none;">Partners</a>
+            </div>
+
+            <div style="display: flex; gap: 1.5rem; margin-bottom: 3rem; font-size: 1.8rem;">
+                <a href="#" style="color: var(--text-black); transition: transform 0.1s;"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" style="color: var(--text-black); transition: transform 0.1s;"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" style="color: var(--text-black); transition: transform 0.1s;"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" style="color: var(--text-black); transition: transform 0.1s;"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+
+            <p style="font-weight: 600; font-size: 0.9rem; color: var(--text-dark-gray);">
+                © 2026 Adpod Intelligence Suite™. Built by Mike De Zilva. <br>
+                <a href="#" style="color: var(--text-dark-gray); text-decoration: underline; margin: 0 10px;">Privacy</a>
+                <a href="#" style="color: var(--text-dark-gray); text-decoration: underline; margin: 0 10px;">Terms</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
