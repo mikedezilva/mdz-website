@@ -554,8 +554,10 @@
         <div class="mailing-list-container fade-in-scroll">
             <h2 class="display-title">Stay Connected</h2>
             <p class="body-text">Sign up to receive updates on new releases, tour dates, and exclusive content.</p>
-            <form class="mailing-list-form">
-                <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS" required>
+            <!-- Hidden iframe to prevent page redirection after submission -->
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(this.submitted) { alert('Thank you for subscribing!'); }"></iframe>
+            <form class="mailing-list-form" action="https://docs.google.com/forms/d/e/1FAIpQLSf9DfRhpo2e9s-g3GtL20bgy3WUHpNfGJ4ZieT-__txm8Ohiw/formResponse" method="POST" target="hidden_iframe" onsubmit="document.getElementById('hidden_iframe').submitted=true;">
+                <input type="email" name="entry.1290442561" placeholder="ENTER YOUR EMAIL ADDRESS" required>
                 <button type="submit">SUBSCRIBE &rarr;</button>
             </form>
         </div>
