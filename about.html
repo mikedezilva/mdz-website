@@ -22,8 +22,10 @@
 
     <!-- JSON-LD Structured Schema -->
     <script type="application/ld+json">
+    [
     {
       "@context": "https://schema.org",
+      "@id": "https://mikedezilva.com/#mike",
       "@type": "Person",
       "name": "Mike De Zilva",
       "url": "https://mikedezilva.com",
@@ -47,15 +49,66 @@
       ],
       "founder": [
         {
-          "@type": "Organization",
-          "name": "Adpod"
+          "@id": "https://mikedezilva.com/#adpod"
         },
         {
-          "@type": "Organization",
-          "name": "Yelo Ecosystem"
+          "@id": "https://mikedezilva.com/#yelo"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://mikedezilva.com/#adpod",
+      "name": "Adpod",
+      "url": "https://mikedezilva.com/about.html#artificial-intelligence",
+      "description": "Autonomous digital entities mapping real-time market truth.",
+      "founder": {
+        "@id": "https://mikedezilva.com/#mike"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://mikedezilva.com/#yelo",
+      "name": "Yelo Ecosystem",
+      "url": "https://mikedezilva.com/about.html#yelo-ecosystem",
+      "description": "Style-to-music AI generation and Web3 digital rights tokenization.",
+      "founder": {
+        "@id": "https://mikedezilva.com/#mike"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is Mike De Zilva?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mike De Zilva is an entrepreneur, Web3 strategist, and Digital Infrastructure Architect based in Colombo, Sri Lanka."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Adpod IntelligenceSuite?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Adpod IntelligenceSuite is an autonomous digital entity designed to uncover deterministic market truth with zero-latency, resolving traditional reporting delays."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Yelo Ecosystem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Yelo Ecosystem is a Web3 platform featuring Yelo Studio for style-to-music AI generation and YeloPlay for digital rights and IP tokenization."
+          }
         }
       ]
     }
+    ]
     </script>
 
     <!-- Google Fonts -->
@@ -141,7 +194,7 @@
             <div class="about-text fade-in-scroll delay-2">
                 <span class="tech-text">Colombo, Sri Lanka</span>
                 <h1 class="display-title">Mike De Zilva</h1>
-                <p class="body-text">Mike De Zilva is an entrepreneur, Web3 strategist, and digital infrastructure architect based in Colombo, Sri Lanka. With over seven years of experience operating at the frontier of the blockchain and artificial intelligence sectors, he specializes in building autonomous intelligence pipelines, architecting tokenized economies, and scaling decentralized infrastructure.</p>
+                <p class="body-text">Mike De Zilva is an entrepreneur, Web3 strategist, and <dfn>digital infrastructure architect</dfn> based in Colombo, Sri Lanka. With over seven years of experience operating at the frontier of the blockchain and artificial intelligence sectors, he specializes in building autonomous intelligence pipelines, architecting tokenized economies, and scaling decentralized infrastructure.</p>
                 <p class="body-text">His work fundamentally addresses structural inefficiencies in global strategic intelligence, decentralized finance, and digital rights management moving enterprise brands from speculation into high-conviction reality.</p>
             </div>
         </div>
@@ -152,9 +205,9 @@
             <!-- The Foundation -->
             <div class="about-detail-section fade-in-scroll">
                 <span class="tech-text">The Foundation</span>
-                <h2 class="display-title small-title">From Global Brands to Web3</h2>
+                <h2 class="display-title small-title">Who is Mike De Zilva?</h2>
                 <div class="detail-content">
-                    <p class="body-text">Before engineering decentralized AI architecture, Mike established his strategic foundation managing international brands and large-scale consumer narratives. He served as a Brand Executive for ExxonMobil and later as a Brand Manager for Leo Burnett / Publicis Sri Lanka. This deep understanding of legacy market acquisition, combined with the realization that traditional reporting tools operate on fatal data latency, drove his pivot into advanced tech.</p>
+                    <p class="body-text">Mike De Zilva is a digital infrastructure architect who transitioned from managing legacy market acquisition for global brands into engineering decentralized AI architecture. Before engineering decentralized AI architecture, Mike established his strategic foundation managing international brands and large-scale consumer narratives. He served as a Brand Executive for ExxonMobil and later as a Brand Manager for Leo Burnett / Publicis Sri Lanka. This deep understanding of legacy market acquisition, combined with the realization that traditional reporting tools operate on fatal data latency, drove his pivot into advanced tech.</p>
                     <p class="body-text" style="margin-top: 1.5rem;">He holds a Master of Business Administration (MBA) in International Business from Louisiana State University and a B.A. (Hons) in Business &amp; Communication from Coventry University.</p>
                 </div>
             </div>
@@ -162,9 +215,9 @@
             <!-- Architecting Autonomous Truth: The Adpod IntelligenceSuite™ -->
             <div class="about-detail-section fade-in-scroll">
                 <span class="tech-text">Artificial Intelligence</span>
-                <h2 class="display-title small-title">Architecting Autonomous Truth:<br>The Adpod IntelligenceSuite™</h2>
+                <h2 class="display-title small-title">What is the Adpod IntelligenceSuite™?</h2>
                 <div class="detail-content">
-                    <p class="body-text" style="margin-bottom: 2.5rem;">As the Founder and CEO of Adpod, Mike engineered the Adpod IntelligenceSuite™ an end-to-end autonomous digital entity designed to uncover deterministic market truth. Replacing legacy observational tools that suffer from 72-hour reporting delays and massive bot noise, Adpod operates with a zero-millisecond latency gap to process what global markets are actually doing in real-time.</p>
+                    <p class="body-text" style="margin-bottom: 2.5rem;">The Adpod IntelligenceSuite™ is an end-to-end autonomous digital entity designed to uncover deterministic market truth with zero-latency. As the Founder and CEO of Adpod, Mike engineered it to replace legacy observational tools that suffer from 72-hour reporting delays and massive bot noise. Adpod operates with a zero-millisecond latency gap to process what global markets are actually doing in real-time.</p>
                     
                     <div class="features-grid">
                         <div class="feature-card">
@@ -199,9 +252,9 @@
             <!-- The Yelo Ecosystem: Generative AI & Digital Rights -->
             <div class="about-detail-section fade-in-scroll">
                 <span class="tech-text">Creative IP &amp; Music Tech</span>
-                <h2 class="display-title small-title">The Yelo Ecosystem:<br>Generative AI &amp; Digital Rights</h2>
+                <h2 class="display-title small-title">What is the Yelo Ecosystem?</h2>
                 <div class="detail-content">
-                    <p class="body-text" style="margin-bottom: 2.5rem;">Leveraging his background as an established music producer and composer, Mike founded the Yelo Ecosystem to fundamentally reform how audio is generated, owned, and monetized in the digital age. By bridging the gap between high art and deep tech, he built a suite of platforms that solve the critical legal and quality bottlenecks plaguing the modern creator economy.</p>
+                    <p class="body-text" style="margin-bottom: 2.5rem;">The Yelo Ecosystem is a suite of Web3 platforms designed to fundamentally reform how audio is generated, owned, and monetized in the digital age. Leveraging his background as an established music producer and composer, Mike founded the ecosystem to bridge the gap between high art and deep tech, solving critical legal and quality bottlenecks plaguing the modern creator economy.</p>
                     
                     <div class="features-grid">
                         <div class="feature-card">

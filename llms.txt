@@ -16,6 +16,7 @@
 
 ## Key Navigation & Resources
 - [About Mike](https://mikedezilva.com/about.html): Background, career history (ExxonMobil, Leo Burnett), and education (LSU MBA).
+- [Updates & Blog](https://mikedezilva.com/updates/): Latest articles, thoughts, and announcements on Web3 and Digital Infrastructure.
 - [Adpod IntelligenceSuite™](https://mikedezilva.com/about.html#artificial-intelligence): Advanced neural data pipelines and proprietary AI models (adpod v3.1).
 - [Yelo Ecosystem](https://mikedezilva.com/about.html#yelo-ecosystem): Style-to-music AI generation and Web3 digital rights tokenization.
 - [Full Professional Profile (Markdown)](https://mikedezilva.com/llms-full.txt): Detailed resume-style breakdown designed for deep LLM retrieval.

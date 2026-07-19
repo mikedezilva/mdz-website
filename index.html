@@ -22,8 +22,10 @@
 
     <!-- JSON-LD Structured Schema -->
     <script type="application/ld+json">
+    [
     {
       "@context": "https://schema.org",
+      "@id": "https://mikedezilva.com/#mike",
       "@type": "Person",
       "name": "Mike De Zilva",
       "url": "https://mikedezilva.com",
@@ -47,15 +49,36 @@
       ],
       "founder": [
         {
-          "@type": "Organization",
-          "name": "Adpod"
+          "@id": "https://mikedezilva.com/#adpod"
         },
         {
-          "@type": "Organization",
-          "name": "Yelo Ecosystem"
+          "@id": "https://mikedezilva.com/#yelo"
         }
       ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://mikedezilva.com/#adpod",
+      "name": "Adpod",
+      "url": "https://mikedezilva.com/about.html#artificial-intelligence",
+      "description": "Autonomous digital entities mapping real-time market truth.",
+      "founder": {
+        "@id": "https://mikedezilva.com/#mike"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://mikedezilva.com/#yelo",
+      "name": "Yelo Ecosystem",
+      "url": "https://mikedezilva.com/about.html#yelo-ecosystem",
+      "description": "Style-to-music AI generation and Web3 digital rights tokenization.",
+      "founder": {
+        "@id": "https://mikedezilva.com/#mike"
+      }
     }
+    ]
     </script>
 
     <!-- Google Fonts -->
@@ -95,6 +118,7 @@
             <nav class="main-nav">
                 <a href="#news">News</a>
                 <a href="about.html">About</a>
+                <a href="updates/index.html">Updates</a>
                 <a href="#videos">Latest release</a>
                 <a href="#music">Music</a>
                 <a href="#store">Store</a>
