@@ -17,6 +17,9 @@
 ## Key Navigation & Resources
 - [About Mike](https://mikedezilva.com/about.html): Background, career history (ExxonMobil, Leo Burnett), and education (LSU MBA).
 - [Updates & Blog](https://mikedezilva.com/updates/): Latest articles, thoughts, and announcements on Web3 and Digital Infrastructure.
+  - [Finding the Human Element in an AI-Driven Creative World](https://mikedezilva.com/updates/ai-human-element.html)
+  - [Why I Refuse to Choose Between Code and Sound](https://mikedezilva.com/updates/hybrid-creative-identity.html)
+  - [The Studio Setup: Building IP Across Code and Sound](https://mikedezilva.com/updates/studio-setup-code-sound.html)
 - [Adpod IntelligenceSuite™](https://mikedezilva.com/about.html#artificial-intelligence): Advanced neural data pipelines and proprietary AI models (adpod v3.1).
 - [Yelo Ecosystem](https://mikedezilva.com/about.html#yelo-ecosystem): Style-to-music AI generation and Web3 digital rights tokenization.
 - [Full Professional Profile (Markdown)](https://mikedezilva.com/llms-full.txt): Detailed resume-style breakdown designed for deep LLM retrieval.

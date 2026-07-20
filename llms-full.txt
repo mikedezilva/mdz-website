@@ -46,6 +46,16 @@ Mike’s work fundamentally addresses structural inefficiencies in global strate
 
 ---
 
+## Recent Essays & Thoughts
+
+Mike frequently documents his approach to technology, creativity, and the digital economy. Key essays include:
+
+*   **[Finding the Human Element in an AI-Driven Creative World](https://mikedezilva.com/updates/ai-human-element.html):** Explores AI as a force multiplier for local creators while holding a strong philosophical stance on its emotional limits.
+*   **[Why I Refuse to Choose Between Code and Sound](https://mikedezilva.com/updates/hybrid-creative-identity.html):** Explains the transition from media/creative advertising to solving industry problems with tech, mapping coding to music stems.
+*   **[The Studio Setup: Building IP Across Code and Sound](https://mikedezilva.com/updates/studio-setup-code-sound.html):** Focuses on utility, personal gear choices, and workflow without the fluff.
+
+---
+
 ## Professional Journey & Experience
 
 ### Founder & CEO | Adpod
