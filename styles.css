@@ -83,7 +83,7 @@ body {
 
 .site-header {
     position: fixed;
-    top: 40px; /* Offset by banner height */
+    top: 0; /* Reset top to 0 since banner was removed */
     width: 100%;
     padding: 2.5rem 4rem;
     display: flex;
