@@ -1,15 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Lenis Smooth Scroll
-    const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        wheelMultiplier: 1,
-        touchMultiplier: 2,
-        infinite: false
-    });
+    let lenis = null;
+    if (typeof Lenis !== 'undefined') {
+        lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            wheelMultiplier: 1,
+            touchMultiplier: 2,
+            infinite: false
+        });
+    }
 
     function raf(time) {
-        lenis.raf(time);
+        if (lenis) lenis.raf(time);
         requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
@@ -23,20 +26,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Open menu
     openMenuBtn.addEventListener('click', () => {
         menuOverlay.classList.add('active');
-        lenis.stop(); // Pause smooth scrolling while menu is open
+        if (lenis) lenis.stop(); // Pause smooth scrolling while menu is open
     });
 
     // Close menu
     closeMenuBtn.addEventListener('click', () => {
         menuOverlay.classList.remove('active');
-        lenis.start(); // Resume smooth scrolling
+        if (lenis) lenis.start(); // Resume smooth scrolling
     });
 
     // Close menu when clicking a link
     menuLinks.forEach(link => {
         link.addEventListener('click', () => {
             menuOverlay.classList.remove('active');
-            lenis.start();
+            if (lenis) lenis.start();
         });
     });
 
@@ -47,8 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
             
-            if (targetElement) {
+            if (targetElement && lenis) {
                 lenis.scrollTo(targetElement);
+            } else if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
@@ -390,7 +395,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             dealDrawer.classList.add('active');
-            lenis.stop();
+            document.body.classList.add('modal-open');
+            if (typeof lenis !== 'undefined' && lenis) lenis.stop();
         });
 
         // Switch to Offer form
@@ -446,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function closeDrawer() {
             dealDrawer.classList.remove('active');
-            lenis.start();
+            if (typeof lenis !== 'undefined') lenis.start();
         }
 
         closeDrawerBtn.addEventListener('click', closeDrawer);
