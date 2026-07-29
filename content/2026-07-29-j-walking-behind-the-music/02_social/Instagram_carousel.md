@@ -1,29 +1,40 @@
 **Metrics to Track**: Share Rate & Total Watch Percentage
 
+*This is a pure text carousel optimized for sleek typography on dark backgrounds with neon accents.*
+
 **Slide 1:** 
-(Image: Candid shot of Mike, Shaun, and Shane in the studio laughing)
-Text: What happens when you put two completely different energies on one track?
+# 🎛️
+### What happens when you put two completely different energies on one track?
+*(Swipe to find out)*
 
 **Slide 2:** 
-(Image: Close-up of Shaun looking thoughtful/zen)
-Text: I played them the hook for "J Walking". Shaun instantly went on a deep, spiritual peace trip. 🧘‍♂️
+I’ve worked with Shaun Perera and Shane Vincent individually for years. 
+Both on stage and in the studio. 
+But I had never recorded them together... **until now.**
 
 **Slide 3:**
-(Image: Action shot of Shane looking hyped/energetic)
-Text: Shane’s reaction? Pure chaos. "Rebelliooooonn!!" 🎸🔥
+I played them the hook and title for my upcoming track **"J Walking"**.
+The reactions were instantly polar opposites.
 
 **Slide 4:**
-(Image: Screenshot of the Instagram Reel/Illuminati conversation)
-Text: Their chemistry was hilarious. We even ended up having a deep dive debate about the Illuminati... while recording. 😂 
+### 🧘‍♂️ The Spiritual Trip
+Shaun instantly drifted into a deep, peace-and-love headspace. 
+He was feeling the frequencies, breaking down the energy, and talking about cosmic alignment.
 
 **Slide 5:**
-(Image: Dark, moody graphic with the track title "J Walking")
-Text: "J Walking" - Mike De Zilva ft. Shaun Perera x Shane Vincent. 
-Dropping soon on all platforms. 
+### 🎸 Pure Chaos
+Shane’s reaction? 
+He heard the beat and his immediate response was just pure, unfiltered aggression: 
+**"Rebelliooooonn!!"**
 
 **Slide 6:**
-(Image: Call to action with Yelo Studio branding)
-Text: Watch the full studio session on my reels. Who do you think won the debate? Let me know below! 👇
+As a producer, the chemistry was hilarious. They were completely bouncing off each other's wavelengths. 
+We even ended up in a deep dive debate about the **Illuminati** while the mics were hot 😂
+
+**Slide 7:**
+### 🎵 
+**"J Walking"** drops soon on all platforms. 
+Watch the full studio session (and the Illuminati debate) via the link in my bio!
 
 ---
 *Caption:*
