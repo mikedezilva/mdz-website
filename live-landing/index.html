@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike De Zilva | Official Links</title>
+    <meta name="description" content="Discover and stream music from Mike De Zilva. Latest tracks, tour dates, and more.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Feather Icons for Socials -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <div class="background-backdrop"></div>
+
+    <main class="profile-container">
+        <!-- Top Action Bar -->
+        <header class="topbar">
+            <button class="icon-btn" aria-label="Share" onclick="navigator.share({title: 'Mike De Zilva', url: window.location.href}).catch(console.error);">
+                <i data-feather="share"></i>
+            </button>
+        </header>
+
+        <!-- Profile Section -->
+        <section class="profile-header animate-fade-in-up" style="--anim-delay: 0.1s">
+            <div class="avatar-container">
+                <img src="../links-pic.jpeg" alt="Mike De Zilva" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=MDZ&background=random'">
+            </div>
+            <h1 class="profile-title">Mike De Zilva</h1>
+            <p class="profile-bio">Colombo based Producer and Live Act</p>
+        </section>
+
+        <!-- Social Icons -->
+        <section class="social-links animate-fade-in-up" style="--anim-delay: 0.2s">
+            <a href="https://open.spotify.com/artist/5U67pGgjwyqxzaVy0FR9ZA?si=9WJNF93OS6OQQyCa6SO4nw" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Spotify">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z"/><path d="M8 11.5C9.5 11 11.5 10.5 16 11.5"/><path d="M7 14.5C8.5 14 10.5 13.5 15 14.5"/><path d="M9 8.5C10.5 8 12.5 7.5 17 8.5"/></svg>
+            </a>
+            <a href="https://music.apple.com/lk/artist/mike-de-zilva/6779239204" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Apple Music">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+            </a>
+            <a href="https://instagram.com/mikedezilva" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                <i data-feather="instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@mikedezilva" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+                <i data-feather="youtube"></i>
+            </a>
+            <a href="https://x.com/mikedezilva" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X (Twitter)">
+                <i data-feather="twitter"></i>
+            </a>
+        </section>
+
+        <!-- Main Link Buttons -->
+        <section class="links-section animate-fade-in-up" style="--anim-delay: 0.3s">
+            <a href="https://open.spotify.com/artist/5U67pGgjwyqxzaVy0FR9ZA?si=9WJNF93OS6OQQyCa6SO4nw" target="_blank" rel="noopener noreferrer" class="link-btn">
+                <span class="btn-content">
+                    <span class="btn-title">Listen on Spotify</span>
+                </span>
+            </a>
+
+            <a href="https://music.apple.com/lk/artist/mike-de-zilva/6779239204" target="_blank" rel="noopener noreferrer" class="link-btn">
+                <span class="btn-content">
+                    <span class="btn-title">Listen on Apple Music</span>
+                </span>
+            </a>
+
+            <a href="https://www.youtube.com/@mikedezilva" target="_blank" rel="noopener noreferrer" class="link-btn">
+                <span class="btn-content">
+                    <span class="btn-title">Watch on YouTube</span>
+                </span>
+            </a>
+
+            <a href="https://mikedezilva.com" target="_blank" rel="noopener noreferrer" class="link-btn">
+                <span class="btn-content">
+                    <span class="btn-title">Official Website</span>
+                </span>
+            </a>
+            
+            <a href="#" class="link-btn merch-btn">
+                <span class="btn-content">
+                    <span class="btn-title">Merch Store</span>
+                    <span class="btn-subtitle">Coming Soon</span>
+                </span>
+            </a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer animate-fade-in-up" style="--anim-delay: 0.4s">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Mike De Zilva. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+    </script>
+</body>
+</html>
