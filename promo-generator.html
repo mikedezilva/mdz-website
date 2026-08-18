@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yelo Studio Promo Generator</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
@@ -158,6 +159,12 @@
     </style>
 </head>
 <body>
+
+<div class="w-full flex justify-center mt-10">
+    <button onclick="downloadAll()" class="bg-[#D9FF00] hover:bg-white transition-colors text-black px-8 py-4 font-black uppercase text-2xl tracking-widest cursor-pointer shadow-[0_0_20px_rgba(217,255,0,0.4)]">
+        <i class="fa-solid fa-download"></i> Download All Images
+    </button>
+</div>
 
 <h1 class="text-white text-3xl font-mono mt-10 text-center w-full">SQUARE POSTS (1080x1080)</h1>
 <div id="square-container" class="flex flex-col gap-40 items-center w-full"></div>
@@ -363,6 +370,34 @@
         `;
         verticalContainer.insertAdjacentHTML('beforeend', verticalHtml);
     });
+
+    async function downloadAll() {
+        const elements = document.querySelectorAll('.promo-canvas, .promo-canvas-vertical');
+        for (let i = 0; i < elements.length; i++) {
+            const el = elements[i];
+            
+            // Temporarily remove CSS scale transform to ensure full 1080p rendering
+            el.style.transform = 'scale(1)';
+            
+            const canvas = await html2canvas(el, { 
+                scale: 1, 
+                backgroundColor: '#020202',
+                useCORS: true,
+                logging: false
+            });
+            
+            // Restore transform
+            el.style.transform = '';
+            
+            const link = document.createElement('a');
+            link.download = `yelo-promo-${el.id}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            
+            // Brief pause to allow the browser to process downloads
+            await new Promise(r => setTimeout(r, 800));
+        }
+    }
 </script>
 
 </body>
