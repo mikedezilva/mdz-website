@@ -46,7 +46,7 @@
         .content-layer {
             position: relative;
             z-index: 10;
-            padding: 60px;
+            padding: 50px 0 50px 50px; /* No right padding to let image bleed */
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -54,6 +54,13 @@
 
         .mono { font-family: 'Space Mono', monospace; }
         .neon-text { color: #D9FF00; text-shadow: 0 0 10px rgba(217, 255, 0, 0.5); }
+
+        .header-section {
+            padding-right: 50px; /* Restore right padding for header */
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
 
         .feature-icon {
             width: 45px;
@@ -70,20 +77,27 @@
         }
 
         .middle-section {
-            position: relative;
-            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
             flex: 1;
         }
 
+        .features-column {
+            width: 380px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
         .product-image-container {
-            position: absolute;
-            right: -60px;
-            top: -20px;
-            width: 750px;
-            height: 750px;
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: -20px 20px 60px rgba(0,0,0,0.9);
-            z-index: 5;
+            width: 600px;
+            height: 600px;
+            border-left: 2px solid rgba(217, 255, 0, 0.3);
+            border-top: 2px solid rgba(217, 255, 0, 0.3);
+            border-bottom: 2px solid rgba(217, 255, 0, 0.3);
+            box-shadow: -20px 20px 60px rgba(0,0,0,0.6);
             background-color: #fff;
         }
 
@@ -91,23 +105,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        .features-column {
-            position: absolute;
-            left: 0;
-            top: 20px;
-            width: 460px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            z-index: 10;
-            /* Cyber panel background to ensure readability over the massive image */
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(12px);
-            padding: 30px;
-            border: 1px solid rgba(217, 255, 0, 0.3);
-            box-shadow: 20px 20px 40px rgba(0,0,0,0.5);
         }
 
         .bottom-bar {
@@ -121,7 +118,7 @@
             border-top: 1px solid rgba(217, 255, 0, 0.2);
             display: flex;
             align-items: center;
-            padding: 0 60px;
+            padding: 0 50px;
             justify-content: space-between;
             z-index: 20;
         }
@@ -134,13 +131,13 @@
         {
             title: "Universe Is <br><span class='neon-text'>Noise</span>",
             edition: "Edition 1 (Transparent)",
-            colorText: "Audiophile grade 12\" transparent vinyl pressing.",
+            colorText: "Audiophile grade 12\" transparent vinyl.",
             imgSrc: "yelo-store-products/Vinyl_record_mockup_202608180458.jpeg"
         },
         {
             title: "Taprobane <br><span class='neon-text'>Trance</span>",
             edition: "Crimson Edition",
-            colorText: "Audiophile grade 12\" crimson vinyl pressing.",
+            colorText: "Audiophile grade 12\" crimson vinyl.",
             imgSrc: "yelo-store-products/Vinyl_record_album_mockup_202608180458.jpeg"
         },
         {
@@ -152,7 +149,7 @@
         {
             title: "Universe Is <br><span class='neon-text'>Noise</span>",
             edition: "Edition 2 (Transparent)",
-            colorText: "Audiophile grade 12\" transparent vinyl pressing.",
+            colorText: "Audiophile grade 12\" transparent vinyl.",
             imgSrc: "yelo-store-products/Vinyl_record_mockup_display_202608180458.jpeg"
         },
         {
@@ -164,7 +161,7 @@
         {
             title: "Universe Is <br><span class='neon-text'>Noise</span>",
             edition: "Edition 3 (Transparent)",
-            colorText: "Audiophile grade 12\" transparent vinyl pressing.",
+            colorText: "Audiophile grade 12\" transparent vinyl.",
             imgSrc: "yelo-store-products/Vinyl_record_mockup_displayed_202608180458.jpeg"
         },
         {
@@ -180,60 +177,60 @@
         <div class="promo-canvas" id="promo-${index + 1}">
             <div class="cyber-grid"></div>
             <div class="content-layer">
-                <div class="flex justify-between items-start mb-6 relative z-20">
+                <div class="header-section mb-6 relative z-20">
                     <div>
                         <div class="mono text-[#D9FF00] text-lg tracking-[0.3em] uppercase mb-3">Sector 03 // The Vault</div>
                         <h1 class="text-7xl font-black uppercase leading-none mb-2">${p.title}</h1>
-                        <h2 class="text-3xl font-light text-gray-300 drop-shadow-md">${p.edition}</h2>
+                        <h2 class="text-3xl font-light text-gray-300">${p.edition}</h2>
                     </div>
-                    <div class="text-right border border-[#D9FF00] p-4 bg-black/90 backdrop-blur-md shadow-[0_0_20px_rgba(217,255,0,0.2)]">
+                    <div class="text-right border border-[#D9FF00] p-4 bg-black/90 shadow-[0_0_20px_rgba(217,255,0,0.2)]">
                         <div class="mono text-xs text-gray-400 uppercase mb-1">Pre-Order Price</div>
                         <div class="text-5xl font-black text-[#D9FF00]">$99.00</div>
                     </div>
                 </div>
 
                 <div class="middle-section">
-                    <!-- Massive Hero Image -->
-                    <div class="product-image-container">
-                        <img src="${p.imgSrc}" alt="${p.title}">
-                    </div>
-
-                    <!-- Floating Cyber Panel for Features -->
+                    <!-- Text Column -->
                     <div class="features-column">
                         <div class="flex items-center gap-4">
                             <div class="feature-icon"><i class="fa-solid fa-record-vinyl"></i></div>
                             <div>
                                 <h3 class="text-lg font-bold uppercase tracking-wider mb-1">Premium 45 RPM</h3>
-                                <p class="text-gray-400 text-sm">${p.colorText}</p>
+                                <p class="text-gray-400 text-sm leading-tight">${p.colorText}</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
                             <div class="feature-icon"><i class="fa-solid fa-certificate"></i></div>
                             <div>
                                 <h3 class="text-lg font-bold uppercase tracking-wider mb-1">100% Human Creativity</h3>
-                                <p class="text-gray-400 text-sm">Certified pure analog & human craftsmanship.</p>
+                                <p class="text-gray-400 text-sm leading-tight">Certified pure analog & human craftsmanship.</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
                             <div class="feature-icon"><i class="fa-solid fa-wallet"></i></div>
                             <div>
                                 <h3 class="text-lg font-bold uppercase tracking-wider mb-1">NFT Access Pass</h3>
-                                <p class="text-gray-400 text-sm">Includes exclusive First Edition digital rights.</p>
+                                <p class="text-gray-400 text-sm leading-tight">Includes exclusive First Edition digital rights.</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
                             <div class="feature-icon"><i class="fa-solid fa-hourglass-half"></i></div>
                             <div>
                                 <h3 class="text-lg font-bold uppercase tracking-wider mb-1">Open Edition (Timed)</h3>
-                                <p class="text-gray-400 text-sm">Available only until the vault closes.</p>
+                                <p class="text-gray-400 text-sm leading-tight">Available only until the vault closes.</p>
                             </div>
                         </div>
                         
                         <div class="mt-4">
-                            <div class="inline-flex items-center gap-3 bg-[#D9FF00] hover:bg-white transition-colors text-black px-6 py-3 font-black uppercase text-lg tracking-widest cursor-pointer shadow-[0_0_15px_rgba(217,255,0,0.4)]">
+                            <div class="inline-flex items-center gap-3 bg-[#D9FF00] hover:bg-white transition-colors text-black px-5 py-3 font-black uppercase text-base tracking-widest cursor-pointer shadow-[0_0_15px_rgba(217,255,0,0.4)] w-max">
                                 <i class="fa-solid fa-lock-open"></i> Pre-Order Now
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Clean Separated Hero Image -->
+                    <div class="product-image-container">
+                        <img src="${p.imgSrc}" alt="${p.title}">
                     </div>
                 </div>
             </div>
