@@ -371,6 +371,79 @@
         verticalContainer.insertAdjacentHTML('beforeend', verticalHtml);
     });
 
+    // --- CAMPAIGN SPECIAL POSTS ---
+
+    // 48 HOUR WARNING - SQUARE
+    const warningSquareHtml = `
+    <div class="promo-canvas" id="square-warning">
+        <div class="cyber-grid" style="background-image: linear-gradient(rgba(255, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 0, 0, 0.05) 1px, transparent 1px);"></div>
+        <div class="content-layer" style="justify-content: center; align-items: center; text-align: center;">
+            <div class="mono text-red-500 text-2xl tracking-[0.3em] uppercase mb-10 border border-red-500/30 px-6 py-2 bg-red-500/10"><i class="fa-solid fa-triangle-exclamation animate-pulse"></i> CRITICAL ALERT</div>
+            <h1 class="text-8xl font-black uppercase leading-none mb-10 text-white">The Vault <br>Closes In</h1>
+            <div class="flex gap-8 text-[#D9FF00] font-black text-9xl mono tracking-widest bg-black p-10 border-4 border-[#D9FF00] shadow-[0_0_50px_rgba(217,255,0,0.3)]">
+                <div>48<span class="text-3xl block text-gray-500 tracking-normal text-center mt-2">HRS</span></div>
+                <div class="animate-pulse">:</div>
+                <div>00<span class="text-3xl block text-gray-500 tracking-normal text-center mt-2">MIN</span></div>
+            </div>
+            <p class="text-3xl text-gray-400 mt-16 max-w-2xl">First Editions will be permanently locked. No represses.</p>
+        </div>
+    </div>
+    `;
+    squareContainer.insertAdjacentHTML('beforeend', warningSquareHtml);
+
+    // TEASER - SQUARE
+    const teaserSquareHtml = `
+    <div class="promo-canvas" id="square-teaser">
+        <div class="cyber-grid"></div>
+        <div class="content-layer" style="justify-content: center; align-items: center; text-align: center;">
+            <div class="mono text-[#D9FF00] text-3xl tracking-[0.5em] uppercase mb-12">Sector 03</div>
+            <h1 class="text-9xl font-black uppercase leading-none mb-16 text-white tracking-tighter">The Vault</h1>
+            <div class="mono text-4xl text-[#D9FF00] mt-10 flex gap-4 items-center bg-[#D9FF00]/10 px-8 py-4 border border-[#D9FF00]/30">
+                <i class="fa-solid fa-lock"></i> ACCESSING SECURE SERVER <span class="animate-pulse">_</span>
+            </div>
+        </div>
+    </div>
+    `;
+    squareContainer.insertAdjacentHTML('beforeend', teaserSquareHtml);
+
+    // 48 HOUR WARNING - VERTICAL
+    const warningVerticalHtml = `
+    <div class="promo-canvas-vertical" id="vertical-warning">
+        <div class="cyber-grid" style="background-image: linear-gradient(rgba(255, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 0, 0, 0.05) 1px, transparent 1px);"></div>
+        <div class="content-layer-vertical" style="justify-content: center; align-items: center; text-align: center;">
+            <div class="mono text-red-500 text-3xl tracking-[0.3em] uppercase mb-16 border border-red-500/30 px-8 py-4 bg-red-500/10"><i class="fa-solid fa-triangle-exclamation animate-pulse"></i> FINAL WARNING</div>
+            <h1 class="text-[9rem] font-black uppercase leading-none mb-20 text-white">The Vault <br>Closes In</h1>
+            <div class="flex gap-8 text-[#D9FF00] font-black text-[12rem] mono tracking-widest bg-black p-12 border-4 border-[#D9FF00] shadow-[0_0_50px_rgba(217,255,0,0.3)]">
+                <div>48<span class="text-4xl block text-gray-500 tracking-normal text-center mt-4">HRS</span></div>
+                <div class="animate-pulse">:</div>
+                <div>00<span class="text-4xl block text-gray-500 tracking-normal text-center mt-4">MIN</span></div>
+            </div>
+            <p class="text-5xl text-gray-400 mt-32 max-w-3xl leading-relaxed">First Editions will be permanently locked. No represses.</p>
+            <div class="absolute bottom-40 w-full flex justify-center">
+                 <div class="inline-flex items-center gap-4 bg-[#D9FF00] text-black px-12 py-6 font-black uppercase text-4xl tracking-widest cursor-pointer shadow-[0_0_40px_rgba(217,255,0,0.4)]">
+                    <i class="fa-solid fa-lock-open"></i> SECURE YOURS NOW
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+    verticalContainer.insertAdjacentHTML('beforeend', warningVerticalHtml);
+
+    // TEASER - VERTICAL
+    const teaserVerticalHtml = `
+    <div class="promo-canvas-vertical" id="vertical-teaser">
+        <div class="cyber-grid"></div>
+        <div class="content-layer-vertical" style="justify-content: center; align-items: center; text-align: center;">
+            <div class="mono text-[#D9FF00] text-4xl tracking-[0.5em] uppercase mb-20">Sector 03</div>
+            <h1 class="text-[12rem] font-black uppercase leading-none mb-32 text-white tracking-tighter">The <br>Vault</h1>
+            <div class="mono text-5xl text-[#D9FF00] mt-20 flex gap-6 items-center bg-[#D9FF00]/10 px-12 py-6 border border-[#D9FF00]/30">
+                <i class="fa-solid fa-lock"></i> SYSTEM LOADING <span class="animate-pulse">_</span>
+            </div>
+        </div>
+    </div>
+    `;
+    verticalContainer.insertAdjacentHTML('beforeend', teaserVerticalHtml);
+
     async function downloadAll() {
         const elements = document.querySelectorAll('.promo-canvas, .promo-canvas-vertical');
         for (let i = 0; i < elements.length; i++) {
