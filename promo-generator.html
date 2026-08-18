@@ -118,15 +118,16 @@
         .content-layer-vertical {
             position: relative;
             z-index: 10;
-            padding: 80px 60px;
+            padding: 80px 60px 180px 60px; /* added 180px bottom padding to clear the bottom bar */
             height: 100%;
             display: flex;
             flex-direction: column;
+            justify-content: space-between; /* ensures even spacing */
         }
         .product-image-container-vertical {
             width: 100%;
-            height: 960px;
-            margin: 60px 0;
+            height: 840px; /* Reduced from 960px to give text more breathing room */
+            margin: 40px 0;
             border: 2px solid rgba(217, 255, 0, 0.3);
             box-shadow: 0 20px 60px rgba(0,0,0,0.6);
             background-color: #fff;
@@ -135,8 +136,7 @@
         .features-grid-vertical {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 20px;
+            gap: 50px 40px; /* row gap, column gap */
         }
 
         .mono { font-family: 'Space Mono', monospace; }
@@ -296,19 +296,17 @@
         <div class="promo-canvas-vertical" id="vertical-${index + 1}">
             <div class="cyber-grid"></div>
             <div class="content-layer-vertical">
-                <div class="flex justify-between items-start mb-6 relative z-20">
-                    <div>
-                        <div class="mono text-[#D9FF00] text-xl tracking-[0.3em] uppercase mb-4">Sector 03 // The Vault</div>
-                        <h1 class="text-8xl font-black uppercase leading-none mb-4">${p.title}</h1>
-                        <h2 class="text-4xl font-light text-gray-300">${p.edition}</h2>
-                    </div>
+                <div class="relative z-20">
+                    <div class="mono text-[#D9FF00] text-xl tracking-[0.3em] uppercase mb-4">Sector 03 // The Vault</div>
+                    <h1 class="text-8xl font-black uppercase leading-none mb-4">${p.title}</h1>
+                    <h2 class="text-4xl font-light text-gray-300">${p.edition}</h2>
                 </div>
 
                 <div class="product-image-container-vertical">
                     <img src="${p.imgSrc}" alt="${p.title}">
                 </div>
 
-                <div class="features-grid-vertical flex-grow">
+                <div class="features-grid-vertical">
                     <div class="flex items-start gap-4">
                         <div class="feature-icon mt-1"><i class="fa-solid fa-record-vinyl"></i></div>
                         <div>
@@ -320,27 +318,27 @@
                         <div class="feature-icon mt-1"><i class="fa-solid fa-certificate"></i></div>
                         <div>
                             <h3 class="text-xl font-bold uppercase tracking-wider mb-2">100% Human Creativity</h3>
-                            <p class="text-gray-400 text-lg leading-tight">Certified pure analog & human craftsmanship.</p>
+                            <p class="text-gray-400 text-lg leading-tight">Certified pure analog craftsmanship.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
                         <div class="feature-icon mt-1"><i class="fa-solid fa-wallet"></i></div>
                         <div>
                             <h3 class="text-xl font-bold uppercase tracking-wider mb-2">NFT Access Pass</h3>
-                            <p class="text-gray-400 text-lg leading-tight">Includes exclusive First Edition digital rights.</p>
+                            <p class="text-gray-400 text-lg leading-tight">Exclusive First Edition digital rights.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
                         <div class="feature-icon mt-1"><i class="fa-solid fa-hourglass-half"></i></div>
                         <div>
-                            <h3 class="text-xl font-bold uppercase tracking-wider mb-2">Open Edition (Timed)</h3>
+                            <h3 class="text-xl font-bold uppercase tracking-wider mb-2">Open Edition</h3>
                             <p class="text-gray-400 text-lg leading-tight">Available only until the vault closes.</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="flex justify-between items-end mt-auto mb-8 relative z-20">
-                    <div class="inline-flex items-center gap-4 bg-[#D9FF00] hover:bg-white transition-colors text-black px-8 py-5 font-black uppercase text-2xl tracking-widest cursor-pointer shadow-[0_0_20px_rgba(217,255,0,0.4)]">
+                <div class="flex justify-between items-center relative z-20">
+                    <div class="inline-flex items-center gap-4 bg-[#D9FF00] hover:bg-white transition-colors text-black px-8 py-5 font-black uppercase text-3xl tracking-widest cursor-pointer shadow-[0_0_20px_rgba(217,255,0,0.4)]">
                         <i class="fa-solid fa-lock-open"></i> Pre-Order Now
                     </div>
                     <div class="text-right border-2 border-[#D9FF00] p-6 bg-black/90 shadow-[0_0_20px_rgba(217,255,0,0.2)]">
@@ -351,11 +349,11 @@
             </div>
 
             <div class="bottom-bar" style="height: 120px; padding: 0 60px;">
-                <div class="flex items-center gap-5 text-2xl mono text-[#D9FF00]">
+                <div class="flex items-center gap-5 text-3xl mono text-[#D9FF00]">
                     <img src="Images/yelo-logo.svg" alt="Yelo Logo" style="height: 32px; filter: drop-shadow(0 0 5px rgba(217,255,0,0.5));">
                     <span>YELOSTUDIO.XYZ</span>
                 </div>
-                <div class="flex items-center gap-8 text-gray-500 text-4xl">
+                <div class="flex items-center gap-8 text-gray-500 text-5xl">
                     <i class="fa-brands fa-cc-visa"></i>
                     <i class="fa-brands fa-cc-mastercard"></i>
                     <i class="fa-brands fa-bitcoin"></i>
