@@ -91,6 +91,21 @@
                     <h1 class="text-4xl md:text-7xl font-black mb-6 tracking-tighter uppercase leading-none">
                         Record <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D9FF00] to-white drop-shadow-[0_0_20px_rgba(217,255,0,0.3)]">Store.</span>
                     </h1>
+                    
+                    <!-- Countdown Timer -->
+                    <div class="mb-8 font-mono text-center">
+                        <div class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Open Edition Window Closes In:</div>
+                        <div id="countdown-timer" class="inline-flex items-center gap-4 text-[#D9FF00] tracking-widest bg-black/50 px-6 py-3 border border-[#D9FF00]/30 shadow-[0_0_15px_rgba(217,255,0,0.1)]">
+                            <div class="flex flex-col items-center"><span id="cd-days" class="text-2xl font-black">00</span><span class="text-[8px] uppercase">Days</span></div>
+                            <div class="text-2xl mb-3">:</div>
+                            <div class="flex flex-col items-center"><span id="cd-hours" class="text-2xl font-black">00</span><span class="text-[8px] uppercase">Hours</span></div>
+                            <div class="text-2xl mb-3">:</div>
+                            <div class="flex flex-col items-center"><span id="cd-mins" class="text-2xl font-black">00</span><span class="text-[8px] uppercase">Mins</span></div>
+                            <div class="text-2xl mb-3">:</div>
+                            <div class="flex flex-col items-center"><span id="cd-secs" class="text-2xl font-black">00</span><span class="text-[8px] uppercase">Secs</span></div>
+                        </div>
+                    </div>
+
                     <p class="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed font-sans font-light">
                         Exclusive vinyl, limited edition drops, and official merchandise from the Yelo Studio roster.
                     </p>
@@ -273,6 +288,30 @@
                     }, 800);
                 }
             }, 20);
+            
+            // Countdown Timer Logic
+            const targetDate = new Date("December 30, 2026 23:59:59").getTime();
+            
+            const timerInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+                
+                if (distance < 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById("countdown-timer").innerHTML = "<div class='text-xl text-red-500 font-bold tracking-widest'>THE VAULT IS CLOSED</div>";
+                    return;
+                }
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById("cd-days").textContent = days.toString().padStart(2, '0');
+                document.getElementById("cd-hours").textContent = hours.toString().padStart(2, '0');
+                document.getElementById("cd-mins").textContent = minutes.toString().padStart(2, '0');
+                document.getElementById("cd-secs").textContent = seconds.toString().padStart(2, '0');
+            }, 1000);
         });
     </script>
 </body>
