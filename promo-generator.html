@@ -18,6 +18,7 @@
             align-items: center;
         }
 
+        /* --- SQUARE CANVAS (1080x1080) --- */
         .promo-canvas {
             width: 1080px;
             height: 1080px;
@@ -33,6 +34,22 @@
             border: 1px solid #333;
         }
 
+        /* --- VERTICAL CANVAS (1080x1920) --- */
+        .promo-canvas-vertical {
+            width: 1080px;
+            height: 1920px;
+            background-color: #020202;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            color: white;
+            transform-origin: top center;
+            transform: scale(0.4);
+            margin-bottom: -1100px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+        }
+
         .cyber-grid {
             position: absolute;
             inset: 0;
@@ -43,39 +60,21 @@
             z-index: 1;
         }
 
+        /* SQUARE STYLES */
         .content-layer {
             position: relative;
             z-index: 10;
-            padding: 50px 0 50px 50px; /* No right padding to let image bleed */
+            padding: 50px 0 50px 50px;
             height: 100%;
             display: flex;
             flex-direction: column;
         }
-
-        .mono { font-family: 'Space Mono', monospace; }
-        .neon-text { color: #D9FF00; text-shadow: 0 0 10px rgba(217, 255, 0, 0.5); }
-
         .header-section {
-            padding-right: 50px; /* Restore right padding for header */
+            padding-right: 50px;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
         }
-
-        .feature-icon {
-            width: 45px;
-            height: 45px;
-            background-color: rgba(217, 255, 0, 0.1);
-            border: 2px solid #D9FF00;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            color: #D9FF00;
-            flex-shrink: 0;
-        }
-
         .middle-section {
             display: flex;
             justify-content: space-between;
@@ -83,14 +82,12 @@
             margin-top: 30px;
             flex: 1;
         }
-
         .features-column {
             width: 380px;
             display: flex;
             flex-direction: column;
             gap: 25px;
         }
-
         .product-image-container {
             width: 600px;
             height: 600px;
@@ -100,13 +97,7 @@
             box-shadow: -20px 20px 60px rgba(0,0,0,0.6);
             background-color: #fff;
         }
-
-        .product-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
+        .product-image-container img { width: 100%; height: 100%; object-fit: cover; }
         .bottom-bar {
             position: absolute;
             bottom: 0;
@@ -122,9 +113,57 @@
             justify-content: space-between;
             z-index: 20;
         }
+
+        /* VERTICAL STYLES */
+        .content-layer-vertical {
+            position: relative;
+            z-index: 10;
+            padding: 80px 60px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-image-container-vertical {
+            width: 100%;
+            height: 960px;
+            margin: 60px 0;
+            border: 2px solid rgba(217, 255, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            background-color: #fff;
+        }
+        .product-image-container-vertical img { width: 100%; height: 100%; object-fit: cover; }
+        .features-grid-vertical {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 20px;
+        }
+
+        .mono { font-family: 'Space Mono', monospace; }
+        .neon-text { color: #D9FF00; text-shadow: 0 0 10px rgba(217, 255, 0, 0.5); }
+        .feature-icon {
+            width: 45px;
+            height: 45px;
+            background-color: rgba(217, 255, 0, 0.1);
+            border: 2px solid #D9FF00;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #D9FF00;
+            flex-shrink: 0;
+        }
+        
     </style>
 </head>
 <body>
+
+<h1 class="text-white text-3xl font-mono mt-10 text-center w-full">SQUARE POSTS (1080x1080)</h1>
+<div id="square-container" class="flex flex-col gap-40 items-center w-full"></div>
+
+<h1 class="text-white text-3xl font-mono mt-32 mb-10 text-center w-full">VERTICAL POSTS (1080x1920)</h1>
+<div id="vertical-container" class="flex flex-col gap-[800px] items-center w-full mb-32"></div>
 
 <script>
     const products = [
@@ -172,9 +211,13 @@
         }
     ];
 
+    const squareContainer = document.getElementById('square-container');
+    const verticalContainer = document.getElementById('vertical-container');
+
     products.forEach((p, index) => {
-        const html = `
-        <div class="promo-canvas" id="promo-${index + 1}">
+        // --- SQUARE HTML ---
+        const squareHtml = `
+        <div class="promo-canvas" id="square-${index + 1}">
             <div class="cyber-grid"></div>
             <div class="content-layer">
                 <div class="header-section mb-6 relative z-20">
@@ -190,7 +233,6 @@
                 </div>
 
                 <div class="middle-section">
-                    <!-- Text Column -->
                     <div class="features-column">
                         <div class="flex items-center gap-4">
                             <div class="feature-icon"><i class="fa-solid fa-record-vinyl"></i></div>
@@ -228,7 +270,6 @@
                         </div>
                     </div>
 
-                    <!-- Clean Separated Hero Image -->
                     <div class="product-image-container">
                         <img src="${p.imgSrc}" alt="${p.title}">
                     </div>
@@ -248,7 +289,81 @@
             </div>
         </div>
         `;
-        document.body.insertAdjacentHTML('beforeend', html);
+        squareContainer.insertAdjacentHTML('beforeend', squareHtml);
+
+        // --- VERTICAL HTML ---
+        const verticalHtml = `
+        <div class="promo-canvas-vertical" id="vertical-${index + 1}">
+            <div class="cyber-grid"></div>
+            <div class="content-layer-vertical">
+                <div class="flex justify-between items-start mb-6 relative z-20">
+                    <div>
+                        <div class="mono text-[#D9FF00] text-xl tracking-[0.3em] uppercase mb-4">Sector 03 // The Vault</div>
+                        <h1 class="text-8xl font-black uppercase leading-none mb-4">${p.title}</h1>
+                        <h2 class="text-4xl font-light text-gray-300">${p.edition}</h2>
+                    </div>
+                </div>
+
+                <div class="product-image-container-vertical">
+                    <img src="${p.imgSrc}" alt="${p.title}">
+                </div>
+
+                <div class="features-grid-vertical flex-grow">
+                    <div class="flex items-start gap-4">
+                        <div class="feature-icon mt-1"><i class="fa-solid fa-record-vinyl"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold uppercase tracking-wider mb-2">Premium 45 RPM</h3>
+                            <p class="text-gray-400 text-lg leading-tight">${p.colorText}</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="feature-icon mt-1"><i class="fa-solid fa-certificate"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold uppercase tracking-wider mb-2">100% Human Creativity</h3>
+                            <p class="text-gray-400 text-lg leading-tight">Certified pure analog & human craftsmanship.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="feature-icon mt-1"><i class="fa-solid fa-wallet"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold uppercase tracking-wider mb-2">NFT Access Pass</h3>
+                            <p class="text-gray-400 text-lg leading-tight">Includes exclusive First Edition digital rights.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="feature-icon mt-1"><i class="fa-solid fa-hourglass-half"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold uppercase tracking-wider mb-2">Open Edition (Timed)</h3>
+                            <p class="text-gray-400 text-lg leading-tight">Available only until the vault closes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between items-end mt-auto mb-8 relative z-20">
+                    <div class="inline-flex items-center gap-4 bg-[#D9FF00] hover:bg-white transition-colors text-black px-8 py-5 font-black uppercase text-2xl tracking-widest cursor-pointer shadow-[0_0_20px_rgba(217,255,0,0.4)]">
+                        <i class="fa-solid fa-lock-open"></i> Pre-Order Now
+                    </div>
+                    <div class="text-right border-2 border-[#D9FF00] p-6 bg-black/90 shadow-[0_0_20px_rgba(217,255,0,0.2)]">
+                        <div class="mono text-lg text-gray-400 uppercase mb-2">Pre-Order Price</div>
+                        <div class="text-7xl font-black text-[#D9FF00]">$99.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-bar" style="height: 120px; padding: 0 60px;">
+                <div class="flex items-center gap-5 text-2xl mono text-[#D9FF00]">
+                    <img src="Images/yelo-logo.svg" alt="Yelo Logo" style="height: 32px; filter: drop-shadow(0 0 5px rgba(217,255,0,0.5));">
+                    <span>YELOSTUDIO.XYZ</span>
+                </div>
+                <div class="flex items-center gap-8 text-gray-500 text-4xl">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-bitcoin"></i>
+                </div>
+            </div>
+        </div>
+        `;
+        verticalContainer.insertAdjacentHTML('beforeend', verticalHtml);
     });
 </script>
 
